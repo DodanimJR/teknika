@@ -1,0 +1,39 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Página no encontrada"
+  description="La página que buscás no existe."
+>
+
+  <section class="not-found">
+    <div class="container text-center">
+      <h1>404</h1>
+      <p>La página que buscás no existe o fue movida.</p>
+      <a href="/" class="btn btn--primary btn--lg">Volver al inicio</a>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  .not-found {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .not-found h1 {
+    font-size: 6rem;
+    color: var(--color-gray-200);
+    margin-bottom: var(--space-md);
+  }
+
+  .not-found p {
+    color: var(--color-text-muted);
+    font-size: 1.125rem;
+    margin-bottom: var(--space-xl);
+  }
+</style>

@@ -1,0 +1,452 @@
+---
+import Base from '../layouts/Base.astro';
+import ContactModal from '../components/ContactModal.astro';
+---
+
+<Base
+  title="Servicios"
+  description="Servicios de soporte técnico, reparación de computadoras, formateo, instalación de software y asesoría de compra en Costa Rica."
+  canonical="https://teknika.co.cr/servicios"
+>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Nuestros servicios</h1>
+      <p>Soluciones informáticas claras, con precios transparentes</p>
+    </div>
+  </section>
+
+  <!-- DIAGNOSTICO -->
+  <section class="section" id="diagnostico">
+    <div class="container">
+      <div class="service-block">
+        <div class="service-block__header">
+          <span class="service-block__icon">&#128269;</span>
+          <div>
+            <h2>Diagnóstico y reparación</h2>
+            <p class="text-muted">Laptops y desktops - No celulares</p>
+          </div>
+        </div>
+
+        <div class="pricing-table">
+          <div class="pricing-row">
+            <span class="pricing-row__service">Diagnóstico básico (software)</span>
+            <span class="pricing-row__price">&#8353;8,000 - 12,000</span>
+          </div>
+          <div class="pricing-row">
+            <span class="pricing-row__service">Diagnóstico avanzado (hardware)</span>
+            <span class="pricing-row__price">&#8353;15,000 - 20,000</span>
+          </div>
+          <div class="pricing-row">
+            <span class="pricing-row__service">Limpieza interna + pasta térmica</span>
+            <span class="pricing-row__price">&#8353;12,000 - 18,000</span>
+          </div>
+          <div class="pricing-row">
+            <span class="pricing-row__service">Cambio/upgrade de RAM</span>
+            <span class="pricing-row__price">&#8353;8,000 + componente</span>
+          </div>
+          <div class="pricing-row">
+            <span class="pricing-row__service">Cambio de HDD a SSD</span>
+            <span class="pricing-row__price">&#8353;10,000 + SSD</span>
+          </div>
+          <div class="pricing-row">
+            <span class="pricing-row__service">Reparación de software (virus, lentitud)</span>
+            <span class="pricing-row__price">&#8353;10,000 - 20,000</span>
+          </div>
+        </div>
+        <p class="pricing-note">El costo del diagnóstico se aplica al total si se procede con la reparación.</p>
+        <button class="btn btn--primary service-cta" data-service="Diagnóstico y reparación de computadoras" style="margin-top: var(--space-lg);">
+          Consultar este servicio &rarr;
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMATEO -->
+  <section class="section section--alt" id="formateo">
+    <div class="container">
+      <div class="service-block">
+        <div class="service-block__header">
+          <span class="service-block__icon">&#128187;</span>
+          <div>
+            <h2>Formateo e instalación de software</h2>
+            <p class="text-muted">Instalación limpia con todo lo que necesitás</p>
+          </div>
+        </div>
+
+        <div class="pricing-table">
+          <div class="pricing-row">
+            <span class="pricing-row__service">Formateo + instalación de Windows</span>
+            <span class="pricing-row__price">&#8353;15,000 - 20,000</span>
+          </div>
+          <div class="pricing-row">
+            <span class="pricing-row__service">Formateo + instalación de Linux</span>
+            <span class="pricing-row__price">&#8353;12,000 - 18,000</span>
+          </div>
+          <div class="pricing-row">
+            <span class="pricing-row__service">Instalación de suite Office</span>
+            <span class="pricing-row__price">&#8353;5,000 - 8,000</span>
+          </div>
+          <div class="pricing-row">
+            <span class="pricing-row__service">Backup de datos antes de formateo</span>
+            <span class="pricing-row__price">&#8353;8,000 - 15,000</span>
+          </div>
+          <div class="pricing-row pricing-row--featured">
+            <span class="pricing-row__service">
+              <strong>Paquete Completo</strong><br />
+              <small>Formateo + Office + antivirus + backup</small>
+            </span>
+            <span class="pricing-row__price pricing-row__price--featured">&#8353;30,000 - 40,000</span>
+          </div>
+        </div>
+        <button class="btn btn--primary service-cta" data-service="Formateo e instalación de software" style="margin-top: var(--space-lg);">
+          Consultar este servicio &rarr;
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASESORIA -->
+  <section class="section" id="asesoria">
+    <div class="container">
+      <div class="service-block">
+        <div class="service-block__header">
+          <span class="service-block__icon">&#128176;</span>
+          <div>
+            <h2>Asesoría de compra de equipo</h2>
+            <p class="text-muted">Te ayudamos a tomar la mejor decisión</p>
+          </div>
+        </div>
+
+        <div class="pricing-table">
+          <div class="pricing-row">
+            <span class="pricing-row__service">Asesoría por chat (WhatsApp, sin límite)</span>
+            <span class="pricing-row__price">GRATIS</span>
+          </div>
+          <div class="pricing-row">
+            <span class="pricing-row__service">Asesoría por llamada (30 min)</span>
+            <span class="pricing-row__price">&#8353;5,000</span>
+          </div>
+          <div class="pricing-row">
+            <span class="pricing-row__service">Asesoría completa (análisis + recomendación escrita)</span>
+            <span class="pricing-row__price">&#8353;8,000 - 15,000</span>
+          </div>
+          <div class="pricing-row">
+            <span class="pricing-row__service">Acompañamiento de compra (presencial)</span>
+            <span class="pricing-row__price">&#8353;10,000 - 15,000</span>
+          </div>
+          <div class="pricing-row">
+            <span class="pricing-row__service">Configuración inicial de equipo nuevo</span>
+            <span class="pricing-row__price">&#8353;10,000 - 15,000</span>
+          </div>
+        </div>
+        <button class="btn btn--primary service-cta" data-service="Asesoría de compra de equipo" style="margin-top: var(--space-lg);">
+          Consultar este servicio &rarr;
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAQUETES -->
+  <section class="section section--alt" id="paquetes">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: var(--space-2xl);">
+        <h2>Paquetes con descuento</h2>
+        <p class="text-muted">Ahorrá combinando servicios</p>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="card package-card">
+          <span class="badge badge--sky">Básico</span>
+          <h3 class="package-card__title">Paquete Básico</h3>
+          <p class="package-card__price">&#8353;18,000</p>
+          <ul class="package-card__list">
+            <li>Diagnóstico completo</li>
+            <li>Limpieza interna</li>
+          </ul>
+          <p class="package-card__save">Ahorro ~15% vs individual</p>
+        </div>
+
+        <div class="card package-card package-card--featured">
+          <span class="badge badge--cyan">Mejor valor</span>
+          <h3 class="package-card__title">Paquete Completo</h3>
+          <p class="package-card__price">&#8353;45,000</p>
+          <ul class="package-card__list">
+            <li>Formateo + instalación OS</li>
+            <li>Backup de datos</li>
+            <li>Suite Office</li>
+            <li>Antivirus</li>
+            <li>Limpieza interna</li>
+          </ul>
+          <p class="package-card__save">Ahorro ~20% vs individual</p>
+        </div>
+
+        <div class="card package-card">
+          <span class="badge badge--sky">Nuevo equipo</span>
+          <h3 class="package-card__title">Paquete Nuevo Equipo</h3>
+          <p class="package-card__price">&#8353;18,000</p>
+          <ul class="package-card__list">
+            <li>Asesoría de compra</li>
+            <li>Configuración inicial</li>
+          </ul>
+          <p class="package-card__save">Ahorro ~25% vs individual</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITIOS WEB -->
+  <section class="section" id="web">
+    <div class="container">
+      <div class="service-block">
+        <div class="service-block__header">
+          <span class="service-block__icon">&#127760;</span>
+          <div>
+            <h2>Tu negocio en internet</h2>
+            <p class="text-muted">Sitios web profesionales para PYMEs — sin cuotas de hosting</p>
+          </div>
+        </div>
+
+        <div class="grid grid--3">
+          <div class="card package-card">
+            <span class="badge badge--sky">Landing</span>
+            <h3 class="package-card__title">Presencia Digital</h3>
+            <p class="package-card__price">&#8353;120,000 - 150,000</p>
+            <ul class="package-card__list">
+              <li>1 página profesional</li>
+              <li>Formulario de contacto</li>
+              <li>Diseño responsive</li>
+              <li>SSL y hosting gratis</li>
+              <li>Dominio incluido (1 año)</li>
+            </ul>
+            <p class="package-card__save">Entrega en 1 semana</p>
+          </div>
+
+          <div class="card package-card package-card--featured">
+            <span class="badge badge--cyan">Más popular</span>
+            <h3 class="package-card__title">Sitio Profesional</h3>
+            <p class="package-card__price">&#8353;250,000 - 350,000</p>
+            <ul class="package-card__list">
+              <li>3-5 páginas completas</li>
+              <li>Blog integrado</li>
+              <li>SEO básico + Google My Business</li>
+              <li>Botón de WhatsApp</li>
+              <li>Email profesional</li>
+              <li>Hosting gratis</li>
+            </ul>
+            <p class="package-card__save">Entrega en 2 semanas</p>
+          </div>
+
+          <div class="card package-card">
+            <span class="badge badge--sky">E-commerce</span>
+            <h3 class="package-card__title">Tienda Básica</h3>
+            <p class="package-card__price">&#8353;400,000 - 550,000</p>
+            <ul class="package-card__list">
+              <li>Todo lo del Sitio Profesional</li>
+              <li>Catálogo de productos</li>
+              <li>Carrito de compras</li>
+              <li>Pagos SINPE/transferencia</li>
+            </ul>
+            <p class="package-card__save">Entrega en 3-4 semanas</p>
+          </div>
+        </div>
+
+        <div style="margin-top: var(--space-xl);">
+          <h3 style="margin-bottom: var(--space-md);">Mantenimiento web mensual</h3>
+          <div class="pricing-table">
+            <div class="pricing-row">
+              <span class="pricing-row__service">
+                <strong>Plan Mantenimiento Estándar</strong><br />
+                <small>Cambios menores (2h/mes) + 1 página nueva/mes + monitoreo + backups</small>
+              </span>
+              <span class="pricing-row__price">&#8353;20,000 - 30,000/mes</span>
+            </div>
+            <div class="pricing-row">
+              <span class="pricing-row__service">Cambios adicionales (fuera de las 2 horas incluidas)</span>
+              <span class="pricing-row__price">&#8353;8,000/hora</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: var(--space-xl);">
+          <h3 style="margin-bottom: var(--space-md);">Dominio web</h3>
+          <div class="pricing-table">
+            <div class="pricing-row">
+              <span class="pricing-row__service">
+                <strong>Teknika administra</strong><br />
+                <small>Registramos y renovamos el dominio por vos. Sin preocupaciones.</small>
+              </span>
+              <span class="pricing-row__price">&#8353;20,000 - 70,000/año</span>
+            </div>
+            <div class="pricing-row">
+              <span class="pricing-row__service">
+                <strong>Vos lo registrás</strong><br />
+                <small>Comprás tu dominio y nosotros lo configuramos.</small>
+              </span>
+              <span class="pricing-row__price">Configuración incluida</span>
+            </div>
+          </div>
+          <p class="pricing-note">El dominio siempre se registra a tu nombre. Teknika solo lo administra técnicamente.</p>
+        </div>
+
+        <button class="btn btn--primary service-cta" data-service="Sitio web para mi negocio" style="margin-top: var(--space-lg);">
+          Cotizar mi sitio web &rarr;
+        </button>
+
+      </div>
+    </div>
+  </section>
+
+  <ContactModal />
+
+  <!-- CTA -->
+  <section class="section section--dark text-center">
+    <div class="container">
+      <h2>¿Necesitás un servicio?</h2>
+      <p style="color: var(--color-gray-300); max-width: 500px; margin: var(--space-md) auto var(--space-xl);">
+        Contactanos para una cotización. Te damos presupuesto exacto antes de proceder.
+      </p>
+      <a href="https://wa.me/50600000000?text=Hola%20Teknika%20CR%2C%20quiero%20cotizar%20un%20servicio"
+         class="btn btn--whatsapp btn--lg"
+         target="_blank"
+         rel="noopener">
+        Cotizar por WhatsApp
+      </a>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-navy) 100%);
+    color: var(--color-white);
+    padding: var(--space-3xl) 0 var(--space-2xl);
+    text-align: center;
+  }
+
+  .page-header h1 {
+    color: var(--color-white);
+    margin-bottom: var(--space-sm);
+  }
+
+  .page-header p {
+    color: var(--color-gray-300);
+  }
+
+  .service-block__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+  }
+
+  .service-block__icon {
+    font-size: 2.5rem;
+  }
+
+  .pricing-table {
+    max-width: 700px;
+  }
+
+  .pricing-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--color-gray-200);
+    gap: var(--space-md);
+  }
+
+  .pricing-row--featured {
+    background: var(--color-gray-50);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    border: 2px solid var(--color-cyan);
+    margin-top: var(--space-sm);
+  }
+
+  .pricing-row__service {
+    font-size: 0.9375rem;
+  }
+
+  .pricing-row__price {
+    font-weight: 700;
+    color: var(--color-royal);
+    white-space: nowrap;
+  }
+
+  .pricing-row__price--featured {
+    color: var(--color-dark);
+    font-size: 1.125rem;
+  }
+
+  .pricing-note {
+    margin-top: var(--space-md);
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+
+  /* Paquetes */
+  .package-card {
+    text-align: center;
+    padding: var(--space-2xl) var(--space-xl);
+  }
+
+  .package-card--featured {
+    border-color: var(--color-cyan);
+    border-width: 2px;
+    position: relative;
+  }
+
+  .package-card__title {
+    font-size: 1.25rem;
+    margin: var(--space-md) 0 var(--space-sm);
+  }
+
+  .package-card__price {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-royal);
+    margin-bottom: var(--space-lg);
+  }
+
+  .package-card__list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: var(--space-lg);
+  }
+
+  .package-card__list li {
+    padding: var(--space-xs) 0;
+    font-size: 0.9375rem;
+    color: var(--color-gray-600);
+  }
+
+  .package-card__list li::before {
+    content: '✓ ';
+    color: var(--color-cyan);
+    font-weight: 700;
+  }
+
+  .package-card__save {
+    font-size: 0.8125rem;
+    color: var(--color-cyan);
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .service-cta {
+    cursor: pointer;
+  }
+
+  @media (max-width: 600px) {
+    .pricing-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-xs);
+    }
+  }
+</style>

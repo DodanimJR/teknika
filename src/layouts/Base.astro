@@ -1,0 +1,395 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+}
+
+const { title, description, canonical } = Astro.props;
+const siteUrl = 'https://teknika.co.cr';
+const fullTitle = title === 'Inicio'
+  ? 'Teknika CR - Soporte Técnico y Consultoría Informática'
+  : `${title} | Teknika CR`;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Teknika CR" />
+
+    <title>{fullTitle}</title>
+
+    {canonical && <link rel="canonical" href={canonical} />}
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical || siteUrl} />
+    <meta property="og:locale" content="es_CR" />
+    <meta property="og:site_name" content="Teknika CR" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Teknika CR",
+      "description": "Soporte técnico de computadoras, asesoría de compra de equipo informático e instalación de software en Costa Rica.",
+      "url": siteUrl,
+      "telephone": "+506-0000-0000",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Gran Área Metropolitana, Costa Rica"
+      },
+      "serviceType": [
+        "Soporte técnico de computadoras",
+        "Asesoría de compra de equipo informático",
+        "Instalación de software y formateo",
+        "Consultoría informática"
+      ],
+      "priceRange": "$$",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "17:00"
+      }
+    })} />
+
+    <!-- Estilos -->
+    <style is:global>
+      @import '../styles/global.css';
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav container">
+        <a href="/" class="nav__logo">
+          <span class="nav__logo-icon">T</span>
+          <span class="nav__logo-text">Teknika<span class="nav__logo-cr">CR</span></span>
+        </a>
+
+        <button class="nav__toggle" aria-label="Abrir menú" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav__links" id="nav-links">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/servicios">Servicios</a></li>
+          <li><a href="/sobre">Nosotros</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/contacto">Contacto</a></li>
+          <li>
+            <a href="https://wa.me/50600000000?text=Hola%20Teknika%20CR%2C%20necesito%20soporte%20t%C3%A9cnico"
+               class="btn btn--accent btn--nav"
+               target="_blank"
+               rel="noopener">
+              WhatsApp
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <a href="/" class="footer__logo">
+              <span class="footer__logo-icon">T</span>
+              <span class="footer__logo-text">Teknika<span class="footer__logo-cr">CR</span></span>
+            </a>
+            <p class="footer__tagline">Tecnología que funciona.<br />Soluciones que entiendas.</p>
+          </div>
+
+          <div class="footer__col">
+            <h4>Servicios</h4>
+            <ul>
+              <li><a href="/servicios#diagnostico">Diagnóstico y reparación</a></li>
+              <li><a href="/servicios#formateo">Formateo e instalación</a></li>
+              <li><a href="/servicios#asesoria">Asesoría de compra</a></li>
+              <li><a href="/servicios#web">Tu negocio en internet</a></li>
+              <li><a href="/servicios#paquetes">Paquetes</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__col">
+            <h4>Empresa</h4>
+            <ul>
+              <li><a href="/sobre">Sobre nosotros</a></li>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="/contacto">Contacto</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__col">
+            <h4>Contacto</h4>
+            <ul>
+              <li><a href="mailto:info@teknika.co.cr">info@teknika.co.cr</a></li>
+              <li><a href="https://wa.me/50600000000" target="_blank" rel="noopener">WhatsApp</a></li>
+              <li>GAM, Costa Rica</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p>&copy; {new Date().getFullYear()} Teknika CR. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.querySelector('.nav__toggle');
+      const links = document.getElementById('nav-links');
+      if (toggle && links) {
+        toggle.addEventListener('click', () => {
+          const isOpen = links.classList.toggle('nav__links--open');
+          toggle.setAttribute('aria-expanded', String(isOpen));
+        });
+      }
+    </script>
+  </body>
+</html>
+
+<style>
+  /* ============================================
+     Header & Nav
+     ============================================ */
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-gray-200);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+  }
+
+  .nav__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--color-dark);
+    font-weight: 800;
+    font-size: 1.25rem;
+  }
+
+  .nav__logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: var(--color-dark);
+    color: var(--color-cyan);
+    border-radius: var(--radius-md);
+    font-weight: 800;
+    font-size: 1.25rem;
+  }
+
+  .nav__logo-cr {
+    color: var(--color-cyan);
+  }
+
+  .nav__links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav__links a {
+    color: var(--color-gray-700);
+    font-weight: 500;
+    font-size: 0.9375rem;
+    transition: color var(--transition);
+  }
+
+  .nav__links a:hover {
+    color: var(--color-primary);
+  }
+
+  .btn--nav {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .nav__toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .nav__toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--color-dark);
+    border-radius: 2px;
+    transition: all var(--transition);
+  }
+
+  /* ============================================
+     Footer
+     ============================================ */
+  .footer {
+    background-color: var(--color-dark);
+    color: var(--color-gray-300);
+    padding: var(--space-3xl) 0 var(--space-xl);
+  }
+
+  .footer__grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: var(--space-2xl);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .footer__logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.25rem;
+  }
+
+  .footer__logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: var(--color-cyan);
+    color: var(--color-dark);
+    border-radius: var(--radius-md);
+    font-weight: 800;
+    font-size: 1.25rem;
+  }
+
+  .footer__logo-text {
+    color: var(--color-white);
+  }
+
+  .footer__logo-cr {
+    color: var(--color-cyan);
+  }
+
+  .footer__tagline {
+    margin-top: var(--space-md);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  .footer__col h4 {
+    color: var(--color-white);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+  }
+
+  .footer__col ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer__col li {
+    margin-bottom: var(--space-sm);
+    font-size: 0.875rem;
+  }
+
+  .footer__col a {
+    color: var(--color-gray-300);
+  }
+
+  .footer__col a:hover {
+    color: var(--color-cyan);
+  }
+
+  .footer__bottom {
+    border-top: 1px solid var(--color-navy);
+    padding-top: var(--space-lg);
+    text-align: center;
+    font-size: 0.8125rem;
+    color: var(--color-gray-400);
+  }
+
+  .footer__bottom p {
+    margin: 0;
+  }
+
+  /* ============================================
+     Responsive
+     ============================================ */
+  @media (max-width: 768px) {
+    .nav__toggle {
+      display: flex;
+    }
+
+    .nav__links {
+      display: none;
+      position: absolute;
+      top: 4rem;
+      left: 0;
+      right: 0;
+      background: var(--color-white);
+      flex-direction: column;
+      padding: var(--space-lg);
+      border-bottom: 1px solid var(--color-gray-200);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .nav__links--open {
+      display: flex;
+    }
+
+    .footer__grid {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

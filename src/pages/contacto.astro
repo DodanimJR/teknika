@@ -1,0 +1,214 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Contacto"
+  description="Contactá a Teknika CR para soporte técnico en la Gran Área Metropolitana de Costa Rica. WhatsApp, email o formulario de contacto."
+  canonical="https://teknika.co.cr/contacto"
+>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Contacto</h1>
+      <p>Estamos para ayudarte. Escribinos y te respondemos en menos de 2 horas.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="contact-info">
+          <h2>Hablemos</h2>
+          <p>
+            La forma más rápida de contactarnos es por WhatsApp.
+            También podés usar el formulario o escribirnos un email.
+          </p>
+
+          <div class="contact-channels">
+            <a href="https://wa.me/50600000000?text=Hola%20Teknika%20CR%2C%20necesito%20soporte%20t%C3%A9cnico"
+               class="btn btn--whatsapp btn--lg"
+               target="_blank"
+               rel="noopener"
+               style="width: 100%; justify-content: center;">
+              Escribir por WhatsApp
+            </a>
+
+            <div class="contact-item">
+              <span class="contact-item__icon">&#9993;</span>
+              <div>
+                <strong>Email</strong>
+                <a href="mailto:info@teknika.co.cr">info@teknika.co.cr</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <span class="contact-item__icon">&#128205;</span>
+              <div>
+                <strong>Zona de cobertura</strong>
+                <p>Gran Área Metropolitana, Costa Rica</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <span class="contact-item__icon">&#128336;</span>
+              <div>
+                <strong>Horario</strong>
+                <p>Lunes a Viernes: 9am - 5pm<br />Sábado y Domingo: Cerrado</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <h2>Formulario de contacto</h2>
+          <!-- Cambiar action por tu endpoint de Formspree -->
+          <form action="https://formspree.io/f/TU_FORM_ID" method="POST" class="contact-form">
+            <div class="form-group">
+              <label for="name">Nombre</label>
+              <input type="text" id="name" name="name" required placeholder="Tu nombre" />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="tu@email.com" />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Teléfono (opcional)</label>
+              <input type="tel" id="phone" name="phone" placeholder="+506 0000-0000" />
+            </div>
+
+            <div class="form-group">
+              <label for="service">Servicio que necesitás</label>
+              <select id="service" name="service">
+                <option value="">Seleccionar...</option>
+                <option value="diagnostico">Diagnóstico y reparación</option>
+                <option value="formateo">Formateo e instalación</option>
+                <option value="asesoria">Asesoría de compra</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Mensaje</label>
+              <textarea id="message" name="message" rows="4" required
+                        placeholder="Describí tu problema o consulta..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--lg" style="width: 100%; justify-content: center;">
+              Enviar mensaje
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-navy) 100%);
+    color: var(--color-white);
+    padding: var(--space-3xl) 0 var(--space-2xl);
+    text-align: center;
+  }
+
+  .page-header h1 {
+    color: var(--color-white);
+    margin-bottom: var(--space-sm);
+  }
+
+  .page-header p {
+    color: var(--color-gray-300);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+    align-items: start;
+  }
+
+  .contact-channels {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+  }
+
+  .contact-item {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+  }
+
+  .contact-item__icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .contact-item p {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 0.9375rem;
+  }
+
+  .contact-item a {
+    color: var(--color-primary);
+  }
+
+  /* Form */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .form-group label {
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: var(--color-gray-700);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-md);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--color-dark);
+    background: var(--color-white);
+    transition: border-color var(--transition);
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-sky);
+    box-shadow: 0 0 0 3px rgba(78, 165, 217, 0.15);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+  }
+
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-2xl);
+    }
+  }
+</style>

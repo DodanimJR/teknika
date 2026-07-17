@@ -1,0 +1,163 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Sobre nosotros"
+  description="Conocé a Teknika CR: soporte técnico transparente, educativo y responsable en Costa Rica. Nuestra misión, valores y programa de reciclaje."
+  canonical="https://teknika.co.cr/sobre"
+>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Sobre Teknika CR</h1>
+      <p>Tecnología accesible, transparente y responsable</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <h2>Nuestra historia</h2>
+          <p>
+            Teknika CR nace de la convicción de que el soporte técnico puede ser diferente.
+            En un mercado lleno de técnicos informales sin garantía y talleres con precios inflados,
+            creamos una alternativa: un servicio profesional, transparente y educativo.
+          </p>
+          <p>
+            Como ingeniero en sistemas, entiendo la frustración de un equipo que falla en el peor
+            momento. Por eso en Teknika CR no solo reparamos tu computadora: te enseñamos a cuidarla
+            y te ayudamos a tomar mejores decisiones tecnológicas.
+          </p>
+        </div>
+
+        <div class="values-list">
+          <h2>Nuestros valores</h2>
+          <div class="value-item">
+            <span class="value-item__icon">&#128274;</span>
+            <div>
+              <h3>Transparencia</h3>
+              <p>Explicamos cada diagnóstico y costo antes de actuar.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <span class="value-item__icon">&#127891;</span>
+            <div>
+              <h3>Educación</h3>
+              <p>Cada servicio es una oportunidad de enseñar.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <span class="value-item__icon">&#9851;</span>
+            <div>
+              <h3>Responsabilidad ambiental</h3>
+              <p>Reciclamos equipos y promovemos la reutilización.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <span class="value-item__icon">&#129309;</span>
+            <div>
+              <h3>Honestidad</h3>
+              <p>No vendemos servicios innecesarios.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: var(--space-2xl);">
+        <h2>&#9851; Dale una segunda vida</h2>
+        <p class="text-muted">Nuestro programa de reciclaje de equipos</p>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="card">
+          <h3 class="card__title">Dona tu equipo</h3>
+          <p class="card__text">
+            Traenos tu computadora vieja (en buen estado físico) y recibís un 10-15%
+            de descuento en tu próximo servicio.
+          </p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Reacondicionamos</h3>
+          <p class="card__text">
+            Los equipos donados se limpian, reparan y preparan para una segunda vida útil
+            a precio accesible.
+          </p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Impacto social</h3>
+          <p class="card__text">
+            Los equipos que no se venden se donan a escuelas y organizaciones que los necesitan.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-navy) 100%);
+    color: var(--color-white);
+    padding: var(--space-3xl) 0 var(--space-2xl);
+    text-align: center;
+  }
+
+  .page-header h1 {
+    color: var(--color-white);
+    margin-bottom: var(--space-sm);
+  }
+
+  .page-header p {
+    color: var(--color-gray-300);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+    align-items: start;
+  }
+
+  .values-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .value-item {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+  }
+
+  .value-item__icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .value-item h3 {
+    font-size: 1rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .value-item p {
+    color: var(--color-text-muted);
+    font-size: 0.9375rem;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-2xl);
+    }
+  }
+</style>

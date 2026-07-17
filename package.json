@@ -1,0 +1,15 @@
+{
+  "name": "teknika-cr",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Sitio web de Teknika CR - Soporte técnico y consultoría informática",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^5.10.0",
+    "@astrojs/sitemap": "^3.3.0"
+  }
+}

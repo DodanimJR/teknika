@@ -1,0 +1,370 @@
+---
+import Base from '../layouts/Base.astro';
+import ContactModal from '../components/ContactModal.astro';
+---
+
+<Base
+  title="Inicio"
+  description="Teknika CR - Soporte técnico de computadoras, asesoría de compra y servicios informáticos en la Gran Área Metropolitana de Costa Rica. Servicio a domicilio y remoto."
+  canonical="https://teknika.co.cr"
+>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__content">
+        <span class="badge badge--cyan">Servicio a domicilio en el GAM</span>
+        <h1>Tecnología que funciona.<br /><span class="hero__accent">Soluciones que entiendas.</span></h1>
+        <p class="hero__subtitle">
+          Soporte técnico de computadoras, asesoría de compra de equipo y
+          servicios informáticos en Costa Rica. Transparente, confiable y educativo.
+        </p>
+        <div class="hero__actions">
+          <a href="https://wa.me/50600000000?text=Hola%20Teknika%20CR%2C%20necesito%20soporte%20t%C3%A9cnico"
+             class="btn btn--whatsapp btn--lg"
+             target="_blank"
+             rel="noopener">
+            Contactar por WhatsApp
+          </a>
+          <a href="/servicios" class="btn btn--outline-dark btn--lg">
+            Ver servicios
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="section section--alt" id="servicios">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: var(--space-2xl);">
+        <h2>Nuestros servicios</h2>
+        <p class="text-muted">Soluciones informáticas para personas y pequeñas empresas</p>
+      </div>
+
+      <div class="grid grid--4">
+        <div class="card card--clickable" data-service="Diagnóstico y reparación de computadoras" role="button" tabindex="0">
+          <div class="card__icon">&#128269;</div>
+          <h3 class="card__title">Diagnóstico y reparación</h3>
+          <p class="card__text">
+            Identificamos el problema de tu computadora y lo reparamos. Limpieza interna,
+            cambio de componentes, optimización de rendimiento.
+          </p>
+          <span class="card__cta">Consultar &rarr;</span>
+        </div>
+
+        <div class="card card--clickable" data-service="Formateo e instalación de software" role="button" tabindex="0">
+          <div class="card__icon">&#128187;</div>
+          <h3 class="card__title">Formateo e instalación</h3>
+          <p class="card__text">
+            Instalación limpia de Windows o Linux, drivers, software esencial,
+            antivirus y respaldo de tus datos antes de formatear.
+          </p>
+          <span class="card__cta">Consultar &rarr;</span>
+        </div>
+
+        <div class="card card--clickable" data-service="Asesoría de compra de equipo" role="button" tabindex="0">
+          <div class="card__icon">&#128176;</div>
+          <h3 class="card__title">Asesoría de compra</h3>
+          <p class="card__text">
+            Te ayudamos a elegir la mejor computadora según tu presupuesto y
+            necesidades. Sin comisiones ocultas, solo tu beneficio.
+          </p>
+          <span class="card__cta">Consultar &rarr;</span>
+        </div>
+
+        <div class="card card--clickable" data-service="Sitio web para mi negocio" role="button" tabindex="0">
+          <div class="card__icon">&#127760;</div>
+          <h3 class="card__title">Tu negocio en internet</h3>
+          <p class="card__text">
+            Creamos el sitio web de tu negocio: profesional, rápido y sin cuotas
+            mensuales de hosting. Que tus clientes te encuentren en Google.
+          </p>
+          <span class="card__cta">Consultar &rarr;</span>
+        </div>
+      </div>
+
+      <div class="text-center" style="margin-top: var(--space-2xl);">
+        <a href="/servicios" class="btn btn--primary">Ver todos los servicios y precios</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section class="section" id="proceso">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: var(--space-2xl);">
+        <h2>Cómo trabajamos</h2>
+        <p class="text-muted">Un proceso simple, transparente y sin sorpresas</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step__number">1</div>
+          <h3 class="step__title">Contactanos</h3>
+          <p class="step__text">Escribinos por WhatsApp o por el formulario. Describí el problema y te damos un estimado.</p>
+        </div>
+
+        <div class="step">
+          <div class="step__number">2</div>
+          <h3 class="step__title">Diagnóstico</h3>
+          <p class="step__text">Revisamos tu equipo (a domicilio o remoto). Te explicamos el problema en lenguaje simple.</p>
+        </div>
+
+        <div class="step">
+          <div class="step__number">3</div>
+          <h3 class="step__title">Aprobación</h3>
+          <p class="step__text">Te damos el presupuesto exacto antes de proceder. Sin sorpresas, sin presión.</p>
+        </div>
+
+        <div class="step">
+          <div class="step__number">4</div>
+          <h3 class="step__title">Solución</h3>
+          <p class="step__text">Reparamos, te enseñamos tips de mantenimiento y hacemos seguimiento a las 48 horas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUE TEKNIKA -->
+  <section class="section section--dark" id="diferenciadores">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: var(--space-2xl);">
+        <h2>¿Por qué Teknika CR?</h2>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="feature">
+          <div class="feature__icon">&#128274;</div>
+          <h3>Transparencia total</h3>
+          <p>Explicamos cada diagnóstico y costo antes de actuar. Nunca cobramos de más.</p>
+        </div>
+
+        <div class="feature">
+          <div class="feature__icon">&#127968;</div>
+          <h3>Servicio a domicilio</h3>
+          <p>Vamos a tu casa u oficina en el GAM. También ofrecemos soporte remoto.</p>
+        </div>
+
+        <div class="feature">
+          <div class="feature__icon">&#127891;</div>
+          <h3>Te enseñamos</h3>
+          <p>Cada servicio es una oportunidad de aprender. Te damos tips para cuidar tu equipo.</p>
+        </div>
+
+        <div class="feature">
+          <div class="feature__icon">&#128176;</div>
+          <h3>Precio justo</h3>
+          <p>Precios competitivos y sin letras pequeñas. Sabés exactamente cuánto pagás.</p>
+        </div>
+
+        <div class="feature">
+          <div class="feature__icon">&#9989;</div>
+          <h3>Garantía</h3>
+          <p>Todo nuestro trabajo tiene garantía. Si algo falla, lo resolvemos sin costo adicional.</p>
+        </div>
+
+        <div class="feature">
+          <div class="feature__icon">&#9834;</div>
+          <h3>Reciclaje responsable</h3>
+          <p>Recibimos equipos viejos para darles una segunda vida. Tecnología sostenible.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="section cta-section">
+    <div class="container text-center">
+      <h2>¿Tu computadora necesita ayuda?</h2>
+      <p class="cta-section__text">
+        Contactanos hoy y recibirás un diagnóstico claro y un presupuesto justo.
+        Sin compromisos.
+      </p>
+      <div class="hero__actions" style="justify-content: center;">
+        <a href="https://wa.me/50600000000?text=Hola%20Teknika%20CR%2C%20necesito%20soporte%20t%C3%A9cnico"
+           class="btn btn--whatsapp btn--lg"
+           target="_blank"
+           rel="noopener">
+          Escribir por WhatsApp
+        </a>
+        <a href="/contacto" class="btn btn--primary btn--lg">
+          Formulario de contacto
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <ContactModal />
+
+</Base>
+
+<style>
+  /* ============================================
+     Hero
+     ============================================ */
+  .hero {
+    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-navy) 100%);
+    color: var(--color-white);
+    padding: var(--space-4xl) 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero__content {
+    max-width: 720px;
+  }
+
+  .hero h1 {
+    color: var(--color-white);
+    margin: var(--space-lg) 0;
+  }
+
+  .hero__accent {
+    color: var(--color-cyan);
+  }
+
+  .hero__subtitle {
+    font-size: 1.125rem;
+    color: var(--color-gray-300);
+    margin-bottom: var(--space-xl);
+    line-height: 1.7;
+  }
+
+  .hero__actions {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .btn--outline-dark {
+    background: transparent;
+    color: var(--color-white);
+    border: 2px solid var(--color-gray-400);
+  }
+
+  .btn--outline-dark:hover {
+    background: var(--color-white);
+    color: var(--color-dark);
+    border-color: var(--color-white);
+  }
+
+  /* ============================================
+     Pasos
+     ============================================ */
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-xl);
+    counter-reset: step;
+  }
+
+  .step {
+    text-align: center;
+    position: relative;
+  }
+
+  .step__number {
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-royal), var(--color-sky));
+    color: var(--color-white);
+    border-radius: var(--radius-full);
+    font-weight: 800;
+    font-size: 1.25rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .step__title {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .step__text {
+    color: var(--color-text-muted);
+    font-size: 0.9375rem;
+  }
+
+  /* ============================================
+     Features (seccion oscura)
+     ============================================ */
+  .feature {
+    text-align: center;
+  }
+
+  .feature__icon {
+    font-size: 2rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .feature h3 {
+    color: var(--color-cyan);
+    font-size: 1.125rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .feature p {
+    color: var(--color-gray-300);
+    font-size: 0.9375rem;
+  }
+
+  /* ============================================
+     CTA
+     ============================================ */
+  .cta-section {
+    background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-gray-100) 100%);
+  }
+
+  .cta-section__text {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    max-width: 500px;
+    margin: var(--space-md) auto var(--space-xl);
+  }
+
+  /* ============================================
+     Clickable Cards
+     ============================================ */
+  .card--clickable {
+    cursor: pointer;
+    position: relative;
+    padding-bottom: var(--space-2xl);
+  }
+
+  .card--clickable:hover {
+    border-color: var(--color-sky);
+  }
+
+  .card--clickable:focus-visible {
+    outline: 2px solid var(--color-sky);
+    outline-offset: 2px;
+  }
+
+  .card__cta {
+    position: absolute;
+    bottom: var(--space-lg);
+    left: var(--space-xl);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-royal);
+    transition: color var(--transition);
+  }
+
+  .card--clickable:hover .card__cta {
+    color: var(--color-sky);
+  }
+
+  /* ============================================
+     Responsive
+     ============================================ */
+  @media (max-width: 768px) {
+    .hero {
+      min-height: auto;
+      padding: var(--space-3xl) 0;
+    }
+  }
+</style>
