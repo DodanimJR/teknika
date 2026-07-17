@@ -1,0 +1,92 @@
+---
+/**
+ * Ilustración SVG tech moderna para el hero.
+ * Representa un técnico trabajando en una laptop con herramientas.
+ * Usa los colores de la paleta de Teknika CR.
+ */
+---
+
+<svg viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero-illustration" aria-hidden="true">
+  <!-- Desk -->
+  <rect x="60" y="280" width="380" height="12" rx="6" fill="#224870" opacity="0.4"/>
+
+  <!-- Laptop base -->
+  <rect x="120" y="250" width="220" height="14" rx="4" fill="#4EA5D9"/>
+  <rect x="110" y="262" width="240" height="6" rx="3" fill="#224870"/>
+
+  <!-- Laptop screen -->
+  <rect x="135" y="120" width="190" height="130" rx="8" fill="#224870"/>
+  <rect x="142" y="127" width="176" height="110" rx="4" fill="#122C34"/>
+
+  <!-- Code lines on screen -->
+  <rect x="155" y="142" width="80" height="4" rx="2" fill="#44CFCB" opacity="0.9"/>
+  <rect x="155" y="152" width="55" height="4" rx="2" fill="#4EA5D9" opacity="0.6"/>
+  <rect x="155" y="162" width="100" height="4" rx="2" fill="#44CFCB" opacity="0.4"/>
+  <rect x="170" y="172" width="70" height="4" rx="2" fill="#4EA5D9" opacity="0.8"/>
+  <rect x="170" y="182" width="45" height="4" rx="2" fill="#44CFCB" opacity="0.5"/>
+  <rect x="155" y="192" width="90" height="4" rx="2" fill="#4EA5D9" opacity="0.6"/>
+  <rect x="155" y="202" width="60" height="4" rx="2" fill="#44CFCB" opacity="0.7"/>
+  <rect x="170" y="212" width="80" height="4" rx="2" fill="#4EA5D9" opacity="0.4"/>
+
+  <!-- Terminal cursor blink -->
+  <rect x="155" y="222" width="8" height="4" rx="1" fill="#44CFCB">
+    <animate attributeName="opacity" values="1;0;1" dur="1.2s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Gear icon (floating, right) -->
+  <g transform="translate(370, 140)" opacity="0.8">
+    <circle cx="20" cy="20" r="16" stroke="#44CFCB" stroke-width="3" fill="none"/>
+    <circle cx="20" cy="20" r="6" fill="#44CFCB"/>
+    <rect x="18" y="0" width="4" height="8" rx="2" fill="#44CFCB"/>
+    <rect x="18" y="32" width="4" height="8" rx="2" fill="#44CFCB"/>
+    <rect x="0" y="18" width="8" height="4" rx="2" fill="#44CFCB"/>
+    <rect x="32" y="18" width="8" height="4" rx="2" fill="#44CFCB"/>
+    <animateTransform attributeName="transform" type="rotate" values="0 20 20;360 20 20" dur="8s" repeatCount="indefinite" additive="sum"/>
+  </g>
+
+  <!-- Shield icon (floating, left) -->
+  <g transform="translate(50, 150)" opacity="0.7">
+    <path d="M20 5 L35 12 V24 C35 32 28 38 20 40 C12 38 5 32 5 24 V12 Z" stroke="#4EA5D9" stroke-width="2.5" fill="none"/>
+    <polyline points="13,22 18,27 27,16" stroke="#44CFCB" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- WiFi signal (floating, top) -->
+  <g transform="translate(280, 80)" opacity="0.6">
+    <path d="M12 20 A8 8 0 0 1 28 20" stroke="#4EA5D9" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M8 15 A14 14 0 0 1 32 15" stroke="#4EA5D9" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M4 10 A20 20 0 0 1 36 10" stroke="#4EA5D9" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <circle cx="20" cy="24" r="2.5" fill="#44CFCB"/>
+  </g>
+
+  <!-- Wrench (floating, bottom-right) -->
+  <g transform="translate(380, 220) rotate(-30)" opacity="0.6">
+    <rect x="8" y="0" width="6" height="30" rx="3" fill="#4EA5D9"/>
+    <circle cx="11" cy="4" r="7" stroke="#4EA5D9" stroke-width="3" fill="#122C34"/>
+  </g>
+
+  <!-- Floating dots decoration -->
+  <circle cx="90" cy="100" r="3" fill="#44CFCB" opacity="0.4">
+    <animate attributeName="cy" values="100;90;100" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="420" cy="280" r="2.5" fill="#4EA5D9" opacity="0.3">
+    <animate attributeName="cy" values="280;270;280" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="450" cy="120" r="2" fill="#44CFCB" opacity="0.5">
+    <animate attributeName="cy" values="120;112;120" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+</svg>
+
+<style>
+  .hero-illustration {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .hero-illustration {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+  }
+</style>

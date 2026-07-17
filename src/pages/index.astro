@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import ContactModal from '../components/ContactModal.astro';
+import HeroIllustration from '../components/HeroIllustration.astro';
 ---
 
 <Base
@@ -12,23 +13,28 @@ import ContactModal from '../components/ContactModal.astro';
   <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <div class="hero__content">
-        <span class="badge badge--cyan">Servicio a domicilio en el GAM</span>
-        <h1>Tecnología que funciona.<br /><span class="hero__accent">Soluciones que entiendas.</span></h1>
-        <p class="hero__subtitle">
-          Soporte técnico de computadoras, asesoría de compra de equipo y
-          servicios informáticos en Costa Rica. Transparente, confiable y educativo.
-        </p>
-        <div class="hero__actions">
-          <a href="https://wa.me/50600000000?text=Hola%20Teknika%20CR%2C%20necesito%20soporte%20t%C3%A9cnico"
-             class="btn btn--whatsapp btn--lg"
-             target="_blank"
-             rel="noopener">
-            Contactar por WhatsApp
-          </a>
-          <a href="/servicios" class="btn btn--outline-dark btn--lg">
-            Ver servicios
-          </a>
+      <div class="hero__grid">
+        <div class="hero__content">
+          <span class="badge badge--cyan">Servicio a domicilio en el GAM</span>
+          <h1>Tecnología que funciona.<br /><span class="hero__accent">Soluciones que entiendas.</span></h1>
+          <p class="hero__subtitle">
+            Soporte técnico de computadoras, asesoría de compra de equipo y
+            servicios informáticos en Costa Rica. Transparente, confiable y educativo.
+          </p>
+          <div class="hero__actions">
+            <a href="https://wa.me/50600000000?text=Hola%20Teknika%20CR%2C%20necesito%20soporte%20t%C3%A9cnico"
+               class="btn btn--whatsapp btn--lg"
+               target="_blank"
+               rel="noopener">
+              Contactar por WhatsApp
+            </a>
+            <a href="/servicios" class="btn btn--outline-dark btn--lg">
+              Ver servicios
+            </a>
+          </div>
+        </div>
+        <div class="hero__illustration">
+          <HeroIllustration />
         </div>
       </div>
     </div>
@@ -42,45 +48,73 @@ import ContactModal from '../components/ContactModal.astro';
         <p class="text-muted">Soluciones informáticas para personas y pequeñas empresas</p>
       </div>
 
-      <div class="grid grid--4">
-        <div class="card card--clickable" data-service="Diagnóstico y reparación de computadoras" role="button" tabindex="0">
-          <div class="card__icon">&#128269;</div>
-          <h3 class="card__title">Diagnóstico y reparación</h3>
+      <div class="grid grid--2">
+        <div class="card card--service" data-service="Diagnóstico y reparación de computadoras" role="button" tabindex="0">
+          <div class="card-service__top">
+            <div class="card__icon-circle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <div>
+              <h3 class="card__title">Diagnóstico y reparación</h3>
+              <p class="card__price">Desde &#8353;8,000</p>
+            </div>
+          </div>
           <p class="card__text">
             Identificamos el problema de tu computadora y lo reparamos. Limpieza interna,
             cambio de componentes, optimización de rendimiento.
           </p>
-          <span class="card__cta">Consultar &rarr;</span>
+          <span class="card__cta">Consultar este servicio &rarr;</span>
         </div>
 
-        <div class="card card--clickable" data-service="Formateo e instalación de software" role="button" tabindex="0">
-          <div class="card__icon">&#128187;</div>
-          <h3 class="card__title">Formateo e instalación</h3>
+        <div class="card card--service" data-service="Formateo e instalación de software" role="button" tabindex="0">
+          <div class="card-service__top">
+            <div class="card__icon-circle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div>
+              <h3 class="card__title">Formateo e instalación</h3>
+              <p class="card__price">Desde &#8353;12,000</p>
+            </div>
+          </div>
           <p class="card__text">
             Instalación limpia de Windows o Linux, drivers, software esencial,
             antivirus y respaldo de tus datos antes de formatear.
           </p>
-          <span class="card__cta">Consultar &rarr;</span>
+          <span class="card__cta">Consultar este servicio &rarr;</span>
         </div>
 
-        <div class="card card--clickable" data-service="Asesoría de compra de equipo" role="button" tabindex="0">
-          <div class="card__icon">&#128176;</div>
-          <h3 class="card__title">Asesoría de compra</h3>
+        <div class="card card--service" data-service="Asesoría de compra de equipo" role="button" tabindex="0">
+          <div class="card-service__top">
+            <div class="card__icon-circle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+            </div>
+            <div>
+              <h3 class="card__title">Asesoría de compra</h3>
+              <p class="card__price">Chat gratis &middot; Llamada &#8353;5,000</p>
+            </div>
+          </div>
           <p class="card__text">
             Te ayudamos a elegir la mejor computadora según tu presupuesto y
             necesidades. Sin comisiones ocultas, solo tu beneficio.
           </p>
-          <span class="card__cta">Consultar &rarr;</span>
+          <span class="card__cta">Consultar este servicio &rarr;</span>
         </div>
 
-        <div class="card card--clickable" data-service="Sitio web para mi negocio" role="button" tabindex="0">
-          <div class="card__icon">&#127760;</div>
-          <h3 class="card__title">Tu negocio en internet</h3>
+        <div class="card card--service" data-service="Sitio web para mi negocio" role="button" tabindex="0">
+          <div class="card-service__top">
+            <div class="card__icon-circle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div>
+              <h3 class="card__title">Tu negocio en internet</h3>
+              <p class="card__price">Desde &#8353;120,000</p>
+            </div>
+          </div>
           <p class="card__text">
             Creamos el sitio web de tu negocio: profesional, rápido y sin cuotas
             mensuales de hosting. Que tus clientes te encuentren en Google.
           </p>
-          <span class="card__cta">Consultar &rarr;</span>
+          <span class="card__cta">Cotizar mi sitio web &rarr;</span>
         </div>
       </div>
 
@@ -101,18 +135,21 @@ import ContactModal from '../components/ContactModal.astro';
       <div class="steps">
         <div class="step">
           <div class="step__number">1</div>
+          <div class="step__connector"></div>
           <h3 class="step__title">Contactanos</h3>
           <p class="step__text">Escribinos por WhatsApp o por el formulario. Describí el problema y te damos un estimado.</p>
         </div>
 
         <div class="step">
           <div class="step__number">2</div>
+          <div class="step__connector"></div>
           <h3 class="step__title">Diagnóstico</h3>
           <p class="step__text">Revisamos tu equipo (a domicilio o remoto). Te explicamos el problema en lenguaje simple.</p>
         </div>
 
         <div class="step">
           <div class="step__number">3</div>
+          <div class="step__connector"></div>
           <h3 class="step__title">Aprobación</h3>
           <p class="step__text">Te damos el presupuesto exacto antes de proceder. Sin sorpresas, sin presión.</p>
         </div>
@@ -204,16 +241,30 @@ import ContactModal from '../components/ContactModal.astro';
      Hero
      ============================================ */
   .hero {
-    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-navy) 100%);
+    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-navy) 50%, #1a3a5c 100%);
     color: var(--color-white);
     padding: var(--space-4xl) 0;
     min-height: 80vh;
     display: flex;
     align-items: center;
+    overflow: hidden;
+  }
+
+  .hero__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
   }
 
   .hero__content {
-    max-width: 720px;
+    max-width: 600px;
+  }
+
+  .hero__illustration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .hero h1 {
@@ -251,23 +302,104 @@ import ContactModal from '../components/ContactModal.astro';
   }
 
   /* ============================================
-     Pasos
+     Service Cards (improved)
+     ============================================ */
+  .card--service {
+    cursor: pointer;
+    position: relative;
+    padding: var(--space-xl);
+    padding-bottom: calc(var(--space-xl) + 2rem);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-lg);
+    background: var(--color-white);
+    transition: all 200ms ease;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .card--service:hover {
+    border-color: var(--color-sky);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+  }
+
+  .card--service:focus-visible {
+    outline: 2px solid var(--color-sky);
+    outline-offset: 2px;
+  }
+
+  .card-service__top {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+
+  .card__icon-circle {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-royal), var(--color-sky));
+    color: var(--color-white);
+    border-radius: var(--radius-lg);
+    flex-shrink: 0;
+  }
+
+  .card__title {
+    font-size: 1.125rem;
+    margin-bottom: 0;
+    line-height: 1.3;
+  }
+
+  .card__price {
+    font-size: 0.8125rem;
+    color: var(--color-cyan);
+    font-weight: 600;
+    margin: 2px 0 0;
+  }
+
+  .card__text {
+    color: var(--color-text-muted);
+    font-size: 0.9375rem;
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .card__cta {
+    position: absolute;
+    bottom: var(--space-lg);
+    left: var(--space-xl);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-royal);
+    transition: all var(--transition);
+  }
+
+  .card--service:hover .card__cta {
+    color: var(--color-sky);
+    transform: translateX(4px);
+  }
+
+  /* ============================================
+     Steps (improved with connectors)
      ============================================ */
   .steps {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: var(--space-xl);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
     counter-reset: step;
   }
 
   .step {
     text-align: center;
     position: relative;
+    padding: 0 var(--space-md);
   }
 
   .step__number {
-    width: 48px;
-    height: 48px;
+    width: 52px;
+    height: 52px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -277,23 +409,48 @@ import ContactModal from '../components/ContactModal.astro';
     font-weight: 800;
     font-size: 1.25rem;
     margin-bottom: var(--space-md);
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 12px rgba(42, 68, 148, 0.3);
+  }
+
+  .step__connector {
+    position: absolute;
+    top: 26px;
+    left: calc(50% + 30px);
+    width: calc(100% - 60px);
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-sky), var(--color-gray-200));
+    z-index: 0;
+  }
+
+  .step:last-child .step__connector {
+    display: none;
   }
 
   .step__title {
-    font-size: 1.125rem;
-    margin-bottom: var(--space-sm);
+    font-size: 1.0625rem;
+    margin-bottom: var(--space-xs);
   }
 
   .step__text {
     color: var(--color-text-muted);
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
   }
 
   /* ============================================
-     Features (seccion oscura)
+     Features (dark section, improved)
      ============================================ */
   .feature {
     text-align: center;
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    transition: background 200ms ease;
+  }
+
+  .feature:hover {
+    background: rgba(255, 255, 255, 0.05);
   }
 
   .feature__icon {
@@ -303,13 +460,14 @@ import ContactModal from '../components/ContactModal.astro';
 
   .feature h3 {
     color: var(--color-cyan);
-    font-size: 1.125rem;
+    font-size: 1.0625rem;
     margin-bottom: var(--space-sm);
   }
 
   .feature p {
     color: var(--color-gray-300);
     font-size: 0.9375rem;
+    margin-bottom: 0;
   }
 
   /* ============================================
@@ -327,44 +485,44 @@ import ContactModal from '../components/ContactModal.astro';
   }
 
   /* ============================================
-     Clickable Cards
-     ============================================ */
-  .card--clickable {
-    cursor: pointer;
-    position: relative;
-    padding-bottom: var(--space-2xl);
-  }
-
-  .card--clickable:hover {
-    border-color: var(--color-sky);
-  }
-
-  .card--clickable:focus-visible {
-    outline: 2px solid var(--color-sky);
-    outline-offset: 2px;
-  }
-
-  .card__cta {
-    position: absolute;
-    bottom: var(--space-lg);
-    left: var(--space-xl);
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--color-royal);
-    transition: color var(--transition);
-  }
-
-  .card--clickable:hover .card__cta {
-    color: var(--color-sky);
-  }
-
-  /* ============================================
      Responsive
      ============================================ */
   @media (max-width: 768px) {
     .hero {
       min-height: auto;
       padding: var(--space-3xl) 0;
+    }
+
+    .hero__grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .hero__illustration {
+      order: -1;
+    }
+
+    .hero__actions {
+      justify-content: center;
+    }
+
+    .steps {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+    }
+
+    .step__connector {
+      display: none;
+    }
+
+    .grid--2 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .steps {
+      grid-template-columns: 1fr;
     }
   }
 </style>
