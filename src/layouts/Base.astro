@@ -80,6 +80,7 @@ const fullTitle = title === 'Inicio'
         "Consultoría informática"
       ],
       "priceRange": "$$",
+      "availableLanguage": ["es", "en"],
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -100,6 +101,7 @@ const fullTitle = title === 'Inicio'
           <span class="nav__logo-icon">T</span>
           <span class="nav__logo-text">Teknika<span class="nav__logo-cr">CR</span></span>
         </a>
+        <span class="nav__lang-badge" title="Service available in English">ES / EN</span>
 
         <button class="nav__toggle" aria-label="Abrir menú" aria-expanded="false">
           <span></span>
@@ -110,6 +112,7 @@ const fullTitle = title === 'Inicio'
         <ul class="nav__links" id="nav-links">
           <li><a href="/">Inicio</a></li>
           <li><a href="/servicios">Servicios</a></li>
+          <li><a href="/ofertas">Ofertas</a></li>
           <li><a href="/sobre">Nosotros</a></li>
           <li><a href="/blog">Blog</a></li>
           <li><a href="/contacto">Contacto</a></li>
@@ -146,6 +149,7 @@ const fullTitle = title === 'Inicio'
               <li><a href="/servicios#diagnostico">Diagnóstico y reparación</a></li>
               <li><a href="/servicios#formateo">Formateo e instalación</a></li>
               <li><a href="/servicios#asesoria">Asesoría de compra</a></li>
+              <li><a href="/servicios#ia">Asesoría de IA</a></li>
               <li><a href="/servicios#web">Tu negocio en internet</a></li>
               <li><a href="/servicios#paquetes">Paquetes</a></li>
             </ul>
@@ -234,6 +238,17 @@ const fullTitle = title === 'Inicio'
 
   .nav__logo-cr {
     color: var(--color-cyan);
+  }
+
+  .nav__lang-badge {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: var(--color-gray-400);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-sm);
+    padding: 2px 6px;
+    letter-spacing: 0.5px;
+    cursor: default;
   }
 
   .nav__links {

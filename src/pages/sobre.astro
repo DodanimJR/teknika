@@ -4,7 +4,7 @@ import Base from '../layouts/Base.astro';
 
 <Base
   title="Sobre nosotros"
-  description="Conocé a Teknika CR: soporte técnico transparente, educativo y responsable en Costa Rica. Nuestra misión, valores y programa de reciclaje."
+  description="Conocé a Teknika CR: soporte técnico transparente, educativo y responsable en Costa Rica. Nuestro equipo, misión, valores y programa de reciclaje."
   canonical="https://teknika.co.cr/sobre"
 >
 
@@ -21,15 +21,23 @@ import Base from '../layouts/Base.astro';
         <div>
           <h2>Nuestra historia</h2>
           <p>
-            Teknika CR nace de la convicción de que el soporte técnico puede ser diferente.
-            En un mercado lleno de técnicos informales sin garantía y talleres con precios inflados,
-            creamos una alternativa: un servicio profesional, transparente y educativo.
+            Teknika CR nace con una misión clara: hacer la tecnología accesible para todos.
+            Creemos que cada persona y cada negocio merece un soporte técnico profesional,
+            con precios justos, explicaciones claras y la tranquilidad de saber que su equipo
+            está en buenas manos.
           </p>
           <p>
-            Como ingeniero en sistemas, entiendo la frustración de un equipo que falla en el peor
-            momento. Por eso en Teknika CR no solo reparamos tu computadora: te enseñamos a cuidarla
-            y te ayudamos a tomar mejores decisiones tecnológicas.
+            No solo reparamos tu computadora: te enseñamos a cuidarla, te ayudamos a tomar
+            mejores decisiones tecnológicas y te acompañamos en cada paso para que la tecnología
+            trabaje a tu favor.
           </p>
+
+          <div class="lang-badges">
+            <span class="lang-badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              Servicio disponible en español e inglés
+            </span>
+          </div>
         </div>
 
         <div class="values-list">
@@ -67,7 +75,62 @@ import Base from '../layouts/Base.astro';
     </div>
   </section>
 
-  <section class="section section--alt">
+  <!-- NUESTRO EQUIPO -->
+  <section class="section section--alt" id="equipo">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: var(--space-2xl);">
+        <h2>Nuestro equipo</h2>
+        <p class="text-muted">Las personas detrás de Teknika CR</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card__photo">
+          <img
+            src="/img/patrick.jpg"
+            alt="Patrick Dodanim Castillo Flores - Fundador de Teknika CR"
+            width="180"
+            height="180"
+            loading="lazy"
+          />
+        </div>
+        <div class="team-card__info">
+          <h3 class="team-card__name">Patrick Dodanim Castillo Flores</h3>
+          <p class="team-card__role">Fundador &middot; Ingeniero en Sistemas</p>
+
+          <div class="team-card__badges">
+            <span class="badge badge--cyan">Lic. Ingeniería de Sistemas</span>
+            <span class="badge badge--sky">English speaker</span>
+          </div>
+
+          <p class="team-card__bio">
+            Licenciado en Ingeniería de Sistemas con más de 2 años de experiencia en
+            soporte técnico de computadoras, consultoría informática, desarrollo web
+            y asesoría de inteligencia artificial. Apasionado por la tecnología accesible
+            y por enseñar a las personas a aprovecharla al máximo.
+          </p>
+
+          <div class="team-card__links">
+            <a href="https://www.linkedin.com/in/patrick-dodanim-castillo-flores/"
+               target="_blank"
+               rel="noopener"
+               class="team-card__link"
+               aria-label="LinkedIn de Patrick">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+            <a href="mailto:patrick.castillo@teknika.co.cr"
+               class="team-card__link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              patrick.castillo@teknika.co.cr
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECICLAJE -->
+  <section class="section">
     <div class="container">
       <div class="text-center" style="margin-bottom: var(--space-2xl);">
         <h2>&#9851; Dale una segunda vida</h2>
@@ -154,10 +217,127 @@ import Base from '../layouts/Base.astro';
     margin: 0;
   }
 
+  /* Language badge */
+  .lang-badges {
+    margin-top: var(--space-lg);
+  }
+
+  .lang-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, rgba(78, 165, 217, 0.1), rgba(68, 207, 203, 0.1));
+    border: 1px solid rgba(68, 207, 203, 0.3);
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-navy);
+  }
+
+  .lang-badge svg {
+    color: var(--color-cyan);
+    flex-shrink: 0;
+  }
+
+  /* ============================================
+     Team card
+     ============================================ */
+  .team-card {
+    display: flex;
+    gap: var(--space-2xl);
+    align-items: flex-start;
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-gray-200);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .team-card__photo {
+    flex-shrink: 0;
+  }
+
+  .team-card__photo img {
+    width: 180px;
+    height: 180px;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+    border: 4px solid var(--color-gray-100);
+  }
+
+  .team-card__name {
+    font-size: 1.375rem;
+    margin-bottom: 2px;
+    color: var(--color-dark);
+  }
+
+  .team-card__role {
+    color: var(--color-gray-500);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    margin-bottom: var(--space-md);
+  }
+
+  .team-card__badges {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-md);
+  }
+
+  .team-card__bio {
+    color: var(--color-text-muted);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    margin-bottom: var(--space-lg);
+  }
+
+  .team-card__links {
+    display: flex;
+    gap: var(--space-lg);
+    flex-wrap: wrap;
+  }
+
+  .team-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--color-gray-600);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color var(--transition);
+  }
+
+  .team-card__link:hover {
+    color: var(--color-primary);
+  }
+
+  .team-card__link svg {
+    flex-shrink: 0;
+  }
+
   @media (max-width: 768px) {
     .about-grid {
       grid-template-columns: 1fr;
       gap: var(--space-2xl);
+    }
+
+    .team-card {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .team-card__badges {
+      justify-content: center;
+    }
+
+    .team-card__links {
+      justify-content: center;
     }
   }
 </style>

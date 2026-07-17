@@ -5,7 +5,7 @@ import ContactModal from '../components/ContactModal.astro';
 
 <Base
   title="Servicios"
-  description="Servicios de soporte técnico, reparación de computadoras, formateo, instalación de software y asesoría de compra en Costa Rica."
+  description="Servicios de soporte técnico, reparación de computadoras, formateo, instalación de software, asesoría de IA y desarrollo web en Costa Rica."
   canonical="https://teknika.co.cr/servicios"
 >
 
@@ -25,23 +25,23 @@ import ContactModal from '../components/ContactModal.astro';
       </div>
 
       <div class="grid grid--3">
-        <div class="card" style="text-align: center;">
-          <div class="card__icon" style="font-size: 2rem;">&#128230;</div>
-          <h3 class="card__title">Dejá y recogé</h3>
-          <p class="card__text">Traé tu equipo a nuestro punto base en Alajuela y recogelo cuando esté listo.</p>
-          <p style="color: var(--color-cyan); font-weight: 700; font-size: 1.125rem; margin: 0;">Sin costo extra</p>
+        <div class="card svc-card" style="text-align: center;">
+          <div class="svc-card__emoji">&#128230;</div>
+          <h3 class="svc-card__title">Dejá y recogé</h3>
+          <p class="svc-card__desc">Traé tu equipo a nuestro punto base en Alajuela y recogelo cuando esté listo.</p>
+          <p class="svc-card__price-highlight">Sin costo extra</p>
         </div>
-        <div class="card" style="text-align: center;">
-          <div class="card__icon" style="font-size: 2rem;">&#128666;</div>
-          <h3 class="card__title">Envío a domicilio</h3>
-          <p class="card__text">Enviá tu equipo por mensajería. Lo reparamos y te lo devolvemos a tu puerta.</p>
-          <p style="color: var(--color-cyan); font-weight: 700; font-size: 1.125rem; margin: 0;">Desde &#8353;3,000</p>
+        <div class="card svc-card" style="text-align: center;">
+          <div class="svc-card__emoji">&#128666;</div>
+          <h3 class="svc-card__title">Envío a domicilio</h3>
+          <p class="svc-card__desc">Enviá tu equipo por mensajería. Lo reparamos y te lo devolvemos a tu puerta. Cobertura en todo el GAM.</p>
+          <p class="svc-card__price-highlight">Desde &#8353;3,000</p>
         </div>
-        <div class="card" style="text-align: center;">
-          <div class="card__icon" style="font-size: 2rem;">&#127968;</div>
-          <h3 class="card__title">Visita a domicilio</h3>
-          <p class="card__text">Vamos a tu casa u oficina. Disponible en Alajuela y alrededores (Zona 1-2).</p>
-          <p style="color: var(--color-cyan); font-weight: 700; font-size: 1.125rem; margin: 0;">Zona 1: gratis &middot; Zona 2: desde &#8353;3,000</p>
+        <div class="card svc-card" style="text-align: center;">
+          <div class="svc-card__emoji">&#127968;</div>
+          <h3 class="svc-card__title">Visita a domicilio</h3>
+          <p class="svc-card__desc">Vamos a tu casa u oficina. Disponible en Alajuela, Heredia, Belén, San Antonio, Santa Bárbara y alrededores.</p>
+          <p class="svc-card__price-highlight">Alajuela: gratis &middot; Heredia y alrededores: desde &#8353;3,000</p>
         </div>
       </div>
     </div>
@@ -50,286 +50,416 @@ import ContactModal from '../components/ContactModal.astro';
   <!-- DIAGNOSTICO -->
   <section class="section" id="diagnostico">
     <div class="container">
-      <div class="service-block">
-        <div class="service-block__header">
-          <span class="service-block__icon">&#128269;</span>
-          <div>
-            <h2>Diagnóstico y reparación</h2>
-            <p class="text-muted">Laptops y desktops - No celulares</p>
-          </div>
+      <div class="svc-section__header">
+        <h2>&#128269; Diagnóstico y reparación</h2>
+        <p class="text-muted">Laptops y desktops &mdash; No celulares</p>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="card svc-card svc-card--clickable" data-service="Diagnóstico básico (software)" role="button" tabindex="0">
+          <h3 class="svc-card__title">Diagnóstico básico</h3>
+          <p class="svc-card__subtitle">Software</p>
+          <p class="svc-card__desc">Revisamos el sistema operativo, programas, rendimiento y detectamos problemas de software.</p>
+          <p class="svc-card__price">Desde &#8353;8,000</p>
+          <span class="svc-card__cta">Consultar &rarr;</span>
         </div>
 
-        <div class="pricing-table">
-          <div class="pricing-row">
-            <span class="pricing-row__service">Diagnóstico básico (software)</span>
-            <span class="pricing-row__price">Desde &#8353;8,000</span>
-          </div>
-          <div class="pricing-row">
-            <span class="pricing-row__service">Diagnóstico avanzado (hardware)</span>
-            <span class="pricing-row__price">Desde &#8353;15,000</span>
-          </div>
-          <div class="pricing-row">
-            <span class="pricing-row__service">Limpieza interna + pasta térmica</span>
-            <span class="pricing-row__price">Desde &#8353;12,000</span>
-          </div>
-          <div class="pricing-row">
-            <span class="pricing-row__service">Cambio/upgrade de RAM</span>
-            <span class="pricing-row__price">&#8353;8,000 + componente</span>
-          </div>
-          <div class="pricing-row">
-            <span class="pricing-row__service">Cambio de HDD a SSD</span>
-            <span class="pricing-row__price">&#8353;10,000 + SSD</span>
-          </div>
-          <div class="pricing-row">
-            <span class="pricing-row__service">Reparación de software (virus, lentitud)</span>
-            <span class="pricing-row__price">Desde &#8353;10,000</span>
-          </div>
+        <div class="card svc-card svc-card--clickable" data-service="Diagnóstico avanzado (hardware)" role="button" tabindex="0">
+          <h3 class="svc-card__title">Diagnóstico avanzado</h3>
+          <p class="svc-card__subtitle">Hardware</p>
+          <p class="svc-card__desc">Apertura del equipo, revisión de componentes internos, temperaturas y estado del disco.</p>
+          <p class="svc-card__price">Desde &#8353;15,000</p>
+          <span class="svc-card__cta">Consultar &rarr;</span>
         </div>
-        <p class="pricing-note">El costo del diagnóstico se aplica al total si se procede con la reparación.</p>
-        <button class="btn btn--primary service-cta" data-service="Diagnóstico y reparación de computadoras" style="margin-top: var(--space-lg);">
-          Consultar este servicio &rarr;
-        </button>
+
+        <div class="card svc-card svc-card--clickable" data-service="Limpieza interna + pasta térmica" role="button" tabindex="0">
+          <h3 class="svc-card__title">Limpieza interna</h3>
+          <p class="svc-card__subtitle">+ pasta térmica</p>
+          <p class="svc-card__desc">Limpieza completa de polvo, cambio de pasta térmica. Tu equipo baja temperaturas y rinde mejor.</p>
+          <p class="svc-card__price">Desde &#8353;12,000</p>
+          <span class="svc-card__cta">Consultar &rarr;</span>
+        </div>
+
+        <div class="card svc-card svc-card--clickable" data-service="Cambio/upgrade de RAM" role="button" tabindex="0">
+          <h3 class="svc-card__title">Upgrade de RAM</h3>
+          <p class="svc-card__subtitle">Más memoria, más velocidad</p>
+          <p class="svc-card__desc">Instalamos o ampliamos la memoria RAM de tu computadora para que funcione más fluida.</p>
+          <p class="svc-card__price">&#8353;8,000 + costo del componente</p>
+          <span class="svc-card__cta">Consultar &rarr;</span>
+        </div>
+
+        <div class="card svc-card svc-card--clickable" data-service="Cambio de HDD a SSD (incluye clonación de datos)" role="button" tabindex="0">
+          <h3 class="svc-card__title">Cambio a SSD</h3>
+          <p class="svc-card__subtitle">Incluye clonación de datos</p>
+          <p class="svc-card__desc">Reemplazamos tu disco duro por un SSD. Tu computadora enciende en segundos y todo carga más rápido.</p>
+          <p class="svc-card__price">&#8353;10,000 + costo del componente</p>
+          <span class="svc-card__cta">Consultar &rarr;</span>
+        </div>
+
+        <div class="card svc-card svc-card--clickable" data-service="Reparación de software (virus, lentitud)" role="button" tabindex="0">
+          <h3 class="svc-card__title">Reparación de software</h3>
+          <p class="svc-card__subtitle">Virus, lentitud, errores</p>
+          <p class="svc-card__desc">Eliminamos malware, reparamos errores del sistema y optimizamos el rendimiento sin formatear.</p>
+          <p class="svc-card__price">Desde &#8353;10,000</p>
+          <span class="svc-card__cta">Consultar &rarr;</span>
+        </div>
       </div>
+
+      <p class="pricing-note">El costo del diagnóstico se aplica al total si se procede con la reparación.</p>
     </div>
   </section>
 
   <!-- FORMATEO -->
   <section class="section section--alt" id="formateo">
     <div class="container">
-      <div class="service-block">
-        <div class="service-block__header">
-          <span class="service-block__icon">&#128187;</span>
-          <div>
-            <h2>Formateo e instalación de software</h2>
-            <p class="text-muted">Instalación limpia con todo lo que necesitás</p>
-          </div>
+      <div class="svc-section__header">
+        <h2>&#128187; Formateo e instalación</h2>
+        <p class="text-muted">Instalación limpia con todo lo que necesitás</p>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="card svc-card svc-card--clickable" data-service="Formateo + instalación de Windows" role="button" tabindex="0">
+          <h3 class="svc-card__title">Windows</h3>
+          <p class="svc-card__subtitle">Formateo + instalación</p>
+          <p class="svc-card__desc">Instalación limpia de Windows 10/11 con drivers, actualizaciones y configuración básica.</p>
+          <p class="svc-card__price">Desde &#8353;15,000</p>
+          <span class="svc-card__cta">Consultar &rarr;</span>
         </div>
 
-        <div class="pricing-table">
-          <div class="pricing-row">
-            <span class="pricing-row__service">Formateo + instalación de Windows</span>
-            <span class="pricing-row__price">Desde &#8353;15,000</span>
-          </div>
-          <div class="pricing-row">
-            <span class="pricing-row__service">Formateo + instalación de Linux</span>
-            <span class="pricing-row__price">Desde &#8353;12,000</span>
-          </div>
-          <div class="pricing-row">
-            <span class="pricing-row__service">Instalación de suite Office</span>
-            <span class="pricing-row__price">&#8353;5,000</span>
-          </div>
-          <div class="pricing-row">
-            <span class="pricing-row__service">Backup de datos antes de formateo</span>
-            <span class="pricing-row__price">Desde &#8353;8,000</span>
-          </div>
-          <div class="pricing-row pricing-row--featured">
-            <span class="pricing-row__service">
-              <strong>Paquete Completo</strong><br />
-              <small>Formateo + Office + antivirus + backup</small>
-            </span>
-            <span class="pricing-row__price pricing-row__price--featured">Desde &#8353;30,000</span>
-          </div>
+        <div class="card svc-card svc-card--clickable" data-service="Formateo + instalación de Linux" role="button" tabindex="0">
+          <h3 class="svc-card__title">Linux</h3>
+          <p class="svc-card__subtitle">Ubuntu, Mint y más</p>
+          <p class="svc-card__desc">Instalación de distribuciones Linux configuradas y listas para usar.</p>
+          <p class="svc-card__price">Desde &#8353;12,000</p>
+          <span class="svc-card__cta">Consultar &rarr;</span>
         </div>
-        <button class="btn btn--primary service-cta" data-service="Formateo e instalación de software" style="margin-top: var(--space-lg);">
-          Consultar este servicio &rarr;
-        </button>
+
+        <div class="card svc-card svc-card--clickable" data-service="Instalación de suite Office" role="button" tabindex="0">
+          <h3 class="svc-card__title">Suite Office</h3>
+          <p class="svc-card__subtitle">Word, Excel, PowerPoint</p>
+          <p class="svc-card__desc">Instalación y configuración de Microsoft Office o alternativas gratuitas.</p>
+          <p class="svc-card__price">&#8353;5,000</p>
+          <span class="svc-card__cta">Consultar &rarr;</span>
+        </div>
+
+        <div class="card svc-card svc-card--clickable" data-service="Backup de datos (respaldo de archivos)" role="button" tabindex="0">
+          <h3 class="svc-card__title">Backup de datos</h3>
+          <p class="svc-card__subtitle">Respaldo de tus archivos</p>
+          <p class="svc-card__desc">Copiamos todos tus documentos, fotos, videos y archivos importantes a un disco externo o la nube antes de formatear o reparar. Nada se pierde.</p>
+          <p class="svc-card__price">Desde &#8353;8,000</p>
+          <span class="svc-card__cta">Consultar &rarr;</span>
+        </div>
+
+        <div class="card svc-card svc-card--clickable svc-card--featured" data-service="Paquete Completo (Formateo + Office + Antivirus + Backup) - Desde ₡30,000" role="button" tabindex="0">
+          <span class="badge badge--cyan">Mejor valor</span>
+          <h3 class="svc-card__title">Paquete Completo</h3>
+          <p class="svc-card__subtitle">El combo más solicitado</p>
+          <p class="svc-card__price">Desde &#8353;30,000</p>
+          <ul class="svc-card__list">
+            <li>Formateo + instalación de Windows o Linux</li>
+            <li>Backup de todos tus archivos</li>
+            <li>Suite Office instalada</li>
+            <li>Antivirus configurado</li>
+            <li>Drivers y actualizaciones</li>
+          </ul>
+          <p class="svc-card__save">Tu equipo como nuevo</p>
+          <span class="svc-card__cta">Pedir paquete &rarr;</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ASESORIA -->
+  <!-- ASESORIA COMPRA -->
   <section class="section" id="asesoria">
     <div class="container">
-      <div class="service-block">
-        <div class="service-block__header">
-          <span class="service-block__icon">&#128176;</span>
-          <div>
-            <h2>Asesoría de compra de equipo</h2>
-            <p class="text-muted">Te ayudamos a tomar la mejor decisión</p>
-          </div>
+      <div class="svc-section__header">
+        <h2>&#128176; Asesoría de compra</h2>
+        <p class="text-muted">Te ayudamos a tomar la mejor decisión</p>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="card svc-card svc-card--clickable" data-service="Asesoría de compra por chat (gratis)" role="button" tabindex="0">
+          <h3 class="svc-card__title">Asesoría por chat</h3>
+          <p class="svc-card__subtitle">WhatsApp, sin límite</p>
+          <p class="svc-card__desc">Escribinos tus dudas y te orientamos sobre qué equipo comprar según tu presupuesto.</p>
+          <p class="svc-card__price svc-card__price--free">GRATIS</p>
+          <span class="svc-card__cta">Escribir ahora &rarr;</span>
         </div>
 
-        <div class="pricing-table">
-          <div class="pricing-row">
-            <span class="pricing-row__service">Asesoría por chat (WhatsApp, sin límite)</span>
-            <span class="pricing-row__price">GRATIS</span>
-          </div>
-          <div class="pricing-row">
-            <span class="pricing-row__service">Asesoría por llamada (30 min)</span>
-            <span class="pricing-row__price">&#8353;5,000</span>
-          </div>
-          <div class="pricing-row">
-            <span class="pricing-row__service">Asesoría completa (análisis + recomendación escrita)</span>
-            <span class="pricing-row__price">Desde &#8353;8,000</span>
-          </div>
-          <div class="pricing-row">
-            <span class="pricing-row__service">Acompañamiento de compra (presencial, Zona 1-2)</span>
-            <span class="pricing-row__price">&#8353;10,000</span>
-          </div>
-          <div class="pricing-row">
-            <span class="pricing-row__service">Configuración inicial de equipo nuevo</span>
-            <span class="pricing-row__price">Desde &#8353;10,000</span>
-          </div>
+        <div class="card svc-card svc-card--clickable" data-service="Asesoría de compra por llamada (30 min)" role="button" tabindex="0">
+          <h3 class="svc-card__title">Asesoría por llamada</h3>
+          <p class="svc-card__subtitle">30 minutos</p>
+          <p class="svc-card__desc">Llamada telefónica personalizada para analizar opciones y darte una recomendación clara.</p>
+          <p class="svc-card__price">&#8353;5,000</p>
+          <span class="svc-card__cta">Agendar llamada &rarr;</span>
         </div>
-        <button class="btn btn--primary service-cta" data-service="Asesoría de compra de equipo" style="margin-top: var(--space-lg);">
-          Consultar este servicio &rarr;
-        </button>
+
+        <div class="card svc-card svc-card--clickable" data-service="Asesoría completa de compra (análisis + recomendación escrita)" role="button" tabindex="0">
+          <h3 class="svc-card__title">Asesoría completa</h3>
+          <p class="svc-card__subtitle">Análisis + informe escrito</p>
+          <p class="svc-card__desc">Evaluamos tus necesidades, comparamos opciones del mercado y te entregamos una recomendación documentada.</p>
+          <p class="svc-card__price">Desde &#8353;8,000</p>
+          <span class="svc-card__cta">Consultar &rarr;</span>
+        </div>
+
+        <div class="card svc-card svc-card--clickable" data-service="Acompañamiento de compra presencial" role="button" tabindex="0">
+          <h3 class="svc-card__title">Acompañamiento de compra</h3>
+          <p class="svc-card__subtitle">Presencial en Alajuela y Heredia</p>
+          <p class="svc-card__desc">Vamos con vos a la tienda o revisamos la compra en línea para que no te vendan de más.</p>
+          <p class="svc-card__price">&#8353;10,000</p>
+          <span class="svc-card__cta">Agendar &rarr;</span>
+        </div>
+
+        <div class="card svc-card svc-card--clickable" data-service="Configuración inicial de equipo nuevo" role="button" tabindex="0">
+          <h3 class="svc-card__title">Configuración de equipo nuevo</h3>
+          <p class="svc-card__subtitle">Dejálo listo para usar</p>
+          <p class="svc-card__desc">Instalamos todo lo que necesitás en tu equipo nuevo: programas, cuentas, impresora, respaldo.</p>
+          <p class="svc-card__price">Desde &#8353;10,000</p>
+          <span class="svc-card__cta">Consultar &rarr;</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- PAQUETES -->
+  <!-- PAQUETES SOPORTE -->
   <section class="section section--alt" id="paquetes">
     <div class="container">
-      <div class="text-center" style="margin-bottom: var(--space-2xl);">
-        <h2>Paquetes con descuento</h2>
+      <div class="svc-section__header">
+        <h2>&#127873; Paquetes con descuento</h2>
         <p class="text-muted">Ahorrá combinando servicios</p>
       </div>
 
       <div class="grid grid--3">
-        <div class="card package-card package-card--clickable" data-service="Paquete Básico (Diagnóstico + Limpieza) - ₡18,000" role="button" tabindex="0">
+        <div class="card svc-card svc-card--clickable" data-service="Paquete Básico (Diagnóstico + Limpieza) - ₡18,000" role="button" tabindex="0">
           <span class="badge badge--sky">Básico</span>
-          <h3 class="package-card__title">Paquete Básico</h3>
-          <p class="package-card__price">&#8353;18,000</p>
-          <ul class="package-card__list">
+          <h3 class="svc-card__title">Paquete Básico</h3>
+          <p class="svc-card__price">&#8353;18,000</p>
+          <ul class="svc-card__list">
             <li>Diagnóstico completo</li>
             <li>Limpieza interna</li>
           </ul>
-          <p class="package-card__save">Ahorro ~15% vs individual</p>
-          <span class="package-card__cta">Pedir este paquete &rarr;</span>
+          <p class="svc-card__save">Ahorro ~15% vs individual</p>
+          <span class="svc-card__cta">Pedir paquete &rarr;</span>
         </div>
 
-        <div class="card package-card package-card--featured package-card--clickable" data-service="Paquete Completo (Formateo + Backup + Office + Antivirus + Limpieza) - ₡45,000" role="button" tabindex="0">
+        <div class="card svc-card svc-card--clickable svc-card--featured" data-service="Paquete Completo (Formateo + Backup + Office + Antivirus + Limpieza) - ₡45,000" role="button" tabindex="0">
           <span class="badge badge--cyan">Mejor valor</span>
-          <h3 class="package-card__title">Paquete Completo</h3>
-          <p class="package-card__price">&#8353;45,000</p>
-          <ul class="package-card__list">
+          <h3 class="svc-card__title">Paquete Completo</h3>
+          <p class="svc-card__price">&#8353;45,000</p>
+          <ul class="svc-card__list">
             <li>Formateo + instalación OS</li>
             <li>Backup de datos</li>
             <li>Suite Office</li>
             <li>Antivirus</li>
             <li>Limpieza interna</li>
           </ul>
-          <p class="package-card__save">Ahorro ~20% vs individual</p>
-          <span class="package-card__cta">Pedir este paquete &rarr;</span>
+          <p class="svc-card__save">Ahorro ~20% vs individual</p>
+          <span class="svc-card__cta">Pedir paquete &rarr;</span>
         </div>
 
-        <div class="card package-card package-card--clickable" data-service="Paquete Nuevo Equipo (Asesoría + Configuración) - ₡18,000" role="button" tabindex="0">
+        <div class="card svc-card svc-card--clickable" data-service="Paquete Nuevo Equipo (Asesoría + Configuración) - ₡18,000" role="button" tabindex="0">
           <span class="badge badge--sky">Nuevo equipo</span>
-          <h3 class="package-card__title">Paquete Nuevo Equipo</h3>
-          <p class="package-card__price">&#8353;18,000</p>
-          <ul class="package-card__list">
+          <h3 class="svc-card__title">Paquete Nuevo Equipo</h3>
+          <p class="svc-card__price">&#8353;18,000</p>
+          <ul class="svc-card__list">
             <li>Asesoría de compra</li>
             <li>Configuración inicial</li>
           </ul>
-          <p class="package-card__save">Ahorro ~25% vs individual</p>
-          <span class="package-card__cta">Pedir este paquete &rarr;</span>
+          <p class="svc-card__save">Ahorro ~25% vs individual</p>
+          <span class="svc-card__cta">Pedir paquete &rarr;</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOPORTE PYMES -->
+  <section class="section" id="pymes">
+    <div class="container">
+      <div class="svc-section__header">
+        <h2>&#128188; Soporte para PYMEs</h2>
+        <p class="text-muted">Tu departamento de TI sin tener que contratar uno</p>
+      </div>
+
+      <p class="svc-intro">
+        Sabemos que las pequeñas y medianas empresas no pueden tener un técnico de planta.
+        Con Teknika CR tenés soporte técnico recurrente, mantenimiento preventivo y asesoría
+        informática cuando lo necesités, a una fracción del costo de un empleado.
+      </p>
+
+      <div class="grid grid--3">
+        <div class="card svc-card svc-card--clickable" data-service="Plan PYME Básico - Soporte técnico mensual - Desde ₡20,000/mes" role="button" tabindex="0">
+          <span class="badge badge--sky">Básico</span>
+          <h3 class="svc-card__title">Plan PYME Básico</h3>
+          <p class="svc-card__price">Desde &#8353;20,000/mes</p>
+          <ul class="svc-card__list">
+            <li>Hasta 3 equipos</li>
+            <li>Soporte remoto ilimitado</li>
+            <li>1 visita presencial/mes</li>
+            <li>Tiempo de respuesta: 24h</li>
+          </ul>
+          <span class="svc-card__cta">Consultar &rarr;</span>
+        </div>
+
+        <div class="card svc-card svc-card--clickable svc-card--featured" data-service="Plan PYME Profesional - Soporte técnico mensual - Desde ₡45,000/mes" role="button" tabindex="0">
+          <span class="badge badge--cyan">Más popular</span>
+          <h3 class="svc-card__title">Plan PYME Profesional</h3>
+          <p class="svc-card__price">Desde &#8353;45,000/mes</p>
+          <ul class="svc-card__list">
+            <li>Hasta 10 equipos</li>
+            <li>Soporte remoto ilimitado</li>
+            <li>2 visitas presenciales/mes</li>
+            <li>Mantenimiento preventivo</li>
+            <li>Tiempo de respuesta: 12h</li>
+          </ul>
+          <span class="svc-card__cta">Consultar &rarr;</span>
+        </div>
+
+        <div class="card svc-card svc-card--clickable" data-service="Plan PYME a medida - Soporte técnico personalizado" role="button" tabindex="0">
+          <span class="badge badge--sky">A medida</span>
+          <h3 class="svc-card__title">Plan personalizado</h3>
+          <p class="svc-card__price">Cotizar</p>
+          <ul class="svc-card__list">
+            <li>Más de 10 equipos</li>
+            <li>Soporte remoto + presencial</li>
+            <li>Visitas según necesidad</li>
+            <li>Asesoría informática integral</li>
+            <li>Tiempo de respuesta: 4h</li>
+          </ul>
+          <span class="svc-card__cta">Solicitar cotización &rarr;</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASESORIA IA -->
+  <section class="section" id="ia">
+    <div class="container">
+      <div class="svc-section__header">
+        <h2>&#129302; Asesoría de inteligencia artificial</h2>
+        <p class="text-muted">Aprendé a usar IA en tu trabajo o vida personal</p>
+      </div>
+
+      <p class="svc-intro">
+        La inteligencia artificial ya está cambiando la forma en que trabajamos. Te enseñamos
+        a usarla de forma práctica: desde generar contenido, automatizar tareas, hasta analizar
+        datos. Sesiones personalizadas, sin jerga técnica, enfocadas en lo que vos necesitás.
+      </p>
+
+      <div class="grid grid--3">
+        <div class="card svc-card svc-card--clickable" data-service="Sesión de IA - 1 hora de aprendizaje virtual - ₡15,000" role="button" tabindex="0">
+          <span class="badge badge--sky">Individual</span>
+          <h3 class="svc-card__title">Sesión básica</h3>
+          <p class="svc-card__subtitle">Virtual &middot; 1 hora</p>
+          <p class="svc-card__price">&#8353;15,000</p>
+          <ul class="svc-card__list">
+            <li>1 hora de sesión virtual en vivo</li>
+            <li>Aprendizaje acompañado y práctico</li>
+            <li>Personalizado a tu trabajo o necesidad</li>
+          </ul>
+          <span class="svc-card__cta">Agendar sesión &rarr;</span>
+        </div>
+
+        <div class="card svc-card svc-card--clickable svc-card--featured" data-service="Bundle de IA - 6 horas de tutoría virtual - ₡75,000" role="button" tabindex="0">
+          <span class="badge badge--cyan">Mejor valor</span>
+          <h3 class="svc-card__title">Bundle 6 sesiones</h3>
+          <p class="svc-card__subtitle">Virtual &middot; Usálas a tu ritmo</p>
+          <p class="svc-card__price">&#8353;75,000</p>
+          <ul class="svc-card__list">
+            <li>6 horas de tutoría virtual</li>
+            <li>Plan de aprendizaje personalizado</li>
+            <li>Soporte por chat entre sesiones</li>
+            <li>Recursos y guías incluidas</li>
+          </ul>
+          <p class="svc-card__save">Ahorro de &#8353;15,000 vs individual</p>
+          <span class="svc-card__cta">Agendar tutoría &rarr;</span>
+        </div>
+
+        <div class="card svc-card svc-card--clickable" data-service="Capacitación grupal de IA para empresa - ₡10,000/persona (mínimo 4 personas)" role="button" tabindex="0">
+          <span class="badge badge--sky">Empresas</span>
+          <h3 class="svc-card__title">Capacitación grupal</h3>
+          <p class="svc-card__subtitle">Virtual o presencial &middot; 2 horas</p>
+          <p class="svc-card__price">&#8353;10,000/persona</p>
+          <ul class="svc-card__list">
+            <li>Sesión de 2 horas para equipos de trabajo</li>
+            <li>Mínimo 4 participantes</li>
+            <li>Virtual o presencial según necesidad</li>
+            <li>Material de apoyo para cada participante</li>
+          </ul>
+          <span class="svc-card__cta">Solicitar cotización &rarr;</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SITIOS WEB -->
-  <section class="section" id="web">
+  <section class="section section--alt" id="web">
     <div class="container">
-      <div class="service-block">
-        <div class="service-block__header">
-          <span class="service-block__icon">&#127760;</span>
-          <div>
-            <h2>Tu negocio en internet</h2>
-            <p class="text-muted">Sitios web profesionales para PYMEs — sin cuotas de hosting</p>
-          </div>
+      <div class="svc-section__header">
+        <h2>&#127760; Tu negocio en internet</h2>
+        <p class="text-muted">Sitios web profesionales para PYMEs &mdash; sin cuotas de hosting</p>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="card svc-card svc-card--clickable" data-service="Presencia Digital (Landing page + dominio) - Desde ₡120,000" role="button" tabindex="0">
+          <span class="badge badge--sky">Landing</span>
+          <h3 class="svc-card__title">Presencia Digital</h3>
+          <p class="svc-card__price">Desde &#8353;120,000</p>
+          <ul class="svc-card__list">
+            <li>1 página profesional</li>
+            <li>Formulario de contacto</li>
+            <li>Diseño responsive</li>
+            <li>SSL y hosting gratis</li>
+            <li>Dominio incluido (1 año)</li>
+          </ul>
+          <p class="svc-card__save">Entrega en 1 semana</p>
+          <span class="svc-card__cta">Cotizar &rarr;</span>
         </div>
 
-        <div class="grid grid--3">
-          <div class="card package-card package-card--clickable" data-service="Presencia Digital (Landing page + dominio) - ₡120,000 - 150,000" role="button" tabindex="0">
-            <span class="badge badge--sky">Landing</span>
-            <h3 class="package-card__title">Presencia Digital</h3>
-            <p class="package-card__price">&#8353;120,000 - 150,000</p>
-            <ul class="package-card__list">
-              <li>1 página profesional</li>
-              <li>Formulario de contacto</li>
-              <li>Diseño responsive</li>
-              <li>SSL y hosting gratis</li>
-              <li>Dominio incluido (1 año)</li>
-            </ul>
-            <p class="package-card__save">Entrega en 1 semana</p>
-            <span class="package-card__cta">Cotizar &rarr;</span>
-          </div>
-
-          <div class="card package-card package-card--featured package-card--clickable" data-service="Sitio Profesional (3-5 páginas + Blog + SEO) - ₡250,000 - 350,000" role="button" tabindex="0">
-            <span class="badge badge--cyan">Más popular</span>
-            <h3 class="package-card__title">Sitio Profesional</h3>
-            <p class="package-card__price">&#8353;250,000 - 350,000</p>
-            <ul class="package-card__list">
-              <li>3-5 páginas completas</li>
-              <li>Blog integrado</li>
-              <li>SEO básico + Google My Business</li>
-              <li>Botón de WhatsApp</li>
-              <li>Email profesional</li>
-              <li>Hosting gratis</li>
-            </ul>
-            <p class="package-card__save">Entrega en 2 semanas</p>
-            <span class="package-card__cta">Cotizar &rarr;</span>
-          </div>
-
-          <div class="card package-card package-card--clickable" data-service="Tienda Básica (E-commerce + catálogo + pagos) - ₡400,000 - 550,000" role="button" tabindex="0">
-            <span class="badge badge--sky">E-commerce</span>
-            <h3 class="package-card__title">Tienda Básica</h3>
-            <p class="package-card__price">&#8353;400,000 - 550,000</p>
-            <ul class="package-card__list">
-              <li>Todo lo del Sitio Profesional</li>
-              <li>Catálogo de productos</li>
-              <li>Carrito de compras</li>
-              <li>Pagos SINPE/transferencia</li>
-            </ul>
-            <p class="package-card__save">Entrega en 3-4 semanas</p>
-            <span class="package-card__cta">Cotizar &rarr;</span>
-          </div>
+        <div class="card svc-card svc-card--clickable svc-card--featured" data-service="Sitio Profesional (3-5 páginas + Blog + SEO) - Desde ₡250,000" role="button" tabindex="0">
+          <span class="badge badge--cyan">Más popular</span>
+          <h3 class="svc-card__title">Sitio Profesional</h3>
+          <p class="svc-card__price">Desde &#8353;250,000</p>
+          <ul class="svc-card__list">
+            <li>3-5 páginas completas</li>
+            <li>Blog integrado</li>
+            <li>SEO básico + Google My Business</li>
+            <li>Botón de WhatsApp</li>
+            <li>Email profesional</li>
+            <li>Hosting gratis</li>
+          </ul>
+          <p class="svc-card__save">Entrega en 2 semanas</p>
+          <span class="svc-card__cta">Cotizar &rarr;</span>
         </div>
 
-        <div style="margin-top: var(--space-xl);">
-          <h3 style="margin-bottom: var(--space-md);">Mantenimiento web mensual</h3>
-          <div class="pricing-table">
-            <div class="pricing-row">
-              <span class="pricing-row__service">
-                <strong>Plan Mantenimiento Estándar</strong><br />
-                <small>Cambios menores (2h/mes) + 1 página nueva/mes + monitoreo + backups</small>
-              </span>
-              <span class="pricing-row__price">&#8353;20,000 - 30,000/mes</span>
-            </div>
-            <div class="pricing-row">
-              <span class="pricing-row__service">Cambios adicionales (fuera de las 2 horas incluidas)</span>
-              <span class="pricing-row__price">&#8353;8,000/hora</span>
-            </div>
-          </div>
+        <div class="card svc-card svc-card--clickable" data-service="Tienda Básica (E-commerce + catálogo + pagos) - Desde ₡400,000" role="button" tabindex="0">
+          <span class="badge badge--sky">E-commerce</span>
+          <h3 class="svc-card__title">Tienda Básica</h3>
+          <p class="svc-card__price">Desde &#8353;400,000</p>
+          <ul class="svc-card__list">
+            <li>Todo lo del Sitio Profesional</li>
+            <li>Catálogo de productos</li>
+            <li>Carrito de compras</li>
+            <li>Pagos SINPE/transferencia</li>
+          </ul>
+          <p class="svc-card__save">Entrega en 3-4 semanas</p>
+          <span class="svc-card__cta">Cotizar &rarr;</span>
+        </div>
+      </div>
+
+      <div class="extras-grid">
+        <div class="card svc-card svc-card--clickable svc-card--sm" data-service="Mantenimiento web mensual - Desde ₡20,000/mes" role="button" tabindex="0">
+          <h3 class="svc-card__title">Mantenimiento web</h3>
+          <p class="svc-card__desc">Cambios menores (2h/mes) + 1 página nueva/mes + monitoreo + backups</p>
+          <p class="svc-card__price">Desde &#8353;20,000/mes</p>
+          <span class="svc-card__cta">Consultar &rarr;</span>
         </div>
 
-        <div style="margin-top: var(--space-xl);">
-          <h3 style="margin-bottom: var(--space-md);">Dominio web</h3>
-          <div class="pricing-table">
-            <div class="pricing-row">
-              <span class="pricing-row__service">
-                <strong>Teknika administra</strong><br />
-                <small>Registramos y renovamos el dominio por vos. Sin preocupaciones.</small>
-              </span>
-              <span class="pricing-row__price">&#8353;20,000 - 70,000/año</span>
-            </div>
-            <div class="pricing-row">
-              <span class="pricing-row__service">
-                <strong>Vos lo registrás</strong><br />
-                <small>Comprás tu dominio y nosotros lo configuramos.</small>
-              </span>
-              <span class="pricing-row__price">Configuración incluida</span>
-            </div>
-          </div>
-          <p class="pricing-note">El dominio siempre se registra a tu nombre. Teknika solo lo administra técnicamente.</p>
+        <div class="card svc-card svc-card--clickable svc-card--sm" data-service="Administración de dominio web" role="button" tabindex="0">
+          <h3 class="svc-card__title">Dominio web</h3>
+          <p class="svc-card__desc">Registramos y renovamos el dominio por vos. Siempre a tu nombre, nosotros lo administramos.</p>
+          <p class="svc-card__price">Desde &#8353;20,000/año</p>
+          <span class="svc-card__cta">Consultar &rarr;</span>
         </div>
-
-        <button class="btn btn--primary service-cta" data-service="Sitio web para mi negocio" style="margin-top: var(--space-lg);">
-          Cotizar mi sitio web &rarr;
-        </button>
-
       </div>
     </div>
   </section>
@@ -371,158 +501,188 @@ import ContactModal from '../components/ContactModal.astro';
     color: var(--color-gray-300);
   }
 
-  .service-block__header {
-    display: flex;
-    align-items: center;
-    gap: var(--space-lg);
-    margin-bottom: var(--space-xl);
+  /* ============================================
+     Section headers
+     ============================================ */
+  .svc-section__header {
+    margin-bottom: var(--space-2xl);
   }
 
-  .service-block__icon {
-    font-size: 2.5rem;
+  .svc-section__header h2 {
+    margin-bottom: var(--space-xs);
   }
 
-  .pricing-table {
+  .svc-intro {
     max-width: 700px;
-  }
-
-  .pricing-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--space-md) 0;
-    border-bottom: 1px solid var(--color-gray-200);
-    gap: var(--space-md);
-  }
-
-  .pricing-row--featured {
-    background: var(--color-gray-50);
-    padding: var(--space-md);
-    border-radius: var(--radius-md);
-    border: 2px solid var(--color-cyan);
-    margin-top: var(--space-sm);
-  }
-
-  .pricing-row__service {
-    font-size: 0.9375rem;
-  }
-
-  .pricing-row__price {
-    font-weight: 700;
-    color: var(--color-royal);
-    white-space: nowrap;
-  }
-
-  .pricing-row__price--featured {
-    color: var(--color-dark);
-    font-size: 1.125rem;
-  }
-
-  .pricing-note {
-    margin-top: var(--space-md);
-    font-size: 0.8125rem;
+    margin-bottom: var(--space-xl);
     color: var(--color-text-muted);
-    font-style: italic;
+    line-height: 1.7;
   }
 
-  /* Paquetes */
-  .package-card {
-    text-align: center;
-    padding: var(--space-2xl) var(--space-xl);
+  /* ============================================
+     Unified service cards
+     ============================================ */
+  .svc-card {
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
   }
 
-  .package-card--featured {
-    border-color: var(--color-cyan);
-    border-width: 2px;
-    position: relative;
-  }
-
-  .package-card__title {
-    font-size: 1.25rem;
-    margin: var(--space-md) 0 var(--space-sm);
-  }
-
-  .package-card__price {
+  .svc-card__emoji {
     font-size: 2rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .svc-card__title {
+    font-size: 1.125rem;
+    margin-bottom: 0;
+    color: var(--color-dark);
+  }
+
+  .svc-card__subtitle {
+    font-size: 0.8125rem;
+    color: var(--color-gray-500);
+    margin: 2px 0 var(--space-sm);
+    font-weight: 500;
+  }
+
+  .svc-card__desc {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+    flex-grow: 1;
+  }
+
+  .svc-card__price {
+    font-size: 1.25rem;
     font-weight: 800;
     color: var(--color-royal);
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-sm);
   }
 
-  .package-card__list {
+  .svc-card__price--free {
+    color: var(--color-cyan);
+  }
+
+  .svc-card__price-highlight {
+    color: var(--color-cyan);
+    font-weight: 700;
+    font-size: 1.125rem;
+    margin: 0;
+  }
+
+  .svc-card__list {
     list-style: none;
     padding: 0;
     text-align: left;
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
+    flex-grow: 1;
   }
 
-  .package-card__list li {
-    padding: var(--space-xs) 0;
+  .svc-card__list li {
+    padding: 3px 0;
     font-size: 0.9375rem;
     color: var(--color-gray-600);
   }
 
-  .package-card__list li::before {
+  .svc-card__list li::before {
     content: '✓ ';
     color: var(--color-cyan);
     font-weight: 700;
   }
 
-  .package-card__save {
+  .svc-card__save {
     font-size: 0.8125rem;
     color: var(--color-cyan);
     font-weight: 600;
-    margin: 0;
+    margin-bottom: var(--space-sm);
   }
 
-  .service-cta {
-    cursor: pointer;
-  }
-
-  /* Clickable packages */
-  .package-card--clickable {
+  /* Clickable state */
+  .svc-card--clickable {
     cursor: pointer;
     transition: all 200ms ease;
     position: relative;
-    padding-bottom: calc(var(--space-2xl) + 1rem);
+    padding-bottom: calc(var(--space-xl) + 2rem);
   }
 
-  .package-card--clickable:hover {
+  .svc-card--clickable:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
+    border-color: var(--color-sky);
   }
 
-  .package-card--clickable:focus-visible {
+  .svc-card--clickable:focus-visible {
     outline: 2px solid var(--color-sky);
     outline-offset: 2px;
   }
 
-  .package-card__cta {
+  .svc-card__cta {
     position: absolute;
     bottom: var(--space-lg);
-    left: 50%;
-    transform: translateX(-50%);
+    left: var(--space-xl);
     font-size: 0.875rem;
     font-weight: 600;
     color: var(--color-royal);
     transition: all var(--transition);
-    white-space: nowrap;
   }
 
-  .package-card--clickable:hover .package-card__cta {
+  .svc-card--clickable:hover .svc-card__cta {
     color: var(--color-sky);
+    transform: translateX(4px);
   }
 
-  .package-card--featured.package-card--clickable:hover {
+  /* Featured card */
+  .svc-card--featured {
+    border: 2px solid var(--color-cyan);
+  }
+
+  .svc-card--featured:hover {
     border-color: var(--color-cyan);
     box-shadow: 0 10px 30px rgba(68, 207, 203, 0.2);
   }
 
+  /* Small cards (extras) */
+  .extras-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+  }
+
+  .svc-card--sm {
+    padding: var(--space-lg);
+    padding-bottom: calc(var(--space-lg) + 2rem);
+  }
+
+  .svc-card--sm .svc-card__title {
+    font-size: 1rem;
+  }
+
+  .svc-card--sm .svc-card__price {
+    font-size: 1.0625rem;
+  }
+
+  .pricing-note {
+    margin-top: var(--space-lg);
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+
+  /* ============================================
+     Responsive
+     ============================================ */
+  @media (max-width: 768px) {
+    .extras-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
   @media (max-width: 600px) {
-    .pricing-row {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: var(--space-xs);
+    .grid--3 {
+      grid-template-columns: 1fr;
     }
   }
 </style>
