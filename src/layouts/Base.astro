@@ -26,7 +26,9 @@ const fullTitle = title === 'Inicio'
     {canonical && <link rel="canonical" href={canonical} />}
 
     <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/img/logo-icon.png" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/img/logo-icon.png" />
 
     <!-- DNS prefetch para servicios externos -->
     <link rel="dns-prefetch" href="https://formspree.io" />
@@ -98,7 +100,7 @@ const fullTitle = title === 'Inicio'
     <header class="header">
       <nav class="nav container">
         <a href="/" class="nav__logo">
-          <span class="nav__logo-icon">T</span>
+          <img src="/img/logo-icon.png" alt="Teknika CR" class="nav__logo-img" width="44" height="44" />
           <span class="nav__logo-text">Teknika<span class="nav__logo-cr">CR</span></span>
         </a>
         <span class="nav__lang-badge" title="Service available in English">ES / EN</span>
@@ -112,6 +114,7 @@ const fullTitle = title === 'Inicio'
         <ul class="nav__links" id="nav-links">
           <li><a href="/">Inicio</a></li>
           <li><a href="/servicios">Servicios</a></li>
+          <li><a href="/asesoria-ia">Asesoría IA</a></li>
           <li><a href="/ofertas">Ofertas</a></li>
           <li><a href="/sobre">Nosotros</a></li>
           <li><a href="/blog">Blog</a></li>
@@ -128,6 +131,15 @@ const fullTitle = title === 'Inicio'
       </nav>
     </header>
 
+    <div class="launch-banner">
+      <div class="container">
+        <p class="launch-banner__text">
+          <span class="launch-banner__badge">-25%</span>
+          <strong>Precio de lanzamiento</strong> en todos los servicios &mdash; <a href="/ofertas">Ver ofertas</a>
+        </p>
+      </div>
+    </div>
+
     <main>
       <slot />
     </main>
@@ -137,7 +149,7 @@ const fullTitle = title === 'Inicio'
         <div class="footer__grid">
           <div class="footer__brand">
             <a href="/" class="footer__logo">
-              <span class="footer__logo-icon">T</span>
+              <img src="/img/logo-icon.png" alt="Teknika CR" class="footer__logo-img" width="42" height="42" />
               <span class="footer__logo-text">Teknika<span class="footer__logo-cr">CR</span></span>
             </a>
             <p class="footer__tagline">Tecnología que funciona.<br />Soluciones que entendés.</p>
@@ -149,7 +161,7 @@ const fullTitle = title === 'Inicio'
               <li><a href="/servicios#diagnostico">Diagnóstico y reparación</a></li>
               <li><a href="/servicios#formateo">Formateo e instalación</a></li>
               <li><a href="/servicios#asesoria">Asesoría de compra</a></li>
-              <li><a href="/servicios#ia">Asesoría de IA</a></li>
+              <li><a href="/asesoria-ia">Asesoría de IA</a></li>
               <li><a href="/servicios#web">Tu negocio en internet</a></li>
               <li><a href="/servicios#paquetes">Paquetes</a></li>
             </ul>
@@ -223,17 +235,11 @@ const fullTitle = title === 'Inicio'
     font-size: 1.25rem;
   }
 
-  .nav__logo-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    background-color: var(--color-dark);
-    color: var(--color-cyan);
+  .nav__logo-img {
+    width: 44px;
+    height: 44px;
     border-radius: var(--radius-md);
-    font-weight: 800;
-    font-size: 1.25rem;
+    object-fit: contain;
   }
 
   .nav__logo-cr {
@@ -320,17 +326,11 @@ const fullTitle = title === 'Inicio'
     font-size: 1.25rem;
   }
 
-  .footer__logo-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    background-color: var(--color-cyan);
-    color: var(--color-dark);
+  .footer__logo-img {
+    width: 42px;
+    height: 42px;
     border-radius: var(--radius-md);
-    font-weight: 800;
-    font-size: 1.25rem;
+    object-fit: contain;
   }
 
   .footer__logo-text {

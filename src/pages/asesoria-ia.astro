@@ -1,0 +1,929 @@
+---
+import Base from '../layouts/Base.astro';
+import ContactModal from '../components/ContactModal.astro';
+---
+
+<Base
+  title="Asesoría de Inteligencia Artificial"
+  description="Aprendé a usar inteligencia artificial en tu trabajo o negocio. Sesiones personalizadas con ChatGPT, Claude, Gemini y más. Sin jerga técnica, enfocado en resultados prácticos."
+  canonical="https://teknika.co.cr/asesoria-ia"
+>
+
+  <!-- HERO IA -->
+  <section class="ia-hero">
+    <div class="container">
+      <div class="ia-hero__grid">
+        <div class="ia-hero__content">
+          <span class="badge badge--cyan">Nuevo servicio</span>
+          <h1>Aprendé a usar <span class="ia-hero__accent">inteligencia artificial</span> en tu trabajo</h1>
+          <p class="ia-hero__subtitle">
+            Sesiones personalizadas donde te enseñamos a usar herramientas de IA de forma práctica.
+            Sin jerga técnica, enfocado en lo que vos necesitás. Desde generar contenido hasta automatizar
+            tareas repetitivas.
+          </p>
+          <div class="ia-hero__actions">
+            <a href="https://wa.me/50600000000?text=Hola%20Teknika%20CR%2C%20me%20interesa%20la%20asesor%C3%ADa%20de%20IA"
+               class="btn btn--whatsapp btn--lg"
+               target="_blank"
+               rel="noopener">
+              Agendar sesión
+            </a>
+            <a href="#paquetes" class="btn btn--outline-light btn--lg">
+              Ver paquetes
+            </a>
+          </div>
+        </div>
+        <div class="ia-hero__visual">
+          <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" class="ia-hero__illustration" aria-hidden="true">
+            <!-- Brain/AI illustration -->
+            <circle cx="200" cy="180" r="100" fill="rgba(68, 207, 203, 0.1)" stroke="#44CFCB" stroke-width="2" />
+            <circle cx="200" cy="180" r="70" fill="rgba(78, 165, 217, 0.1)" stroke="#4EA5D9" stroke-width="1.5" />
+            <!-- Neural network nodes -->
+            <circle cx="200" cy="140" r="8" fill="#44CFCB" class="ia-node ia-node--1" />
+            <circle cx="160" cy="170" r="6" fill="#4EA5D9" class="ia-node ia-node--2" />
+            <circle cx="240" cy="170" r="6" fill="#4EA5D9" class="ia-node ia-node--3" />
+            <circle cx="175" cy="210" r="7" fill="#44CFCB" class="ia-node ia-node--4" />
+            <circle cx="225" cy="210" r="7" fill="#44CFCB" class="ia-node ia-node--5" />
+            <circle cx="200" cy="190" r="10" fill="#122C34" stroke="#44CFCB" stroke-width="2" class="ia-node ia-node--center" />
+            <!-- Connections -->
+            <line x1="200" y1="140" x2="160" y2="170" stroke="#44CFCB" stroke-width="1" opacity="0.5" />
+            <line x1="200" y1="140" x2="240" y2="170" stroke="#44CFCB" stroke-width="1" opacity="0.5" />
+            <line x1="160" y1="170" x2="175" y2="210" stroke="#4EA5D9" stroke-width="1" opacity="0.5" />
+            <line x1="240" y1="170" x2="225" y2="210" stroke="#4EA5D9" stroke-width="1" opacity="0.5" />
+            <line x1="200" y1="190" x2="200" y2="140" stroke="#44CFCB" stroke-width="1.5" opacity="0.7" />
+            <line x1="200" y1="190" x2="160" y2="170" stroke="#44CFCB" stroke-width="1.5" opacity="0.7" />
+            <line x1="200" y1="190" x2="240" y2="170" stroke="#44CFCB" stroke-width="1.5" opacity="0.7" />
+            <line x1="200" y1="190" x2="175" y2="210" stroke="#44CFCB" stroke-width="1.5" opacity="0.7" />
+            <line x1="200" y1="190" x2="225" y2="210" stroke="#44CFCB" stroke-width="1.5" opacity="0.7" />
+            <!-- Chat bubbles -->
+            <rect x="270" y="110" width="90" height="40" rx="12" fill="#44CFCB" opacity="0.15" class="ia-float ia-float--1" />
+            <rect x="275" y="122" width="40" height="4" rx="2" fill="#44CFCB" opacity="0.4" />
+            <rect x="275" y="130" width="60" height="4" rx="2" fill="#44CFCB" opacity="0.3" />
+            <rect x="40" y="200" width="80" height="35" rx="12" fill="#4EA5D9" opacity="0.15" class="ia-float ia-float--2" />
+            <rect x="45" y="210" width="35" height="4" rx="2" fill="#4EA5D9" opacity="0.4" />
+            <rect x="45" y="218" width="55" height="4" rx="2" fill="#4EA5D9" opacity="0.3" />
+            <!-- Sparkles -->
+            <path d="M310 80l4-8 4 8-8 4 8 4-4 8-4-8-8-4z" fill="#44CFCB" opacity="0.6" class="ia-sparkle ia-sparkle--1" />
+            <path d="M80 150l3-6 3 6-6 3 6 3-3 6-3-6-6-3z" fill="#4EA5D9" opacity="0.6" class="ia-sparkle ia-sparkle--2" />
+            <path d="M320 250l3-6 3 6-6 3 6 3-3 6-3-6-6-3z" fill="#44CFCB" opacity="0.5" class="ia-sparkle ia-sparkle--3" />
+            <!-- Bottom text representation -->
+            <rect x="130" y="310" width="140" height="50" rx="16" fill="rgba(68, 207, 203, 0.1)" stroke="#44CFCB" stroke-width="1.5" />
+            <text x="200" y="340" text-anchor="middle" fill="#44CFCB" font-size="14" font-weight="600">IA</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUE ES -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: var(--space-2xl);">
+        <h2>No es solo una moda. Es una herramienta.</h2>
+        <p class="text-muted" style="max-width: 650px; margin: var(--space-sm) auto 0;">
+          La inteligencia artificial ya está cambiando la forma en que trabajamos. No necesitás ser experto
+          en tecnología para aprovecharla.
+        </p>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="card ia-feature">
+          <div class="ia-feature__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#44CFCB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 20h9" /><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+            </svg>
+          </div>
+          <h3>Generá contenido</h3>
+          <p>Textos para redes sociales, correos, propuestas, reportes. La IA te ayuda a escribir más rápido y mejor.</p>
+        </div>
+
+        <div class="card ia-feature">
+          <div class="ia-feature__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4EA5D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+            </svg>
+          </div>
+          <h3>Automatizá tareas</h3>
+          <p>Ahorrá horas en tareas repetitivas. Desde organizar datos hasta responder correos, la IA trabaja por vos.</p>
+        </div>
+
+        <div class="card ia-feature">
+          <div class="ia-feature__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#44CFCB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10" /><line x1="12" y1="20" x2="12" y2="4" /><line x1="6" y1="20" x2="6" y2="14" />
+            </svg>
+          </div>
+          <h3>Analizá datos</h3>
+          <p>Entendé tus números sin ser analista. La IA puede resumir, comparar y encontrar patrones en tu información.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HERRAMIENTAS -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: var(--space-2xl);">
+        <h2>Herramientas que vas a dominar</h2>
+        <p class="text-muted">Te enseñamos las más útiles para tu caso específico</p>
+      </div>
+
+      <div class="ia-tools">
+        <div class="ia-tool">
+          <div class="ia-tool__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+          </div>
+          <h4>ChatGPT</h4>
+          <p>Asistente conversacional para escribir, resumir, analizar y crear contenido.</p>
+        </div>
+
+        <div class="ia-tool">
+          <div class="ia-tool__icon ia-tool__icon--alt">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2" /><polyline points="2 17 12 22 22 17" /><polyline points="2 12 12 17 22 12" />
+            </svg>
+          </div>
+          <h4>Claude</h4>
+          <p>Ideal para análisis largos, documentos complejos y razonamiento detallado.</p>
+        </div>
+
+        <div class="ia-tool">
+          <div class="ia-tool__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3v1m0 16v1m-8-9H3m18 0h-1M5.6 5.6l.7.7m12.4 12.4l-.7-.7M5.6 18.4l.7-.7M18.7 5.6l-.7.7" /><circle cx="12" cy="12" r="4" />
+            </svg>
+          </div>
+          <h4>Gemini</h4>
+          <p>Integrado con Google. Perfecto para buscar información y trabajar con Gmail, Docs y Sheets.</p>
+        </div>
+
+        <div class="ia-tool">
+          <div class="ia-tool__icon ia-tool__icon--alt">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><line x1="3" y1="9" x2="21" y2="9" /><line x1="9" y1="21" x2="9" y2="9" />
+            </svg>
+          </div>
+          <h4>Copilot</h4>
+          <p>Asistente de Microsoft integrado en Word, Excel, PowerPoint y Outlook.</p>
+        </div>
+
+        <div class="ia-tool">
+          <div class="ia-tool__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" />
+            </svg>
+          </div>
+          <h4>Generación de imágenes</h4>
+          <p>Creá imágenes para redes, presentaciones y más con DALL-E, Midjourney o Canva AI.</p>
+        </div>
+
+        <div class="ia-tool">
+          <div class="ia-tool__icon ia-tool__icon--alt">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="4 17 10 11 4 5" /><line x1="12" y1="19" x2="20" y2="19" />
+            </svg>
+          </div>
+          <h4>Automatización</h4>
+          <p>Conectá herramientas con Zapier, Make o flujos de trabajo con IA integrada.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUIEN -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: var(--space-2xl);">
+        <h2 style="color: var(--color-white);">Para quién es este servicio</h2>
+        <p style="color: var(--color-gray-300);">No importa tu nivel técnico. Nos adaptamos a vos.</p>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="ia-audience">
+          <div class="ia-audience__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#44CFCB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
+            </svg>
+          </div>
+          <h3>Profesionales independientes</h3>
+          <p>Abogados, contadores, diseñadores, consultores que quieren ser más productivos con IA.</p>
+        </div>
+
+        <div class="ia-audience">
+          <div class="ia-audience__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4EA5D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <h3>Equipos de PYMEs</h3>
+          <p>Empresas pequeñas que quieren que su equipo use IA para mejorar procesos y ahorrar tiempo.</p>
+        </div>
+
+        <div class="ia-audience">
+          <div class="ia-audience__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#44CFCB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+            </svg>
+          </div>
+          <h3>Emprendedores</h3>
+          <p>Dueños de negocio que hacen de todo y necesitan una mano extra (artificial) para escalar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAQUETES -->
+  <section class="section" id="paquetes">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: var(--space-2xl);">
+        <h2>Paquetes de asesoría de IA</h2>
+        <p class="text-muted">Elegí el que mejor se adapte a tu necesidad</p>
+      </div>
+
+      <div class="grid grid--2">
+        <div class="card svc-card svc-card--clickable" data-service="Sesión de IA - 1 hora de aprendizaje virtual - ₡11,250" role="button" tabindex="0">
+          <span class="badge badge--sky">Individual</span>
+          <h3 class="svc-card__title">Sesión básica</h3>
+          <p class="svc-card__subtitle">Virtual &middot; 1 hora</p>
+          <p class="svc-card__price"><span class="price-original">&#8353;15,000</span> <span class="price-launch">&#8353;11,250</span><span class="launch-tag">-25%</span></p>
+          <ul class="svc-card__list">
+            <li>1 hora de sesión virtual en vivo</li>
+            <li>Aprendizaje acompañado y práctico</li>
+            <li>Personalizado a tu trabajo o necesidad</li>
+            <li>Grabación de la sesión incluida</li>
+          </ul>
+          <p class="svc-card__detail">Ideal para una introducción o resolver una duda puntual</p>
+          <span class="svc-card__cta">Agendar sesión &rarr;</span>
+        </div>
+
+        <div class="card svc-card svc-card--clickable svc-card--featured" data-service="Bundle de IA - 6 horas de tutoría virtual - ₡56,250" role="button" tabindex="0">
+          <span class="badge badge--cyan">Mejor valor</span>
+          <h3 class="svc-card__title">Bundle 6 sesiones</h3>
+          <p class="svc-card__subtitle">Virtual &middot; Usálas a tu ritmo</p>
+          <p class="svc-card__price"><span class="price-original">&#8353;75,000</span> <span class="price-launch">&#8353;56,250</span><span class="launch-tag">-25%</span></p>
+          <ul class="svc-card__list">
+            <li>6 horas de tutoría virtual</li>
+            <li>Plan de aprendizaje personalizado</li>
+            <li>Soporte por chat entre sesiones</li>
+            <li>Recursos y guías incluidas</li>
+            <li>Seguimiento de tu progreso</li>
+          </ul>
+          <p class="svc-card__save">Ahorro de &#8353;15,000 vs individual</p>
+          <span class="svc-card__cta">Empezar tutoría &rarr;</span>
+        </div>
+
+        <div class="card svc-card svc-card--clickable" data-service="Capacitación grupal de IA para empresa - ₡7,500/persona (mínimo 4 personas)" role="button" tabindex="0">
+          <span class="badge badge--sky">Empresas</span>
+          <h3 class="svc-card__title">Capacitación grupal</h3>
+          <p class="svc-card__subtitle">Virtual o presencial &middot; 2 horas</p>
+          <p class="svc-card__price"><span class="price-original">&#8353;10,000</span> <span class="price-launch">&#8353;7,500<span style="font-size: 0.75em; font-weight: 500;">/persona</span></span><span class="launch-tag">-25%</span></p>
+          <ul class="svc-card__list">
+            <li>Sesión de 2 horas para equipos de trabajo</li>
+            <li>Mínimo 4 participantes</li>
+            <li>Virtual o presencial según necesidad</li>
+            <li>Material de apoyo para cada participante</li>
+            <li>Certificado de participación</li>
+          </ul>
+          <p class="svc-card__detail">Ejemplo: 10 personas = &#8353;75,000 total</p>
+          <span class="svc-card__cta">Solicitar cotización &rarr;</span>
+        </div>
+
+        <div class="card svc-card svc-card--clickable svc-card--featured" data-service="Taller PYME de IA - 3 horas, sin límite de personas - ₡37,500" role="button" tabindex="0">
+          <span class="badge badge--cyan">PYMEs</span>
+          <h3 class="svc-card__title">Taller PYME de IA</h3>
+          <p class="svc-card__subtitle">Virtual o presencial &middot; 3 horas</p>
+          <p class="svc-card__price"><span class="price-original">&#8353;50,000</span> <span class="price-launch">&#8353;37,500</span><span class="launch-tag">-25%</span></p>
+          <ul class="svc-card__list">
+            <li>Taller práctico de 3 horas</li>
+            <li>Sin límite de participantes</li>
+            <li>Virtual o presencial según necesidad</li>
+            <li>Material de apoyo para cada participante</li>
+            <li>Certificado de participación</li>
+            <li>Enfocado en las necesidades de tu negocio</li>
+          </ul>
+          <p class="svc-card__save">Precio fijo, invitá a todo tu equipo</p>
+          <span class="svc-card__cta">Agendar taller &rarr;</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: var(--space-2xl);">
+        <h2>Cómo funciona</h2>
+        <p class="text-muted">Un proceso simple, sin complicaciones</p>
+      </div>
+
+      <div class="ia-process">
+        <div class="ia-process__step">
+          <div class="ia-process__number">1</div>
+          <h3>Contanos tu situación</h3>
+          <p>Nos escribís por WhatsApp o formulario. Te preguntamos en qué trabajás y qué querés lograr con IA.</p>
+        </div>
+        <div class="ia-process__connector"></div>
+        <div class="ia-process__step">
+          <div class="ia-process__number">2</div>
+          <h3>Armamos tu plan</h3>
+          <p>Preparamos una sesión personalizada con las herramientas y técnicas que más te van a servir.</p>
+        </div>
+        <div class="ia-process__connector"></div>
+        <div class="ia-process__step">
+          <div class="ia-process__number">3</div>
+          <h3>Sesión en vivo</h3>
+          <p>Nos conectamos por videollamada. Aprendés haciendo, no viendo. Practicás con tus propios casos.</p>
+        </div>
+        <div class="ia-process__connector"></div>
+        <div class="ia-process__step">
+          <div class="ia-process__number">4</div>
+          <h3>Seguimiento</h3>
+          <p>Te dejamos guías y recursos. Con el bundle, tenés soporte por chat para resolver dudas después.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: var(--space-2xl);">
+        <h2>Preguntas frecuentes</h2>
+      </div>
+
+      <div class="ia-faq">
+        <details class="ia-faq__item">
+          <summary class="ia-faq__question">No sé nada de IA, ¿puedo tomar una sesión?</summary>
+          <p class="ia-faq__answer">Sí, precisamente para eso es este servicio. Empezamos desde cero y avanzamos a tu ritmo. No necesitás conocimientos previos de tecnología.</p>
+        </details>
+
+        <details class="ia-faq__item">
+          <summary class="ia-faq__question">¿Qué necesito para tomar la sesión?</summary>
+          <p class="ia-faq__answer">Solo una computadora con internet y ganas de aprender. Nosotros te guiamos para crear las cuentas en las herramientas que vamos a usar.</p>
+        </details>
+
+        <details class="ia-faq__item">
+          <summary class="ia-faq__question">¿Las sesiones son presenciales o virtuales?</summary>
+          <p class="ia-faq__answer">Las sesiones individuales y el bundle son 100% virtuales por videollamada. La capacitación grupal y el taller PYME pueden ser virtuales o presenciales según la necesidad de la empresa.</p>
+        </details>
+
+        <details class="ia-faq__item">
+          <summary class="ia-faq__question">¿La IA no me va a quitar el trabajo?</summary>
+          <p class="ia-faq__answer">La IA no reemplaza personas, reemplaza tareas. Quien sepa usar IA va a ser más productivo y valioso. Mejor aprender a usarla que ignorarla.</p>
+        </details>
+
+        <details class="ia-faq__item">
+          <summary class="ia-faq__question">¿Cuánto dura el bundle de 6 sesiones?</summary>
+          <p class="ia-faq__answer">Las usás a tu ritmo. Podés tomar una por semana o una por mes. No tienen fecha de expiración. Además, incluye soporte por chat entre sesiones.</p>
+        </details>
+
+        <details class="ia-faq__item">
+          <summary class="ia-faq__question">¿Puedo usar la sesión para algo específico de mi trabajo?</summary>
+          <p class="ia-faq__answer">Absolutamente. De hecho, eso es lo ideal. Si sos abogado, trabajamos con contratos. Si sos contador, con hojas de cálculo. Si tenés una tienda, con contenido para redes. La sesión se adapta a vos.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <ContactModal />
+
+  <!-- CTA -->
+  <section class="section section--dark text-center">
+    <div class="container">
+      <h2 style="color: var(--color-white);">¿Listo para empezar?</h2>
+      <p style="color: var(--color-gray-300); max-width: 500px; margin: var(--space-md) auto var(--space-xl);">
+        Contactanos para agendar tu primera sesión. Te respondemos en menos de 2 horas.
+      </p>
+      <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
+        <a href="https://wa.me/50600000000?text=Hola%20Teknika%20CR%2C%20quiero%20agendar%20una%20asesor%C3%ADa%20de%20IA"
+           class="btn btn--whatsapp btn--lg"
+           target="_blank"
+           rel="noopener">
+          Agendar por WhatsApp
+        </a>
+        <a href="/contacto" class="btn btn--outline-light btn--lg">
+          Formulario de contacto
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  /* ============================================
+     Hero IA
+     ============================================ */
+  .ia-hero {
+    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-navy) 50%, #1a3a5c 100%);
+    padding: var(--space-3xl) 0;
+    overflow: hidden;
+  }
+
+  .ia-hero__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+  }
+
+  .ia-hero__content {
+    color: var(--color-white);
+  }
+
+  .ia-hero__content h1 {
+    color: var(--color-white);
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin: var(--space-md) 0;
+  }
+
+  .ia-hero__accent {
+    color: var(--color-cyan);
+  }
+
+  .ia-hero__subtitle {
+    color: var(--color-gray-300);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-bottom: var(--space-xl);
+  }
+
+  .ia-hero__actions {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .ia-hero__illustration {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .btn--outline-light {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: var(--color-white);
+    background: transparent;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all var(--transition);
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn--outline-light:hover {
+    border-color: var(--color-cyan);
+    color: var(--color-cyan);
+    background: rgba(68, 207, 203, 0.1);
+  }
+
+  /* ============================================
+     Features
+     ============================================ */
+  .ia-feature {
+    padding: var(--space-xl);
+    text-align: center;
+  }
+
+  .ia-feature__icon {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-lg);
+    background: rgba(68, 207, 203, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-md);
+  }
+
+  .ia-feature h3 {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .ia-feature p {
+    color: var(--color-text-muted);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  /* ============================================
+     Tools grid
+     ============================================ */
+  .ia-tools {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .ia-tool {
+    text-align: center;
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-gray-200);
+    transition: all var(--transition);
+  }
+
+  .ia-tool:hover {
+    border-color: var(--color-cyan);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .ia-tool__icon {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-md);
+    background: rgba(68, 207, 203, 0.1);
+    color: var(--color-cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-md);
+  }
+
+  .ia-tool__icon--alt {
+    background: rgba(78, 165, 217, 0.1);
+    color: var(--color-sky);
+  }
+
+  .ia-tool h4 {
+    font-size: 1rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .ia-tool p {
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* ============================================
+     Audience
+     ============================================ */
+  .ia-audience {
+    text-align: center;
+    padding: var(--space-xl);
+  }
+
+  .ia-audience__icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(68, 207, 203, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-md);
+  }
+
+  .ia-audience h3 {
+    color: var(--color-white);
+    font-size: 1.125rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .ia-audience p {
+    color: var(--color-gray-300);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  /* ============================================
+     Service cards (reusing from servicios)
+     ============================================ */
+  .svc-card {
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .svc-card__title {
+    font-size: 1.25rem;
+    margin-bottom: 0;
+    color: var(--color-dark);
+  }
+
+  .svc-card__subtitle {
+    font-size: 0.8125rem;
+    color: var(--color-gray-500);
+    margin: 2px 0 var(--space-sm);
+    font-weight: 500;
+  }
+
+  .svc-card__price {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--color-royal);
+    margin-bottom: var(--space-sm);
+  }
+
+  .svc-card__list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: var(--space-md);
+    flex-grow: 1;
+  }
+
+  .svc-card__list li {
+    padding: 3px 0;
+    font-size: 0.9375rem;
+    color: var(--color-gray-600);
+  }
+
+  .svc-card__list li::before {
+    content: '\2713  ';
+    color: var(--color-cyan);
+    font-weight: 700;
+  }
+
+  .svc-card__save {
+    font-size: 0.8125rem;
+    color: var(--color-cyan);
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+  }
+
+  .svc-card__detail {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin-bottom: var(--space-sm);
+  }
+
+  .svc-card--clickable {
+    cursor: pointer;
+    transition: all 200ms ease;
+    position: relative;
+    padding-bottom: calc(var(--space-xl) + 2rem);
+  }
+
+  .svc-card--clickable:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-sky);
+  }
+
+  .svc-card--clickable:focus-visible {
+    outline: 2px solid var(--color-sky);
+    outline-offset: 2px;
+  }
+
+  .svc-card__cta {
+    position: absolute;
+    bottom: var(--space-lg);
+    left: var(--space-xl);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-royal);
+    transition: all var(--transition);
+  }
+
+  .svc-card--clickable:hover .svc-card__cta {
+    color: var(--color-sky);
+    transform: translateX(4px);
+  }
+
+  .svc-card--featured {
+    border: 2px solid var(--color-cyan);
+  }
+
+  .svc-card--featured:hover {
+    border-color: var(--color-cyan);
+    box-shadow: 0 10px 30px rgba(68, 207, 203, 0.2);
+  }
+
+  .price-original {
+    text-decoration: line-through;
+    color: var(--color-gray-400);
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .price-launch {
+    color: var(--color-royal);
+    font-weight: 800;
+  }
+
+  .launch-tag {
+    display: inline-block;
+    background: var(--color-cyan);
+    color: var(--color-white);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  /* ============================================
+     Process
+     ============================================ */
+  .ia-process {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .ia-process__step {
+    flex: 1;
+    text-align: center;
+    padding: 0 var(--space-md);
+  }
+
+  .ia-process__number {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-cyan);
+    color: var(--color-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.25rem;
+    margin: 0 auto var(--space-md);
+  }
+
+  .ia-process__step h3 {
+    font-size: 1rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .ia-process__step p {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  .ia-process__connector {
+    width: 40px;
+    height: 2px;
+    background: var(--color-gray-200);
+    margin-top: 24px;
+    flex-shrink: 0;
+  }
+
+  /* ============================================
+     FAQ
+     ============================================ */
+  .ia-faq {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .ia-faq__item {
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-md);
+    overflow: hidden;
+    transition: all var(--transition);
+  }
+
+  .ia-faq__item[open] {
+    border-color: var(--color-cyan);
+    box-shadow: 0 2px 12px rgba(68, 207, 203, 0.1);
+  }
+
+  .ia-faq__question {
+    padding: var(--space-lg);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--color-dark);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .ia-faq__question::-webkit-details-marker {
+    display: none;
+  }
+
+  .ia-faq__question::after {
+    content: '+';
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--color-gray-400);
+    transition: transform var(--transition);
+    flex-shrink: 0;
+    margin-left: var(--space-md);
+  }
+
+  .ia-faq__item[open] .ia-faq__question::after {
+    transform: rotate(45deg);
+    color: var(--color-cyan);
+  }
+
+  .ia-faq__answer {
+    padding: 0 var(--space-lg) var(--space-lg);
+    color: var(--color-text-muted);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* ============================================
+     Hero Animations
+     ============================================ */
+  @keyframes ia-pulse {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+  }
+
+  @keyframes ia-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  @keyframes ia-sparkle {
+    0%, 100% { opacity: 0.3; transform: scale(0.8); }
+    50% { opacity: 0.8; transform: scale(1.2); }
+  }
+
+  .ia-node--1 { animation: ia-pulse 3s ease-in-out infinite; }
+  .ia-node--2 { animation: ia-pulse 3s ease-in-out 0.5s infinite; }
+  .ia-node--3 { animation: ia-pulse 3s ease-in-out 1s infinite; }
+  .ia-node--4 { animation: ia-pulse 3s ease-in-out 1.5s infinite; }
+  .ia-node--5 { animation: ia-pulse 3s ease-in-out 2s infinite; }
+  .ia-node--center { animation: ia-pulse 2s ease-in-out infinite; }
+
+  .ia-float--1 { animation: ia-float 4s ease-in-out infinite; }
+  .ia-float--2 { animation: ia-float 4s ease-in-out 1s infinite; }
+
+  .ia-sparkle--1 { animation: ia-sparkle 2.5s ease-in-out infinite; }
+  .ia-sparkle--2 { animation: ia-sparkle 2.5s ease-in-out 0.8s infinite; }
+  .ia-sparkle--3 { animation: ia-sparkle 2.5s ease-in-out 1.6s infinite; }
+
+  /* ============================================
+     Grid 2 columns
+     ============================================ */
+  .grid--2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+
+  /* ============================================
+     Responsive
+     ============================================ */
+  @media (max-width: 768px) {
+    .ia-hero__grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .ia-hero__content h1 {
+      font-size: 2rem;
+    }
+
+    .ia-hero__actions {
+      justify-content: center;
+    }
+
+    .ia-hero__visual {
+      display: none;
+    }
+
+    .ia-tools {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ia-process {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .ia-process__connector {
+      width: 2px;
+      height: 30px;
+      margin: 0;
+    }
+
+    .grid--2 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .ia-tools {
+      grid-template-columns: 1fr;
+    }
+
+    .ia-hero__content h1 {
+      font-size: 1.75rem;
+    }
+  }
+</style>
