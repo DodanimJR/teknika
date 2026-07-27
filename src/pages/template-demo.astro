@@ -1,0 +1,795 @@
+---
+/**
+ * template-demo.astro
+ * ==================
+ * Landing page template para clientes PYME.
+ *
+ * COMO PERSONALIZAR:
+ * Solo edita el archivo src/templates/client-config.ts
+ * Todos los textos, colores, fuentes y logos se leen de ahi.
+ *
+ * SECCIONES:
+ * 1. Hero con CTA
+ * 2. Servicios/Productos
+ * 3. Sobre Nosotros
+ * 4. Galeria de fotos
+ * 5. Contacto/Ubicacion
+ * 6. Footer (incluido en TemplateLayout)
+ */
+import TemplateLayout from "../templates/TemplateLayout.astro";
+import ShopIllustration from "../templates/ShopIllustration.astro";
+import { clientConfig } from "../templates/client-config";
+
+const config = clientConfig;
+
+// Mapa de iconos SVG para servicios
+const iconMap: Record<string, string> = {
+  briefcase: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>`,
+  wrench: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
+  star: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
+  shield: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+  heart: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`,
+  clock: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+  truck: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>`,
+  camera: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>`,
+  coffee: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>`,
+  scissors: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>`,
+};
+---
+
+<TemplateLayout>
+
+  <!-- ========== SECCION 1: HERO ========== -->
+  <section class="t-hero" id="hero">
+    {config.hero.backgroundImage ? (
+      <div class="t-hero__bg" style={`background-image: url('${config.hero.backgroundImage}')`}></div>
+    ) : (
+      <div class="t-hero__bg t-hero__bg--gradient"></div>
+    )}
+    <div class="t-hero__overlay"></div>
+    <div class="t-container t-hero__grid">
+      <div class="t-hero__content">
+        {config.hero.badge && (
+          <span class="t-badge">{config.hero.badge}</span>
+        )}
+        <h1 class="t-hero__title">{config.hero.title}</h1>
+        <p class="t-hero__subtitle">{config.hero.subtitle}</p>
+        <div class="t-hero__actions">
+          <a href={config.hero.ctaPrimary.href} class="t-btn t-btn--hero-primary t-btn--lg">
+            {config.hero.ctaPrimary.label}
+          </a>
+          <a href={config.hero.ctaSecondary.href} class="t-btn t-btn--hero-outline t-btn--lg">
+            {config.hero.ctaSecondary.label}
+          </a>
+        </div>
+      </div>
+      <div class="t-hero__illustration">
+        <ShopIllustration />
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECCION 2: SERVICIOS ========== -->
+  <section class="t-section" id="servicios">
+    <div class="t-container">
+      <div class="t-section__header">
+        {config.services.badge && (
+          <span class="t-badge t-badge--primary">{config.services.badge}</span>
+        )}
+        <h2>{config.services.title}</h2>
+        <p class="t-section__subtitle">{config.services.subtitle}</p>
+      </div>
+      <div class="t-grid t-grid--3">
+        {config.services.items.map((service) => (
+          <div class="t-card">
+            <div class="t-card__icon" set:html={iconMap[service.icon] || iconMap.star} />
+            <h3 class="t-card__title">{service.title}</h3>
+            <p class="t-card__text">{service.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECCION 3: SOBRE NOSOTROS ========== -->
+  <section class="t-section t-section--alt" id="nosotros">
+    <div class="t-container">
+      <div class="t-section__header">
+        {config.about.badge && (
+          <span class="t-badge t-badge--primary">{config.about.badge}</span>
+        )}
+        <h2>{config.about.title}</h2>
+      </div>
+      <div class="t-about__grid">
+        <div class="t-about__text">
+          {config.about.paragraphs.map((p) => (
+            <p>{p}</p>
+          ))}
+        </div>
+        {config.about.image ? (
+          <div class="t-about__image">
+            <img src={config.about.image} alt={`Sobre ${config.businessName}`} />
+          </div>
+        ) : (
+          <div class="t-about__image t-about__image--placeholder">
+            <div class="t-about__placeholder">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>Foto del negocio</span>
+            </div>
+          </div>
+        )}
+      </div>
+      <!-- Valores -->
+      {config.about.values.length > 0 && (
+        <div class="t-values">
+          {config.about.values.map((value) => (
+            <div class="t-value">
+              <h3 class="t-value__title">{value.title}</h3>
+              <p class="t-value__text">{value.description}</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- ========== SECCION 4: GALERIA ========== -->
+  <section class="t-section" id="galeria">
+    <div class="t-container">
+      <div class="t-section__header">
+        {config.gallery.badge && (
+          <span class="t-badge t-badge--primary">{config.gallery.badge}</span>
+        )}
+        <h2>{config.gallery.title}</h2>
+        <p class="t-section__subtitle">{config.gallery.subtitle}</p>
+      </div>
+      <div class="t-gallery">
+        {config.gallery.images.map((image) => (
+          <div class="t-gallery__item">
+            {image.src ? (
+              <img src={image.src} alt={image.alt} loading="lazy" />
+            ) : (
+              <div class="t-gallery__placeholder">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+                <span>{image.alt}</span>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECCION 5: CONTACTO ========== -->
+  <section class="t-section t-section--contact" id="contacto">
+    <div class="t-container">
+      <div class="t-section__header">
+        {config.contact.badge && (
+          <span class="t-badge">{config.contact.badge}</span>
+        )}
+        <h2>{config.contact.title}</h2>
+        <p class="t-section__subtitle">{config.contact.subtitle}</p>
+      </div>
+      <div class="t-contact__grid">
+        <!-- Info de contacto -->
+        <div class="t-contact__info">
+          {config.contact.phone && (
+            <div class="t-contact__item">
+              <div class="t-contact__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <h4>Teléfono</h4>
+                <a href={`tel:${config.contact.phone.replace(/\s/g, "")}`}>{config.contact.phone}</a>
+              </div>
+            </div>
+          )}
+
+          {config.contact.whatsapp && (
+            <div class="t-contact__item">
+              <div class="t-contact__icon t-contact__icon--whatsapp">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </div>
+              <div>
+                <h4>WhatsApp</h4>
+                <a href={config.contact.whatsapp} target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+              </div>
+            </div>
+          )}
+
+          {config.contact.email && (
+            <div class="t-contact__item">
+              <div class="t-contact__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <h4>Email</h4>
+                <a href={`mailto:${config.contact.email}`}>{config.contact.email}</a>
+              </div>
+            </div>
+          )}
+
+          {config.contact.address && (
+            <div class="t-contact__item">
+              <div class="t-contact__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <h4>Ubicación</h4>
+                <p>{config.contact.address}</p>
+              </div>
+            </div>
+          )}
+
+          {config.contact.hours && (
+            <div class="t-contact__item">
+              <div class="t-contact__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <h4>Horario</h4>
+                <p>{config.contact.hours}</p>
+              </div>
+            </div>
+          )}
+        </div>
+
+        <!-- Formulario de contacto -->
+        <form class="t-contact__form" action={config.contact.formAction} method="POST">
+          <div class="t-form__group">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required placeholder="Tu nombre completo" />
+          </div>
+          <div class="t-form__row">
+            <div class="t-form__group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="tu@email.com" />
+            </div>
+            <div class="t-form__group">
+              <label for="phone">Teléfono</label>
+              <input type="tel" id="phone" name="phone" placeholder="+506 0000-0000" />
+            </div>
+          </div>
+          <div class="t-form__group">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" rows="4" required placeholder="Cuéntanos en qué podemos ayudarte..."></textarea>
+          </div>
+          <button type="submit" class="t-btn t-btn--hero-primary t-btn--lg t-form__submit">
+            Enviar Mensaje
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</TemplateLayout>
+
+<style>
+  /* ============================================
+     HERO
+     ============================================ */
+  .t-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .t-hero__bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+  }
+
+  .t-hero__bg--gradient {
+    background: linear-gradient(135deg, var(--t-dark) 0%, var(--t-dark-secondary) 50%, var(--t-primary) 100%);
+  }
+
+  .t-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 1;
+  }
+
+  .t-hero__bg--gradient + .t-hero__overlay {
+    background: none;
+  }
+
+  .t-hero__grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3rem;
+    align-items: center;
+    padding: 5rem 1.5rem;
+  }
+
+  .t-hero__content {
+    text-align: left;
+  }
+
+  .t-hero__title {
+    color: var(--t-white);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .t-hero__subtitle {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+
+  .t-hero__actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .t-hero__illustration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Botones del Hero: estilos definidos en TemplateLayout (global) */
+
+  /* ============================================
+     BADGE
+     ============================================ */
+  .t-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--t-white);
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .t-badge--primary {
+    background-color: var(--t-border);
+    color: var(--t-primary);
+  }
+
+  /* ============================================
+     SECTIONS
+     ============================================ */
+  .t-section {
+    padding: 6rem 0;
+  }
+
+  .t-section--alt {
+    background-color: var(--t-bg-alt);
+  }
+
+  .t-section--dark {
+    background-color: var(--t-dark);
+    color: var(--t-white);
+  }
+
+  .t-section--dark h2,
+  .t-section--dark h3,
+  .t-section--dark h4 {
+    color: var(--t-white);
+  }
+
+  .t-section--dark p {
+    color: var(--t-border);
+  }
+
+  .t-section--dark a {
+    color: var(--t-accent);
+  }
+
+  /* Contacto: fondo primary para distinguirse del footer */
+  .t-section--contact {
+    background: linear-gradient(160deg, var(--t-primary) 0%, var(--t-primary-hover) 100%);
+    color: var(--t-white);
+  }
+
+  .t-section--contact h2,
+  .t-section--contact h3,
+  .t-section--contact h4 {
+    color: var(--t-white);
+  }
+
+  .t-section--contact p {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .t-section--contact a {
+    color: var(--t-white);
+  }
+  .t-section--contact a:hover {
+    color: var(--t-bg);
+  }
+
+  .t-section--contact .t-section__subtitle {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .t-section--contact .t-badge {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--t-white);
+  }
+
+  .t-section__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .t-section__subtitle {
+    color: var(--t-text-muted);
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin: 0.75rem auto 0;
+  }
+
+  .t-section--dark .t-section__subtitle {
+    color: var(--t-border);
+  }
+
+  /* ============================================
+     GRID
+     ============================================ */
+  .t-grid {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .t-grid--3 {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  /* ============================================
+     CARDS (Servicios)
+     ============================================ */
+  .t-card {
+    background: var(--t-white);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+    border: 1px solid var(--t-border);
+    transition: all 150ms ease;
+  }
+
+  .t-card:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transform: translateY(-4px);
+  }
+
+  .t-card__icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--t-bg-alt);
+    border-radius: 0.75rem;
+    margin-bottom: 1.25rem;
+    color: var(--t-primary);
+  }
+
+  .t-card__title {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+    color: var(--t-text);
+  }
+
+  .t-card__text {
+    color: var(--t-text-muted);
+    font-size: 0.9375rem;
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  /* ============================================
+     ABOUT (Sobre Nosotros)
+     ============================================ */
+  .t-about__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+
+  .t-about__text p {
+    color: var(--t-text-muted);
+    font-size: 1.0625rem;
+    line-height: 1.8;
+  }
+
+  .t-about__image img {
+    border-radius: 1rem;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+  }
+
+  .t-about__image--placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .t-about__placeholder {
+    width: 100%;
+    height: 400px;
+    background: var(--t-border);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--t-text-muted);
+  }
+
+  .t-about__placeholder span {
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  /* Values */
+  .t-values {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .t-value {
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .t-value__title {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+    color: var(--t-primary);
+  }
+
+  .t-value__text {
+    color: var(--t-text-muted);
+    font-size: 0.9375rem;
+    margin: 0;
+  }
+
+  /* ============================================
+     GALLERY (Galeria)
+     ============================================ */
+  .t-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .t-gallery__item {
+    border-radius: 0.75rem;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+  }
+
+  .t-gallery__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 300ms ease;
+  }
+
+  .t-gallery__item:hover img {
+    transform: scale(1.05);
+  }
+
+  .t-gallery__placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--t-bg-alt);
+    border: 2px dashed var(--t-border);
+    border-radius: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    color: var(--t-text-muted);
+  }
+
+  .t-gallery__placeholder span {
+    font-size: 0.8125rem;
+    font-weight: 500;
+  }
+
+  /* ============================================
+     CONTACT (Contacto)
+     ============================================ */
+  .t-contact__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .t-contact__info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .t-contact__item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .t-contact__icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 0.75rem;
+    color: var(--t-white);
+  }
+
+  .t-contact__icon--whatsapp {
+    background: rgba(37, 211, 102, 0.2);
+    color: #25D366;
+  }
+
+  .t-contact__item h4 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .t-contact__item p {
+    font-size: 0.9375rem;
+    margin: 0;
+  }
+
+  .t-contact__item a {
+    font-size: 0.9375rem;
+  }
+
+  /* Form */
+  .t-contact__form {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    padding: 2rem;
+    backdrop-filter: blur(4px);
+  }
+
+  .t-form__group {
+    margin-bottom: 1.25rem;
+  }
+
+  .t-form__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .t-form__group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--t-white);
+  }
+
+  .t-form__group input,
+  .t-form__group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 0.5rem;
+    color: var(--t-white);
+    font-family: inherit;
+    font-size: 0.9375rem;
+    transition: all 150ms ease;
+  }
+
+  .t-form__group input::placeholder,
+  .t-form__group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+  }
+
+  .t-form__group input:focus,
+  .t-form__group textarea:focus {
+    outline: none;
+    border-color: var(--t-accent);
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .t-form__submit {
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  /* ============================================
+     RESPONSIVE
+     ============================================ */
+  @media (max-width: 768px) {
+    .t-hero {
+      min-height: auto;
+    }
+
+    .t-hero__grid {
+      grid-template-columns: 1fr;
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+
+    .t-hero__content {
+      text-align: center;
+    }
+
+    .t-hero__actions {
+      justify-content: center;
+    }
+
+    .t-hero__illustration {
+      order: -1;
+    }
+
+    .t-section {
+      padding: 4rem 0;
+    }
+
+    .t-about__grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .t-contact__grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .t-form__row {
+      grid-template-columns: 1fr;
+    }
+
+    .t-gallery {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+  }
+
+  @media (max-width: 480px) {
+    .t-hero__actions {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .t-hero__actions .t-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
