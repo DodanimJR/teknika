@@ -62,32 +62,158 @@ const fullTitle = title === 'Inicio'
       />
     </noscript>
 
-    <!-- Schema.org LocalBusiness -->
+    <!-- Schema.org LocalBusiness + OfferCatalog -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Teknika CR",
-      "description": "Soporte técnico de computadoras, asesoría de compra de equipo informático e instalación de software en Costa Rica.",
+      "description": "Soporte técnico de computadoras, asesoría de compra de equipo informático, formateo, instalación de software, asesoría de inteligencia artificial y desarrollo de sitios web para PYMEs en Costa Rica.",
       "url": siteUrl,
       "telephone": "+506-7195-1856",
-      "areaServed": {
-        "@type": "Place",
-        "name": "Gran Área Metropolitana, Costa Rica"
+      "email": "info@teknika.co.cr",
+      "image": siteUrl + "/img/logo-square-dark.png",
+      "logo": siteUrl + "/img/logo-icon.png",
+      "founder": {
+        "@type": "Person",
+        "name": "Patrick Dodanim Castillo Flores",
+        "jobTitle": "Ingeniero en Sistemas"
       },
-      "serviceType": [
-        "Soporte técnico de computadoras",
-        "Asesoría de compra de equipo informático",
-        "Instalación de software y formateo",
-        "Consultoría informática"
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Alajuela",
+        "addressRegion": "Alajuela",
+        "addressCountry": "CR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 10.0162,
+        "longitude": -84.2116
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Alajuela" },
+        { "@type": "City", "name": "San José" },
+        { "@type": "City", "name": "Heredia" },
+        { "@type": "City", "name": "Cartago" },
+        { "@type": "Place", "name": "Gran Área Metropolitana, Costa Rica" }
       ],
       "priceRange": "$$",
+      "currenciesAccepted": "CRC",
+      "paymentAccepted": "SINPE Móvil, Transferencia bancaria, Efectivo",
       "availableLanguage": ["es", "en"],
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
         "opens": "09:00",
         "closes": "17:00"
+      },
+      "sameAs": [
+        "https://www.instagram.com/teknikacr/",
+        "https://www.facebook.com/profile.php?id=61591716943373",
+        "https://www.tiktok.com/@teknikacr"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Teknika CR",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "Diagnóstico y reparación",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diagnóstico básico (software)", "description": "Revisión completa del software, detección de virus, errores y problemas de rendimiento" }, "price": "6000", "priceCurrency": "CRC" },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diagnóstico avanzado (hardware)", "description": "Revisión física del equipo, pruebas de componentes, identificación de fallas de hardware" }, "price": "11250", "priceCurrency": "CRC" }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Formateo e instalación",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Formateo + Windows + Office", "description": "Formateo limpio, instalación de Windows, drivers y Microsoft Office" }, "price": "11250", "priceCurrency": "CRC" },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Paquete completo de formateo", "description": "Backup de datos, formateo, Windows, Office, antivirus y limpieza completa" }, "price": "22500", "priceCurrency": "CRC" }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Limpieza y mantenimiento",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Limpieza interna + pasta térmica", "description": "Limpieza interna de laptop o desktop con cambio de pasta térmica" }, "price": "9000", "priceCurrency": "CRC" },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cambio de HDD a SSD", "description": "Reemplazo de disco duro mecánico por SSD con clonación de datos sin perder archivos" }, "price": "7500", "priceCurrency": "CRC" }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Asesoría de inteligencia artificial",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sesión individual de IA (1 hora)", "description": "Sesión personalizada virtual para aprender a usar ChatGPT, Claude, Gemini y otras herramientas de IA" }, "price": "11250", "priceCurrency": "CRC" },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bundle 6 sesiones de IA", "description": "6 horas de tutoría virtual de IA con plan de aprendizaje personalizado y soporte por chat" }, "price": "56250", "priceCurrency": "CRC" },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Taller PYME de IA", "description": "Taller práctico de 3 horas de inteligencia artificial para equipos de trabajo, sin límite de participantes" }, "price": "37500", "priceCurrency": "CRC" }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Desarrollo web para PYMEs",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Landing page profesional", "description": "Sitio web de 1 página con dominio propio, email profesional, hosting gratuito, SEO y optimización para IA" }, "price": "90000", "priceCurrency": "CRC" },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sitio web completo", "description": "Sitio web de 3-5 páginas con blog, dominio, email, hosting gratuito, SEO y optimización para IA" }, "price": "187500", "priceCurrency": "CRC" }
+            ]
+          }
+        ]
       }
+    })} />
+
+    <!-- Schema.org FAQPage -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta reparar una laptop en Costa Rica?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En Teknika CR, el diagnóstico básico cuesta ₡6,000 y el avanzado ₡11,250. El formateo completo con backup, Windows, Office y antivirus cuesta ₡22,500. La limpieza interna con cambio de pasta térmica cuesta ₡9,000. Todos los precios incluyen descuento de lanzamiento del 25%. El diagnóstico se descuenta del total si se procede con la reparación."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Dónde puedo reparar mi computadora en Alajuela, Costa Rica?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Teknika CR está ubicado en Alajuela Centro y da servicio a todo el Gran Área Metropolitana (GAM) de Costa Rica. Recibimos equipos de lunes a viernes de 9am a 5pm. También ofrecemos soporte remoto a todo el país. WhatsApp: 7195-1856."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta un sitio web en Costa Rica?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En Teknika CR, una landing page profesional cuesta desde ₡90,000 y un sitio web completo de 3-5 páginas desde ₡187,500. Incluye dominio propio (.co.cr o .com), email profesional, hosting gratuito con Cloudflare Pages, SEO y optimización para inteligencia artificial. Entrega en 1-2 semanas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta cambiar el disco duro a SSD?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El cambio de HDD a SSD con clonación de datos (sin perder archivos) cuesta ₡7,500 más el costo del SSD. Es la mejor inversión para una laptop lenta: el encendido pasa de 3-5 minutos a 15-25 segundos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Dan clases de inteligencia artificial en Costa Rica?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, Teknika CR ofrece sesiones personalizadas de asesoría de inteligencia artificial desde ₡11,250 por hora. Enseñamos a usar ChatGPT, Claude, Gemini, Copilot y más. Las sesiones son virtuales, personalizadas al trabajo o negocio del cliente, sin jerga técnica. También ofrecemos talleres para equipos de empresas desde ₡37,500."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Ofrecen soporte técnico remoto en Costa Rica?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, damos soporte remoto a todo Costa Rica usando TeamViewer o AnyDesk. Ideal para diagnósticos de software, configuraciones, limpieza de virus y asesoría. Nos conectamos por videollamada y resolvemos el problema sin que tengás que salir de tu casa."
+          }
+        }
+      ]
     })} />
 
     <!-- Estilos -->

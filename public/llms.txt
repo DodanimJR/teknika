@@ -1,0 +1,104 @@
+# Teknika CR
+
+> Teknika CR es un emprendimiento costarricense de servicios tecnológicos
+> ubicado en Alajuela Centro, Gran Área Metropolitana (GAM), Costa Rica.
+> Brindamos soporte técnico de computadoras, asesoría de compra de equipo
+> informático, instalación de software, asesoría de inteligencia artificial
+> y desarrollo de sitios web para pequeñas empresas.
+
+## Información general
+
+- Nombre: Teknika CR
+- Ubicación: Alajuela Centro, Gran Área Metropolitana, Costa Rica
+- Teléfono WhatsApp: +506 7195-1856
+- Email: info@teknika.co.cr
+- Sitio web: https://teknika.co.cr
+- Horario: Lunes a Viernes, 9:00 AM - 5:00 PM (UTC-6)
+- Idiomas: Español, Inglés
+- Fundador: Patrick Dodanim Castillo Flores, Ingeniero en Sistemas
+
+## Servicios y precios (precios de lanzamiento con -25%)
+
+### Diagnóstico y reparación de computadoras
+- Diagnóstico básico (software): ₡6,000 CRC
+- Diagnóstico avanzado (hardware): ₡11,250 CRC
+- Reparación de software (virus, errores, rendimiento): desde ₡7,500 CRC
+- Reparación de hardware (pantalla, teclado, carga): desde ₡11,250 CRC + componente
+- Recuperación de datos: desde ₡15,000 CRC
+- Servicio de emergencia (mismo día): ₡18,750 CRC
+
+### Formateo e instalación de software
+- Formateo con Windows + drivers: ₡11,250 CRC
+- Formateo + Office + antivirus: ₡15,000 CRC
+- Backup + formateo + Office + antivirus: ₡18,750 CRC
+- Paquete completo (backup + formateo + Office + antivirus + limpieza): ₡22,500 CRC
+- Instalación de Linux (Ubuntu/Fedora): ₡11,250 CRC
+
+### Asesoría de compra de equipo informático
+- Asesoría por WhatsApp: GRATIS
+- Asesoría completa con comparativas: ₡3,750 CRC
+- Acompañamiento a tienda + configuración: ₡7,500 CRC
+- Setup completo de equipo nuevo: ₡11,250 CRC
+- Asesoría para empresa (múltiples equipos): ₡15,000 CRC
+
+### Limpieza y mantenimiento
+- Limpieza interna + cambio de pasta térmica: ₡9,000 CRC
+- Cambio de HDD a SSD (clonación incluida): ₡7,500 CRC + SSD
+- Ampliación de RAM: ₡6,000 CRC + componente
+
+### Asesoría de inteligencia artificial
+- Sesión individual virtual (1 hora): ₡11,250 CRC
+- Bundle 6 sesiones (tutoría virtual): ₡56,250 CRC
+- Capacitación grupal para empresas (2 horas, mínimo 4 personas): ₡7,500 CRC/persona
+- Taller PYME de IA (3 horas, sin límite de personas): ₡37,500 CRC
+- Herramientas que enseñamos: ChatGPT, Claude, Gemini, Copilot, DALL-E, Midjourney, Zapier, Make
+
+### Desarrollo web para PYMEs
+- Landing page (1 página profesional): ₡90,000 CRC
+- Sitio web completo (3-5 páginas + blog): ₡187,500 CRC
+- Incluye: dominio propio, email profesional, hosting gratuito con Cloudflare Pages, SEO, optimización para IA, diseño responsive
+- Entrega: 1-2 semanas
+
+### Soporte para PYMEs
+- Plan básico (5 horas/mes): ₡37,500 CRC/mes
+- Plan profesional (12 horas/mes): ₡75,000 CRC/mes
+- Plan empresa (horas ilimitadas): ₡150,000 CRC/mes
+
+## Zona de cobertura
+
+Recibimos equipos en Alajuela Centro y damos servicio a todo el Gran Área Metropolitana (GAM) de Costa Rica: San José, Alajuela, Heredia, Cartago.
+También ofrecemos soporte remoto a todo el país por TeamViewer o AnyDesk.
+
+## Diferenciadores
+
+- Transparencia: presupuesto exacto antes de proceder
+- Sin costos ocultos: si no conviene, solo se paga el diagnóstico
+- Educativo: explicamos cada diagnóstico para que el cliente entienda
+- Programa de reciclaje "Dale una segunda vida": 10-15% de descuento al entregar equipo viejo
+- Precios de lanzamiento con -25% en todos los servicios
+
+## Redes sociales
+
+- Instagram: https://www.instagram.com/teknikacr/
+- Facebook: https://www.facebook.com/profile.php?id=61591716943373
+- TikTok: https://www.tiktok.com/@teknikacr
+
+## Preguntas frecuentes
+
+### ¿Cuánto cuesta reparar una laptop en Costa Rica?
+Depende del problema. En Teknika CR, el diagnóstico básico cuesta ₡6,000 CRC y el diagnóstico avanzado ₡11,250 CRC. El diagnóstico se descuenta del total si se procede con la reparación. El formateo completo con backup, Windows, Office y antivirus cuesta ₡22,500 CRC.
+
+### ¿Dónde puedo reparar mi computadora en Alajuela?
+Teknika CR está ubicado en Alajuela Centro. Recibimos equipos de lunes a viernes de 9am a 5pm. También podemos coordinar envío en el GAM.
+
+### ¿Ofrecen soporte remoto?
+Sí, damos soporte remoto a todo Costa Rica usando TeamViewer o AnyDesk para diagnósticos y reparaciones de software.
+
+### ¿Cuánto cuesta un sitio web en Costa Rica?
+En Teknika CR, una landing page profesional cuesta desde ₡90,000 CRC y un sitio web completo desde ₡187,500 CRC. Incluye dominio, email profesional, hosting gratuito y optimización para Google e IA.
+
+### ¿Dan clases de inteligencia artificial?
+Sí, ofrecemos sesiones personalizadas de asesoría de IA desde ₡11,250 CRC por hora. Enseñamos a usar ChatGPT, Claude, Gemini y más herramientas de IA enfocadas en el trabajo o negocio del cliente.
+
+### ¿Cuánto cuesta cambiar el disco duro a SSD?
+El servicio de cambio de HDD a SSD con clonación de datos (sin perder archivos) cuesta ₡7,500 CRC más el costo del SSD.
