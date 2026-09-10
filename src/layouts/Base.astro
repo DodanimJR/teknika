@@ -1,4 +1,10 @@
 ---
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/600.css';
+import '@fontsource/inter/700.css';
+import '@fontsource/inter/800.css';
+
 interface Props {
   title: string;
   description: string;
@@ -40,27 +46,18 @@ const fullTitle = title === 'Inicio'
     <meta property="og:url" content={canonical || siteUrl} />
     <meta property="og:locale" content="es_CR" />
     <meta property="og:site_name" content="Teknika CR" />
+    <meta property="og:image" content={`${siteUrl}/img/logo-horizontal-dark.png`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Teknika CR - Soporte Técnico y Consultoría Informática" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}/img/logo-horizontal-dark.png`} />
 
-    <!-- Fuentes (optimizado: preconnect + preload + font-display swap) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-      media="print"
-      onload="this.media='all'"
-    />
-    <noscript>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
-      />
-    </noscript>
+    <!-- Fuentes (self-hosted via @fontsource/inter) -->
 
     <!-- Schema.org LocalBusiness + OfferCatalog -->
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -310,13 +307,13 @@ const fullTitle = title === 'Inicio'
             </ul>
             <div class="footer__social">
               <a href="https://www.instagram.com/teknikacr/" target="_blank" rel="noopener" aria-label="Instagram" class="footer__social-link">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
               </a>
               <a href="https://www.facebook.com/profile.php?id=61591716943373" target="_blank" rel="noopener" aria-label="Facebook" class="footer__social-link">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
               </a>
               <a href="https://www.tiktok.com/@teknikacr" target="_blank" rel="noopener" aria-label="TikTok" class="footer__social-link">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.72a8.2 8.2 0 0 0 4.76 1.52V6.79a4.84 4.84 0 0 1-1-.1z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.72a8.2 8.2 0 0 0 4.76 1.52V6.79a4.84 4.84 0 0 1-1-.1z"/></svg>
               </a>
             </div>
           </div>
@@ -434,7 +431,7 @@ const fullTitle = title === 'Inicio'
     height: 2px;
     background-color: var(--color-dark);
     border-radius: 2px;
-    transition: all var(--transition);
+    transition: transform var(--transition), opacity var(--transition);
   }
 
   /* ============================================
@@ -535,7 +532,7 @@ const fullTitle = title === 'Inicio'
     border-radius: var(--radius-md);
     background: rgba(255, 255, 255, 0.08);
     color: var(--color-gray-300);
-    transition: all var(--transition);
+    transition: background-color var(--transition), color var(--transition), transform var(--transition);
   }
 
   .footer__social-link:hover {

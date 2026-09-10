@@ -189,7 +189,7 @@ ul, ol {
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all var(--transition);
+  transition: background-color var(--transition), color var(--transition), transform var(--transition), box-shadow var(--transition);
   text-decoration: none;
   line-height: 1;
 }
@@ -256,7 +256,7 @@ ul, ol {
   padding: var(--space-xl);
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--color-gray-200);
-  transition: all var(--transition);
+  transition: box-shadow var(--transition), transform var(--transition);
 }
 
 .card:hover {
@@ -420,4 +420,41 @@ ul, ol {
   vertical-align: middle;
   letter-spacing: 0.3px;
   line-height: 1.4;
+}
+
+/* ============================================
+   Reduced Motion (mandatory a11y)
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ============================================
+   Page Header (shared across internal pages)
+   ============================================ */
+.page-header {
+  background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-navy) 100%);
+  color: var(--color-white);
+  padding: var(--space-3xl) 0 var(--space-2xl);
+  text-align: center;
+}
+
+.page-header h1 {
+  color: var(--color-white);
+  margin-bottom: var(--space-sm);
+}
+
+.page-header p {
+  color: var(--color-gray-300);
 }
