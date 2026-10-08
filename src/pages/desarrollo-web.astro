@@ -1,0 +1,765 @@
+---
+import Base from '../layouts/Base.astro';
+import ContactModal from '../components/ContactModal.astro';
+---
+
+<Base
+  title="Desarrollo Web para PYMEs"
+  description="Sitios web profesionales para PYMEs en Costa Rica. Optimizados para Google e inteligencia artificial. Dominio, email profesional y hosting gratuito incluidos."
+  canonical="https://teknika.co.cr/desarrollo-web"
+>
+
+  <!-- HERO -->
+  <section class="web-hero">
+    <div class="container">
+      <div class="web-hero__grid">
+        <div class="web-hero__content">
+          <h1>Tu negocio visible para <span class="web-hero__accent">Google y la IA</span></h1>
+          <p class="web-hero__subtitle">
+            Creamos sitios web profesionales que no solo se ven bien:
+            hacen que Google y los asistentes de IA recomienden tu negocio
+            cuando alguien busca lo que ofrecés.
+          </p>
+          <div class="web-hero__actions">
+            <a href="https://wa.me/50671951856?text=Hola%20Teknika%20CR%2C%20me%20interesa%20un%20sitio%20web%20para%20mi%20negocio"
+               class="btn btn--whatsapp btn--lg"
+               target="_blank"
+               rel="noopener">
+              Cotizar sitio web
+            </a>
+            <a href="#paquetes" class="btn btn--outline-light btn--lg">
+              Ver paquetes
+            </a>
+          </div>
+        </div>
+        <div class="web-hero__visual">
+          <svg viewBox="0 0 400 320" fill="none" xmlns="http://www.w3.org/2000/svg" class="web-hero__illustration" aria-hidden="true">
+            <!-- Browser window -->
+            <rect x="40" y="30" width="320" height="220" rx="12" fill="rgba(68,207,203,0.08)" stroke="#44CFCB" stroke-width="1.5" />
+            <rect x="40" y="30" width="320" height="32" rx="12" fill="rgba(68,207,203,0.12)" />
+            <circle cx="62" cy="46" r="5" fill="#ff5f57" opacity="0.6" />
+            <circle cx="78" cy="46" r="5" fill="#ffbd2e" opacity="0.6" />
+            <circle cx="94" cy="46" r="5" fill="#28c840" opacity="0.6" />
+            <rect x="120" y="40" width="160" height="12" rx="6" fill="rgba(255,255,255,0.1)" />
+            <!-- Content lines -->
+            <rect x="60" y="80" width="180" height="10" rx="3" fill="rgba(68,207,203,0.2)" />
+            <rect x="60" y="100" width="140" height="8" rx="3" fill="rgba(255,255,255,0.08)" />
+            <rect x="60" y="115" width="160" height="8" rx="3" fill="rgba(255,255,255,0.06)" />
+            <rect x="60" y="140" width="100" height="28" rx="6" fill="#44CFCB" opacity="0.3" />
+            <!-- Search/AI indicators -->
+            <circle cx="310" cy="100" r="24" fill="rgba(78,165,217,0.1)" stroke="#4EA5D9" stroke-width="1" />
+            <text x="310" y="105" text-anchor="middle" fill="#4EA5D9" font-size="16" font-weight="600">IA</text>
+            <circle cx="310" cy="160" r="20" fill="rgba(68,207,203,0.1)" stroke="#44CFCB" stroke-width="1" />
+            <text x="310" y="165" text-anchor="middle" fill="#44CFCB" font-size="11" font-weight="600">SEO</text>
+            <!-- Connection lines -->
+            <line x1="286" y1="100" x2="220" y2="90" stroke="#4EA5D9" stroke-width="0.8" opacity="0.3" />
+            <line x1="290" y1="160" x2="160" y2="140" stroke="#44CFCB" stroke-width="0.8" opacity="0.3" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EL PROBLEMA -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: var(--space-2xl);">
+        <h2>Una página de Facebook no es suficiente</h2>
+        <p class="text-muted" style="max-width: 600px; margin: var(--space-sm) auto 0;">
+          La gente ya no solo busca en Google. Ahora le pregunta a ChatGPT, Gemini y Siri.
+          Si tu negocio no tiene un sitio web propio, sos invisible para la IA.
+        </p>
+      </div>
+
+      <div class="web-comparison">
+        <div class="web-comparison__col web-comparison__col--bad">
+          <h3>Solo Facebook</h3>
+          <ul>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d93025" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              La IA no puede leer tu página
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d93025" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              Google cada vez la muestra menos
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d93025" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              No controlás lo que aparece
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d93025" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              No tenés email profesional
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d93025" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              Dependés del algoritmo de Meta
+            </li>
+          </ul>
+        </div>
+        <div class="web-comparison__col web-comparison__col--good">
+          <h3>Sitio web propio</h3>
+          <ul>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#44CFCB" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Google y la IA te encuentran
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#44CFCB" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Tu dominio: tunegocio.co.cr
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#44CFCB" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Email profesional incluido
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#44CFCB" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Control total del diseño
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#44CFCB" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Credibilidad: se ve profesional
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUÉ INCLUYE -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: var(--space-2xl);">
+        <h2>Qué incluye tu sitio web</h2>
+        <p class="text-muted">Todo lo que necesitás para estar en internet de forma profesional</p>
+      </div>
+
+      <div class="web-features">
+        <div class="web-feature">
+          <div class="web-feature__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#44CFCB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+            </svg>
+          </div>
+          <h4>Dominio propio</h4>
+          <p>tunegocio.co.cr o tunegocio.com. Tu dirección en internet, profesional y memorable.</p>
+        </div>
+
+        <div class="web-feature">
+          <div class="web-feature__icon web-feature__icon--alt">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4EA5D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <h4>Email profesional</h4>
+          <p>info@tunegocio.co.cr. Nada de @gmail.com o @hotmail.com para tu negocio.</p>
+        </div>
+
+        <div class="web-feature">
+          <div class="web-feature__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#44CFCB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <h4>Hosting gratuito</h4>
+          <p>Tu sitio alojado en Cloudflare Pages. Rápido, seguro y sin costo mensual. Para siempre.</p>
+        </div>
+
+        <div class="web-feature">
+          <div class="web-feature__icon web-feature__icon--alt">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4EA5D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </div>
+          <h4>SEO + optimización para IA</h4>
+          <p>Tu sitio preparado para que Google y los asistentes de IA encuentren y recomienden tu negocio.</p>
+        </div>
+
+        <div class="web-feature">
+          <div class="web-feature__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#44CFCB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+            </svg>
+          </div>
+          <h4>Responsive</h4>
+          <p>Se ve perfecto en celular, tablet y computadora. Sin excepción.</p>
+        </div>
+
+        <div class="web-feature">
+          <div class="web-feature__icon web-feature__icon--alt">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4EA5D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h4>SSL incluido</h4>
+          <p>Certificado de seguridad HTTPS. El candadito verde que genera confianza.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAQUETES -->
+  <section class="section section--dark" id="paquetes">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: var(--space-2xl);">
+        <h2 style="color: var(--color-white);">Paquetes de desarrollo web</h2>
+        <p style="color: var(--color-gray-300);">Elegí el que mejor se adapte a tu negocio</p>
+      </div>
+
+      <div class="web-packages">
+        <div class="card web-package" data-service="Landing page profesional - ₡120,000" role="button" tabindex="0">
+          <span class="badge badge--sky">Esencial</span>
+          <h3 class="web-package__title">Landing Page</h3>
+          <p class="web-package__price">&#8353;120,000</p>
+          <p class="web-package__time">Entrega: 1 semana</p>
+          <ul class="web-package__list">
+            <li>1 página profesional</li>
+            <li>Diseño personalizado</li>
+            <li>Formulario de contacto</li>
+            <li>Botón de WhatsApp</li>
+            <li>Dominio .com (1 año)</li>
+            <li>Email profesional</li>
+            <li>Hosting gratuito (Cloudflare)</li>
+            <li>SEO básico</li>
+            <li>Optimizado para IA</li>
+            <li>Responsive (celular + desktop)</li>
+          </ul>
+          <span class="web-package__cta">Cotizar landing page &rarr;</span>
+        </div>
+
+        <div class="card web-package web-package--featured" data-service="Sitio web completo - ₡250,000" role="button" tabindex="0">
+          <span class="badge badge--cyan">Recomendado</span>
+          <h3 class="web-package__title">Sitio Completo</h3>
+          <p class="web-package__price">&#8353;250,000</p>
+          <p class="web-package__time">Entrega: 2 semanas</p>
+          <ul class="web-package__list">
+            <li>3-5 páginas (Inicio, Servicios, Nosotros, Contacto, Blog)</li>
+            <li>Todo lo de la Landing Page, más:</li>
+            <li>Múltiples secciones por página</li>
+            <li>Blog integrado</li>
+            <li>Google My Business configurado</li>
+            <li>SEO avanzado + Schema.org</li>
+            <li>Optimización completa para IA (llms.txt)</li>
+            <li>Sitemap XML automático</li>
+            <li>Redes sociales integradas</li>
+            <li>Capacitación básica para actualizar contenido</li>
+          </ul>
+          <span class="web-package__cta">Cotizar sitio completo &rarr;</span>
+        </div>
+
+        <div class="card web-package" data-service="Sitio web + SEO para IA - Cotización personalizada" role="button" tabindex="0">
+          <span class="badge badge--sky">Premium</span>
+          <h3 class="web-package__title">Web + SEO para IA</h3>
+          <p class="web-package__price">Desde &#8353;350,000</p>
+          <p class="web-package__time">Entrega: 2-3 semanas</p>
+          <ul class="web-package__list">
+            <li>Todo lo del Sitio Completo, más:</li>
+            <li>Optimización avanzada para LLMs</li>
+            <li>FAQ Schema estructurado</li>
+            <li>Archivo llms.txt personalizado</li>
+            <li>3 artículos de blog optimizados para IA</li>
+            <li>Páginas individuales por servicio</li>
+            <li>robots.txt para bots de IA</li>
+            <li>Dominio .co.cr (1 año)</li>
+            <li>Mantenimiento mensual (3 meses incluidos)</li>
+          </ul>
+          <span class="web-package__cta">Solicitar cotización &rarr;</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: var(--space-2xl);">
+        <h2>Cómo trabajamos</h2>
+        <p class="text-muted">De la idea al sitio web en 4 pasos</p>
+      </div>
+
+      <div class="web-process">
+        <div class="web-process__step">
+          <div class="web-process__number">1</div>
+          <h3>Llamada inicial</h3>
+          <p>Entendemos tu negocio, tus clientes y tus objetivos. 20 minutos, sin compromiso.</p>
+        </div>
+        <div class="web-process__connector"></div>
+        <div class="web-process__step">
+          <div class="web-process__number">2</div>
+          <h3>Diseño y contenido</h3>
+          <p>Creamos la estructura, el diseño y el contenido optimizado para Google e IA.</p>
+        </div>
+        <div class="web-process__connector"></div>
+        <div class="web-process__step">
+          <div class="web-process__number">3</div>
+          <h3>Desarrollo</h3>
+          <p>Construimos tu sitio web con tecnología moderna, rápido y seguro.</p>
+        </div>
+        <div class="web-process__connector"></div>
+        <div class="web-process__step">
+          <div class="web-process__number">4</div>
+          <h3>Lanzamiento</h3>
+          <p>Configuramos dominio, email y hosting. Tu sitio en vivo, listo para recibir clientes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: var(--space-2xl);">
+        <h2>Preguntas frecuentes</h2>
+      </div>
+
+      <div class="web-faq">
+        <details class="web-faq__item">
+          <summary class="web-faq__question">¿Qué es eso de "optimizado para IA"?</summary>
+          <p class="web-faq__answer">Hoy la gente no solo busca en Google. También le pregunta a ChatGPT, Gemini o Siri. Nosotros estructuramos tu sitio web para que estos asistentes de IA puedan leerlo y recomendar tu negocio cuando alguien pregunte por servicios como los tuyos.</p>
+        </details>
+
+        <details class="web-faq__item">
+          <summary class="web-faq__question">¿El hosting es realmente gratis?</summary>
+          <p class="web-faq__answer">Sí. Usamos Cloudflare Pages, que es gratuito para sitios estáticos. Tu sitio se aloja en una red global de servidores (CDN) sin costo mensual. El único costo recurrente es la renovación del dominio (aproximadamente $25-30 USD al año).</p>
+        </details>
+
+        <details class="web-faq__item">
+          <summary class="web-faq__question">¿Puedo actualizar el contenido yo mismo?</summary>
+          <p class="web-faq__answer">Sí, te damos una capacitación básica para que puedas hacer cambios simples. Para cambios más complejos, ofrecemos un plan de mantenimiento mensual o podés solicitarlos por demanda.</p>
+        </details>
+
+        <details class="web-faq__item">
+          <summary class="web-faq__question">¿Cuánto tarda la entrega?</summary>
+          <p class="web-faq__answer">Una landing page se entrega en 1 semana. Un sitio completo en 2 semanas. Esto incluye diseño, desarrollo, contenido y configuración de dominio/email. Los tiempos pueden variar si el contenido del cliente tarda en llegar.</p>
+        </details>
+
+        <details class="web-faq__item">
+          <summary class="web-faq__question">¿Necesito tener contenido listo?</summary>
+          <p class="web-faq__answer">No es necesario. Nosotros te ayudamos a crear el contenido: textos, estructura, CTAs. Solo necesitamos que nos cuentes sobre tu negocio en la llamada inicial y nos compartas fotos si las tenés.</p>
+        </details>
+
+        <details class="web-faq__item">
+          <summary class="web-faq__question">¿Hacen tiendas en línea (e-commerce)?</summary>
+          <p class="web-faq__answer">Actualmente nos enfocamos en sitios informativos y de servicios. Las tiendas en línea con carrito de compras y pagos son un servicio que ofrecemos por cotización personalizada a partir de ₡400,000.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <ContactModal />
+
+  <!-- CTA -->
+  <section class="section section--dark text-center">
+    <div class="container">
+      <h2 style="color: var(--color-white);">Tu negocio merece estar en internet</h2>
+      <p style="color: var(--color-gray-300); max-width: 500px; margin: var(--space-md) auto var(--space-xl);">
+        Contactanos para una llamada de 20 minutos donde entendemos tu negocio y te damos una cotización sin compromiso.
+      </p>
+      <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
+        <a href="https://wa.me/50671951856?text=Hola%20Teknika%20CR%2C%20me%20interesa%20un%20sitio%20web%20para%20mi%20negocio"
+           class="btn btn--whatsapp btn--lg"
+           target="_blank"
+           rel="noopener">
+          Cotizar por WhatsApp
+        </a>
+        <a href="/contacto" class="btn btn--outline-light btn--lg">
+          Formulario de contacto
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  /* ============================================
+     Hero
+     ============================================ */
+  .web-hero {
+    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-navy) 50%, #1a3a5c 100%);
+    padding: var(--space-3xl) 0;
+    overflow: hidden;
+  }
+
+  .web-hero__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+  }
+
+  .web-hero__content { color: var(--color-white); }
+
+  .web-hero__content h1 {
+    color: var(--color-white);
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: var(--space-md);
+  }
+
+  .web-hero__accent { color: var(--color-cyan); }
+
+  .web-hero__subtitle {
+    color: var(--color-gray-300);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-bottom: var(--space-xl);
+  }
+
+  .web-hero__actions {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .web-hero__illustration {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .btn--outline-light {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: var(--color-white);
+    background: transparent;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+  }
+
+  .btn--outline-light:hover {
+    border-color: var(--color-cyan);
+    color: var(--color-cyan);
+    background: rgba(68, 207, 203, 0.1);
+  }
+
+  /* ============================================
+     Comparison
+     ============================================ */
+  .web-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .web-comparison__col {
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+  }
+
+  .web-comparison__col--bad {
+    background: rgba(217, 48, 37, 0.05);
+    border: 1px solid rgba(217, 48, 37, 0.15);
+  }
+
+  .web-comparison__col--good {
+    background: rgba(68, 207, 203, 0.05);
+    border: 1px solid rgba(68, 207, 203, 0.2);
+  }
+
+  .web-comparison__col h3 {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .web-comparison__col--bad h3 { color: #d93025; }
+  .web-comparison__col--good h3 { color: var(--color-cyan); }
+
+  .web-comparison__col ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .web-comparison__col li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+    font-size: 0.9375rem;
+    color: var(--color-gray-600);
+  }
+
+  /* ============================================
+     Features grid
+     ============================================ */
+  .web-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .web-feature {
+    text-align: center;
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-gray-200);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .web-feature:hover {
+    border-color: var(--color-cyan);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .web-feature__icon {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-md);
+    background: rgba(68, 207, 203, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-md);
+  }
+
+  .web-feature__icon--alt {
+    background: rgba(78, 165, 217, 0.1);
+  }
+
+  .web-feature h4 {
+    font-size: 1rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .web-feature p {
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* ============================================
+     Packages
+     ============================================ */
+  .web-packages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .web-package {
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    cursor: pointer;
+    padding-bottom: calc(var(--space-xl) + 2rem);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .web-package:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-sky);
+  }
+
+  .web-package:focus-visible {
+    outline: 2px solid var(--color-sky);
+    outline-offset: 2px;
+  }
+
+  .web-package--featured {
+    border: 2px solid var(--color-cyan);
+  }
+
+  .web-package--featured:hover {
+    border-color: var(--color-cyan);
+    box-shadow: 0 10px 30px rgba(68, 207, 203, 0.2);
+  }
+
+  .web-package__title {
+    font-size: 1.25rem;
+    margin-bottom: 0;
+    color: var(--color-dark);
+  }
+
+  .web-package__price {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-royal);
+    margin: var(--space-xs) 0;
+  }
+
+  .web-package__time {
+    font-size: 0.8125rem;
+    color: var(--color-gray-500);
+    font-weight: 500;
+    margin-bottom: var(--space-md);
+  }
+
+  .web-package__list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: var(--space-md);
+    flex-grow: 1;
+  }
+
+  .web-package__list li {
+    padding: 3px 0;
+    font-size: 0.9375rem;
+    color: var(--color-gray-600);
+  }
+
+  .web-package__list li::before {
+    content: '\2713  ';
+    color: var(--color-cyan);
+    font-weight: 700;
+  }
+
+  .web-package__cta {
+    position: absolute;
+    bottom: var(--space-lg);
+    left: var(--space-xl);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-royal);
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  .web-package:hover .web-package__cta {
+    color: var(--color-sky);
+    transform: translateX(4px);
+  }
+
+  /* ============================================
+     Process
+     ============================================ */
+  .web-process {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .web-process__step {
+    flex: 1;
+    text-align: center;
+    padding: 0 var(--space-md);
+  }
+
+  .web-process__number {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-cyan);
+    color: var(--color-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.25rem;
+    margin: 0 auto var(--space-md);
+  }
+
+  .web-process__step h3 { font-size: 1rem; margin-bottom: var(--space-xs); }
+  .web-process__step p { font-size: 0.875rem; color: var(--color-text-muted); line-height: 1.5; }
+
+  .web-process__connector {
+    width: 40px;
+    height: 2px;
+    background: var(--color-gray-200);
+    margin-top: 24px;
+    flex-shrink: 0;
+  }
+
+  /* ============================================
+     FAQ
+     ============================================ */
+  .web-faq {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .web-faq__item {
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-md);
+    overflow: hidden;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .web-faq__item[open] {
+    border-color: var(--color-cyan);
+    box-shadow: 0 2px 12px rgba(68, 207, 203, 0.1);
+  }
+
+  .web-faq__question {
+    padding: var(--space-lg);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--color-dark);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .web-faq__question::-webkit-details-marker { display: none; }
+
+  .web-faq__question::after {
+    content: '+';
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--color-gray-400);
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+    margin-left: var(--space-md);
+  }
+
+  .web-faq__item[open] .web-faq__question::after {
+    transform: rotate(45deg);
+    color: var(--color-cyan);
+  }
+
+  .web-faq__answer {
+    padding: 0 var(--space-lg) var(--space-lg);
+    color: var(--color-text-muted);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* ============================================
+     Responsive
+     ============================================ */
+  @media (max-width: 768px) {
+    .web-hero__grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .web-hero__content h1 { font-size: 2rem; }
+
+    .web-hero__actions { justify-content: center; }
+
+    .web-hero__visual { display: none; }
+
+    .web-comparison { grid-template-columns: 1fr; }
+
+    .web-features { grid-template-columns: 1fr; }
+
+    .web-packages { grid-template-columns: 1fr; }
+
+    .web-process {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .web-process__connector {
+      width: 2px;
+      height: 30px;
+      margin: 0;
+    }
+  }
+</style>

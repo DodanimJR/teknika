@@ -25,11 +25,15 @@ const fullTitle = title === 'Inicio'
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="author" content="Teknika CR" />
+    <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#122C34" />
 
     <title>{fullTitle}</title>
 
     {canonical && <link rel="canonical" href={canonical} />}
+
+    <!-- LLM discovery -->
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Information" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/img/logo-icon.png" />
@@ -64,7 +68,7 @@ const fullTitle = title === 'Inicio'
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Teknika CR",
-      "description": "Soporte técnico de computadoras, asesoría de compra de equipo informático, formateo, instalación de software, asesoría de inteligencia artificial y desarrollo de sitios web para PYMEs en Costa Rica.",
+      "description": "Consultoría tecnológica, capacitación empresarial en inteligencia artificial, desarrollo web para PYMEs y soporte técnico informático en Costa Rica.",
       "url": siteUrl,
       "telephone": "+506-7195-1856",
       "email": "info@teknika.co.cr",
@@ -116,41 +120,41 @@ const fullTitle = title === 'Inicio'
             "@type": "OfferCatalog",
             "name": "Diagnóstico y reparación",
             "itemListElement": [
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diagnóstico básico (software)", "description": "Revisión completa del software, detección de virus, errores y problemas de rendimiento" }, "price": "6000", "priceCurrency": "CRC" },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diagnóstico avanzado (hardware)", "description": "Revisión física del equipo, pruebas de componentes, identificación de fallas de hardware" }, "price": "11250", "priceCurrency": "CRC" }
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diagnóstico básico (software)", "description": "Revisión completa del software, detección de virus, errores y problemas de rendimiento" }, "price": "8000", "priceCurrency": "CRC" },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diagnóstico avanzado (hardware)", "description": "Revisión física del equipo, pruebas de componentes, identificación de fallas de hardware" }, "price": "15000", "priceCurrency": "CRC" }
             ]
           },
           {
             "@type": "OfferCatalog",
             "name": "Formateo e instalación",
             "itemListElement": [
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Formateo + Windows + Office", "description": "Formateo limpio, instalación de Windows, drivers y Microsoft Office" }, "price": "11250", "priceCurrency": "CRC" },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Paquete completo de formateo", "description": "Backup de datos, formateo, Windows, Office, antivirus y limpieza completa" }, "price": "22500", "priceCurrency": "CRC" }
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Formateo + Windows + Office", "description": "Formateo limpio, instalación de Windows, drivers y Microsoft Office" }, "price": "15000", "priceCurrency": "CRC" },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Paquete completo de formateo", "description": "Backup de datos, formateo, Windows, Office, antivirus y limpieza completa" }, "price": "30000", "priceCurrency": "CRC" }
             ]
           },
           {
             "@type": "OfferCatalog",
             "name": "Limpieza y mantenimiento",
             "itemListElement": [
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Limpieza interna + pasta térmica", "description": "Limpieza interna de laptop o desktop con cambio de pasta térmica" }, "price": "9000", "priceCurrency": "CRC" },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cambio de HDD a SSD", "description": "Reemplazo de disco duro mecánico por SSD con clonación de datos sin perder archivos" }, "price": "7500", "priceCurrency": "CRC" }
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Limpieza interna + pasta térmica", "description": "Limpieza interna de laptop o desktop con cambio de pasta térmica" }, "price": "12000", "priceCurrency": "CRC" },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cambio de HDD a SSD", "description": "Reemplazo de disco duro mecánico por SSD con clonación de datos sin perder archivos" }, "price": "10000", "priceCurrency": "CRC" }
             ]
           },
           {
             "@type": "OfferCatalog",
             "name": "Asesoría de inteligencia artificial",
             "itemListElement": [
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sesión individual de IA (1 hora)", "description": "Sesión personalizada virtual para aprender a usar ChatGPT, Claude, Gemini y otras herramientas de IA" }, "price": "11250", "priceCurrency": "CRC" },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bundle 6 sesiones de IA", "description": "6 horas de tutoría virtual de IA con plan de aprendizaje personalizado y soporte por chat" }, "price": "56250", "priceCurrency": "CRC" },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Taller PYME de IA", "description": "Taller práctico de 3 horas de inteligencia artificial para equipos de trabajo, sin límite de participantes" }, "price": "37500", "priceCurrency": "CRC" }
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sesión individual de IA (1 hora)", "description": "Sesión personalizada virtual para aprender a usar ChatGPT, Claude, Gemini y otras herramientas de IA" }, "price": "15000", "priceCurrency": "CRC" },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bundle 6 sesiones de IA", "description": "6 horas de tutoría virtual de IA con plan de aprendizaje personalizado y soporte por chat" }, "price": "75000", "priceCurrency": "CRC" },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Taller PYME de IA", "description": "Taller práctico de 3 horas de inteligencia artificial para equipos de trabajo, sin límite de participantes" }, "price": "50000", "priceCurrency": "CRC" }
             ]
           },
           {
             "@type": "OfferCatalog",
             "name": "Desarrollo web para PYMEs",
             "itemListElement": [
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Landing page profesional", "description": "Sitio web de 1 página con dominio propio, email profesional, hosting gratuito, SEO y optimización para IA" }, "price": "90000", "priceCurrency": "CRC" },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sitio web completo", "description": "Sitio web de 3-5 páginas con blog, dominio, email, hosting gratuito, SEO y optimización para IA" }, "price": "187500", "priceCurrency": "CRC" }
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Landing page profesional", "description": "Sitio web de 1 página con dominio propio, email profesional, hosting gratuito, SEO y optimización para IA" }, "price": "120000", "priceCurrency": "CRC" },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sitio web completo", "description": "Sitio web de 3-5 páginas con blog, dominio, email, hosting gratuito, SEO y optimización para IA" }, "price": "250000", "priceCurrency": "CRC" }
             ]
           }
         ]
@@ -167,7 +171,7 @@ const fullTitle = title === 'Inicio'
           "name": "¿Cuánto cuesta reparar una laptop en Costa Rica?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "En Teknika CR, el diagnóstico básico cuesta ₡6,000 y el avanzado ₡11,250. El formateo completo con backup, Windows, Office y antivirus cuesta ₡22,500. La limpieza interna con cambio de pasta térmica cuesta ₡9,000. Todos los precios incluyen descuento de lanzamiento del 25%. El diagnóstico se descuenta del total si se procede con la reparación."
+            "text": "En Teknika CR, el diagnóstico básico cuesta ₡8,000 y el avanzado ₡15,000. El formateo completo con backup, Windows, Office y antivirus cuesta ₡30,000. La limpieza interna con cambio de pasta térmica cuesta ₡12,000. El diagnóstico se descuenta del total si se procede con la reparación."
           }
         },
         {
@@ -183,7 +187,7 @@ const fullTitle = title === 'Inicio'
           "name": "¿Cuánto cuesta un sitio web en Costa Rica?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "En Teknika CR, una landing page profesional cuesta desde ₡90,000 y un sitio web completo de 3-5 páginas desde ₡187,500. Incluye dominio propio (.co.cr o .com), email profesional, hosting gratuito con Cloudflare Pages, SEO y optimización para inteligencia artificial. Entrega en 1-2 semanas."
+            "text": "En Teknika CR, una landing page profesional cuesta desde ₡120,000 y un sitio web completo de 3-5 páginas desde ₡250,000. Incluye dominio propio (.co.cr o .com), email profesional, hosting gratuito con Cloudflare Pages, SEO y optimización para inteligencia artificial. Entrega en 1-2 semanas."
           }
         },
         {
@@ -191,7 +195,7 @@ const fullTitle = title === 'Inicio'
           "name": "¿Cuánto cuesta cambiar el disco duro a SSD?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "El cambio de HDD a SSD con clonación de datos (sin perder archivos) cuesta ₡7,500 más el costo del SSD. Es la mejor inversión para una laptop lenta: el encendido pasa de 3-5 minutos a 15-25 segundos."
+            "text": "El cambio de HDD a SSD con clonación de datos (sin perder archivos) cuesta ₡10,000 más el costo del SSD. Es la mejor inversión para una laptop lenta: el encendido pasa de 3-5 minutos a 15-25 segundos."
           }
         },
         {
@@ -199,7 +203,7 @@ const fullTitle = title === 'Inicio'
           "name": "¿Dan clases de inteligencia artificial en Costa Rica?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí, Teknika CR ofrece sesiones personalizadas de asesoría de inteligencia artificial desde ₡11,250 por hora. Enseñamos a usar ChatGPT, Claude, Gemini, Copilot y más. Las sesiones son virtuales, personalizadas al trabajo o negocio del cliente, sin jerga técnica. También ofrecemos talleres para equipos de empresas desde ₡37,500."
+            "text": "Sí, Teknika CR ofrece sesiones personalizadas de asesoría de inteligencia artificial desde ₡15,000 por hora. Enseñamos a usar ChatGPT, Claude, Gemini, Copilot y más. Las sesiones son virtuales, personalizadas al trabajo o negocio del cliente, sin jerga técnica. También ofrecemos talleres para equipos de empresas desde ₡50,000."
           }
         },
         {
@@ -235,14 +239,14 @@ const fullTitle = title === 'Inicio'
 
         <ul class="nav__links" id="nav-links">
           <li><a href="/">Inicio</a></li>
-          <li><a href="/servicios">Servicios</a></li>
-          <li><a href="/asesoria-ia">Asesoría IA</a></li>
-          <li><a href="/ofertas">Ofertas</a></li>
+          <li><a href="/capacitacion-ia">Capacitación IA</a></li>
+          <li><a href="/desarrollo-web">Desarrollo Web</a></li>
+          <li><a href="/servicios">Soporte Técnico</a></li>
           <li><a href="/sobre">Nosotros</a></li>
           <li><a href="/blog">Blog</a></li>
           <li><a href="/contacto">Contacto</a></li>
           <li>
-            <a href="https://wa.me/50671951856?text=Hola%20Teknika%20CR%2C%20necesito%20soporte%20t%C3%A9cnico"
+            <a href="https://wa.me/50671951856?text=Hola%20Teknika%20CR%2C%20me%20interesa%20una%20consultor%C3%ADa"
                class="btn btn--accent btn--nav"
                target="_blank"
                rel="noopener">
@@ -252,15 +256,6 @@ const fullTitle = title === 'Inicio'
         </ul>
       </nav>
     </header>
-
-    <div class="launch-banner">
-      <div class="container">
-        <p class="launch-banner__text">
-          <span class="launch-banner__badge">-25%</span>
-          <strong>Precio de lanzamiento</strong> en todos los servicios &mdash; <a href="/ofertas">Ver ofertas</a>
-        </p>
-      </div>
-    </div>
 
     <main>
       <slot />
@@ -280,12 +275,11 @@ const fullTitle = title === 'Inicio'
           <div class="footer__col">
             <h4>Servicios</h4>
             <ul>
+              <li><a href="/capacitacion-ia">Capacitación en IA</a></li>
+              <li><a href="/desarrollo-web">Desarrollo Web</a></li>
+              <li><a href="/servicios">Soporte Técnico</a></li>
               <li><a href="/servicios#diagnostico">Diagnóstico y reparación</a></li>
               <li><a href="/servicios#formateo">Formateo e instalación</a></li>
-              <li><a href="/servicios#asesoria">Asesoría de compra</a></li>
-              <li><a href="/asesoria-ia">Asesoría de IA</a></li>
-              <li><a href="/servicios#web">Tu negocio en internet</a></li>
-              <li><a href="/servicios#paquetes">Paquetes</a></li>
             </ul>
           </div>
 
