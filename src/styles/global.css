@@ -256,6 +256,23 @@ ul, ol {
   border-color: var(--color-white);
 }
 
+.btn--outline-light {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: var(--color-white);
+  background: transparent;
+}
+
+.btn--outline-light:hover {
+  border-color: var(--color-cyan);
+  color: var(--color-cyan);
+  background: rgba(68, 207, 203, 0.1);
+}
+
+.btn--sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
 .btn--whatsapp {
   background-color: #25D366;
   color: var(--color-white);
