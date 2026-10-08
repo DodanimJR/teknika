@@ -229,6 +229,33 @@ ul, ol {
   color: var(--color-dark);
 }
 
+.btn--outline-dark {
+  background: transparent;
+  color: var(--color-dark);
+  border: 2px solid var(--color-gray-300);
+}
+
+.btn--outline-dark:hover {
+  background: var(--color-dark);
+  color: var(--color-white);
+  border-color: var(--color-dark);
+}
+
+.section--dark .btn--outline-dark,
+.hero .btn--outline-dark,
+.page-header .btn--outline-dark {
+  color: var(--color-white);
+  border-color: var(--color-gray-400);
+}
+
+.section--dark .btn--outline-dark:hover,
+.hero .btn--outline-dark:hover,
+.page-header .btn--outline-dark:hover {
+  background: var(--color-white);
+  color: var(--color-dark);
+  border-color: var(--color-white);
+}
+
 .btn--whatsapp {
   background-color: #25D366;
   color: var(--color-white);

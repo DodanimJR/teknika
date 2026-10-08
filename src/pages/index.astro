@@ -41,25 +41,59 @@ import HeroIllustration from '../components/HeroIllustration.astro';
     <div class="container">
       <div class="text-center" style="margin-bottom: var(--space-2xl);">
         <h2>Nuestros servicios</h2>
-        <p class="text-muted">Soluciones informáticas para personas y pequeñas empresas</p>
+        <p class="text-muted">Consultoría, capacitación y soporte tecnológico para organizaciones y PYMEs</p>
       </div>
 
       <div class="services-grid">
+        <div class="card card--service" data-service="Capacitación empresarial en inteligencia artificial" role="button" tabindex="0">
+          <div class="card-service__top">
+            <div class="card__icon-circle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <div>
+              <h3 class="card__title">Capacitación en IA</h3>
+              <p class="card__price">Desde &#8353;15,000 &middot; Empresas desde &#8353;150,000</p>
+            </div>
+          </div>
+          <p class="card__text">
+            Capacitá a tu equipo en inteligencia artificial. Talleres personalizados con Claude,
+            Gemini y Copilot para organizaciones y profesionales.
+          </p>
+          <span class="card__cta">Ver paquetes de capacitación &rarr;</span>
+        </div>
+
+        <div class="card card--service" data-service="Sitio web para mi negocio" role="button" tabindex="0">
+          <div class="card-service__top">
+            <div class="card__icon-circle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div>
+              <h3 class="card__title">Desarrollo web</h3>
+              <p class="card__price">Desde &#8353;120,000</p>
+            </div>
+          </div>
+          <p class="card__text">
+            Sitios web profesionales optimizados para Google y la IA.
+            Dominio, email profesional y hosting gratuito incluidos.
+          </p>
+          <span class="card__cta">Cotizar sitio web &rarr;</span>
+        </div>
+
         <div class="card card--service" data-service="Diagnóstico y reparación de computadoras" role="button" tabindex="0">
           <div class="card-service__top">
             <div class="card__icon-circle">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
             </div>
             <div>
-              <h3 class="card__title">Diagnóstico y reparación</h3>
+              <h3 class="card__title">Soporte técnico</h3>
               <p class="card__price">Desde &#8353;8,000</p>
             </div>
           </div>
           <p class="card__text">
-            Identificamos el problema de tu computadora y lo reparamos. Limpieza interna,
-            cambio de componentes, optimización de rendimiento.
+            Diagnóstico, reparación, formateo, limpieza interna y upgrades.
+            Presupuesto exacto antes de proceder. Sin sorpresas.
           </p>
-          <span class="card__cta">Consultar este servicio &rarr;</span>
+          <span class="card__cta">Ver servicios de soporte &rarr;</span>
         </div>
 
         <div class="card card--service" data-service="Formateo e instalación de software" role="button" tabindex="0">
@@ -96,40 +130,6 @@ import HeroIllustration from '../components/HeroIllustration.astro';
           <span class="card__cta">Consultar este servicio &rarr;</span>
         </div>
 
-        <div class="card card--service" data-service="Sitio web para mi negocio" role="button" tabindex="0">
-          <div class="card-service__top">
-            <div class="card__icon-circle">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            </div>
-            <div>
-              <h3 class="card__title">Tu negocio en internet</h3>
-              <p class="card__price">Desde &#8353;120,000</p>
-            </div>
-          </div>
-          <p class="card__text">
-            Creamos el sitio web de tu negocio: profesional, rápido y sin cuotas
-            mensuales de hosting. Que tus clientes te encuentren en Google.
-          </p>
-          <span class="card__cta">Cotizar mi sitio web &rarr;</span>
-        </div>
-
-        <div class="card card--service" data-service="Asesoría de inteligencia artificial" role="button" tabindex="0">
-          <div class="card-service__top">
-            <div class="card__icon-circle">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-            </div>
-            <div>
-              <h3 class="card__title">Asesoría de IA</h3>
-              <p class="card__price">Desde &#8353;15,000</p>
-            </div>
-          </div>
-          <p class="card__text">
-            Aprendé a usar inteligencia artificial en tu trabajo o vida personal.
-            Sesiones prácticas y personalizadas, sin jerga técnica.
-          </p>
-          <span class="card__cta">Consultar este servicio &rarr;</span>
-        </div>
-
         <div class="card card--service" data-service="Soporte técnico para PYMEs" role="button" tabindex="0">
           <div class="card-service__top">
             <div class="card__icon-circle">
@@ -141,8 +141,8 @@ import HeroIllustration from '../components/HeroIllustration.astro';
             </div>
           </div>
           <p class="card__text">
-            Mantenimiento de equipos, soporte técnico recurrente y asesoría informática
-            para tu negocio. Tu departamento de TI sin tener que contratar uno.
+            Tu departamento de TI sin tener que contratar uno.
+            Mantenimiento de equipos, soporte recurrente y asesoría informática.
           </p>
           <span class="card__cta">Consultar este servicio &rarr;</span>
         </div>
@@ -331,17 +331,7 @@ import HeroIllustration from '../components/HeroIllustration.astro';
     flex-wrap: wrap;
   }
 
-  .btn--outline-dark {
-    background: transparent;
-    color: var(--color-white);
-    border: 2px solid var(--color-gray-400);
-  }
-
-  .btn--outline-dark:hover {
-    background: var(--color-white);
-    color: var(--color-dark);
-    border-color: var(--color-white);
-  }
+  /* btn--outline-dark moved to global.css */
 
   /* ============================================
      Services grid (fixed 3 columns)
