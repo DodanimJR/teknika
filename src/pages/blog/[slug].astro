@@ -1,0 +1,210 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const formattedDate = post.data.date.toLocaleDateString('es-CR', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<Base
+  title={post.data.title}
+  description={post.data.description}
+  canonical={`https://teknika.co.cr/blog/${post.slug}/`}
+>
+
+  <section class="page-header">
+    <div class="container">
+      <a href="/blog" class="blog-back">&larr; Volver al blog</a>
+      <h1>{post.data.title}</h1>
+      <div class="blog-post__meta">
+        <span>{formattedDate}</span>
+        <span>&middot;</span>
+        <span>{post.data.author}</span>
+      </div>
+    </div>
+  </section>
+
+  <article class="section">
+    <div class="container">
+      <div class="blog-post__content">
+        <Content />
+      </div>
+
+      <div class="blog-post__tags">
+        {post.data.tags.map((tag: string) => (
+          <span class="badge badge--sky">{tag}</span>
+        ))}
+      </div>
+
+      <div class="blog-post__cta">
+        <h3>¿Te interesa este tema?</h3>
+        <p>En Teknika CR ofrecemos capacitación empresarial en inteligencia artificial, desarrollo web y soporte técnico para organizaciones y PYMEs en Costa Rica.</p>
+        <div style="display: flex; gap: var(--space-md); flex-wrap: wrap;">
+          <a href="https://wa.me/50671951856?text=Hola%20Teknika%20CR%2C%20le%C3%AD%20el%20art%C3%ADculo%20y%20me%20interesa%20saber%20m%C3%A1s"
+             class="btn btn--whatsapp"
+             target="_blank"
+             rel="noopener">
+            Contactar por WhatsApp
+          </a>
+          <a href="/contacto" class="btn btn--outline-dark">
+            Formulario de contacto
+          </a>
+        </div>
+      </div>
+
+      <nav class="blog-post__nav">
+        <a href="/blog" class="btn btn--outline-dark btn--sm">&larr; Todos los artículos</a>
+      </nav>
+    </div>
+  </article>
+
+</Base>
+
+<style>
+  .blog-back {
+    color: var(--color-cyan);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: var(--space-md);
+    transition: color 0.2s ease;
+  }
+
+  .blog-back:hover { color: var(--color-white); }
+
+  .blog-post__meta {
+    display: flex;
+    gap: var(--space-sm);
+    color: var(--color-gray-300);
+    font-size: 0.9375rem;
+    margin-top: var(--space-sm);
+  }
+
+  .blog-post__content {
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text);
+  }
+
+  .blog-post__content :global(h2) {
+    font-size: 1.5rem;
+    margin-top: var(--space-2xl);
+    margin-bottom: var(--space-md);
+    color: var(--color-dark);
+  }
+
+  .blog-post__content :global(h3) {
+    font-size: 1.25rem;
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-sm);
+    color: var(--color-dark);
+  }
+
+  .blog-post__content :global(p) {
+    margin-bottom: var(--space-md);
+  }
+
+  .blog-post__content :global(ul),
+  .blog-post__content :global(ol) {
+    margin-bottom: var(--space-md);
+    padding-left: var(--space-xl);
+  }
+
+  .blog-post__content :global(li) {
+    margin-bottom: var(--space-xs);
+  }
+
+  .blog-post__content :global(strong) {
+    color: var(--color-dark);
+  }
+
+  .blog-post__content :global(a) {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .blog-post__content :global(a:hover) {
+    color: var(--color-sky);
+  }
+
+  .blog-post__content :global(blockquote) {
+    border-left: 3px solid var(--color-cyan);
+    padding-left: var(--space-lg);
+    margin: var(--space-xl) 0;
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+
+  .blog-post__content :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--space-lg) 0;
+    font-size: 0.9375rem;
+  }
+
+  .blog-post__content :global(th),
+  .blog-post__content :global(td) {
+    padding: var(--space-sm) var(--space-md);
+    border-bottom: 1px solid var(--color-gray-200);
+    text-align: left;
+  }
+
+  .blog-post__content :global(th) {
+    font-weight: 700;
+    color: var(--color-dark);
+    background: var(--color-gray-50);
+  }
+
+  .blog-post__tags {
+    display: flex;
+    gap: var(--space-xs);
+    flex-wrap: wrap;
+    max-width: 720px;
+    margin: var(--space-xl) auto;
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--color-gray-200);
+  }
+
+  .blog-post__cta {
+    max-width: 720px;
+    margin: var(--space-2xl) auto;
+    padding: var(--space-xl);
+    background: var(--color-gray-50);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-gray-200);
+  }
+
+  .blog-post__cta h3 {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .blog-post__cta p {
+    color: var(--color-text-muted);
+    font-size: 0.9375rem;
+    margin-bottom: var(--space-lg);
+  }
+
+  .blog-post__nav {
+    max-width: 720px;
+    margin: var(--space-xl) auto 0;
+  }
+</style>
