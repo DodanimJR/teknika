@@ -1,6 +1,5 @@
 ---
 import Base from '../layouts/Base.astro';
-import ContactModal from '../components/ContactModal.astro';
 import PreciosIA from '../components/PreciosIA.astro';
 import { AGENDA_URL, WHATSAPP_URL } from '../data/contacto';
 ---
@@ -323,7 +322,6 @@ import { AGENDA_URL, WHATSAPP_URL } from '../data/contacto';
     </div>
   </section>
 
-  <ContactModal />
 
   <!-- CTA -->
   <section class="section section--dark text-center">
@@ -339,7 +337,7 @@ import { AGENDA_URL, WHATSAPP_URL } from '../data/contacto';
            rel="noopener">
           Agendar una llamada
         </a>
-        <a href={WHATSAPP_URL}
+        <a data-service="Asesoría o capacitación en IA" href={WHATSAPP_URL}
            class="btn btn--whatsapp btn--lg"
            target="_blank"
            rel="noopener">

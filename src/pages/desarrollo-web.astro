@@ -1,6 +1,5 @@
 ---
 import Base from '../layouts/Base.astro';
-import ContactModal from '../components/ContactModal.astro';
 import { paquetesWeb, etiquetaWeb } from '../data/precios-web';
 import { colones } from '../data/precios-ia';
 ---
@@ -23,7 +22,7 @@ import { colones } from '../data/precios-ia';
             cuando alguien busca lo que ofrecés.
           </p>
           <div class="web-hero__actions">
-            <a href="https://wa.me/50671951856?text=Hola%20Teknika%20CR%2C%20me%20interesa%20un%20sitio%20web%20para%20mi%20negocio"
+            <a data-service="Sitio web para mi negocio" href="https://wa.me/50671951856?text=Hola%20Teknika%20CR%2C%20me%20interesa%20un%20sitio%20web%20para%20mi%20negocio"
                class="btn btn--primary btn--lg"
                target="_blank"
                rel="noopener">
@@ -307,7 +306,6 @@ import { colones } from '../data/precios-ia';
     </div>
   </section>
 
-  <ContactModal />
 
   <!-- CTA -->
   <section class="section section--dark text-center">
@@ -317,7 +315,7 @@ import { colones } from '../data/precios-ia';
         Contactanos para una llamada de 20 minutos donde entendemos tu negocio y te damos una cotización sin compromiso.
       </p>
       <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
-        <a href="https://wa.me/50671951856?text=Hola%20Teknika%20CR%2C%20me%20interesa%20un%20sitio%20web%20para%20mi%20negocio"
+        <a data-service="Sitio web para mi negocio" href="https://wa.me/50671951856?text=Hola%20Teknika%20CR%2C%20me%20interesa%20un%20sitio%20web%20para%20mi%20negocio"
            class="btn btn--whatsapp btn--lg"
            target="_blank"
            rel="noopener">

@@ -1,41 +1,51 @@
 ---
 /**
- * ContactModal - Modal que aparece al hacer click en un servicio.
- * Le pregunta al usuario si quiere contactar por WhatsApp o por correo.
- * Se activa con data-service en las cards.
+ * ContactModal — se abre al tocar cualquier elemento con data-service
+ * (tarjetas de servicio y botones de WhatsApp). Pide nombre y teléfono,
+ * registra el lead en HubSpot (/api/lead) y abre WhatsApp con el mensaje listo.
+ * Está incluido una sola vez en Base.astro.
  */
+import { WHATSAPP_NUMERO } from '../data/contacto';
 ---
 
-<div class="contact-modal-overlay" id="contact-modal" aria-hidden="true">
-  <div class="contact-modal" role="dialog" aria-labelledby="modal-title">
-    <button class="contact-modal__close" aria-label="Cerrar">&times;</button>
-
-    <div class="contact-modal__icon">&#128172;</div>
-    <h3 class="contact-modal__title" id="modal-title">¿Cómo preferís que te contactemos?</h3>
+<div class="contact-modal-overlay" id="contact-modal" aria-hidden="true" data-wa={WHATSAPP_NUMERO}>
+  <div class="contact-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="contact-modal__close" type="button" aria-label="Cerrar">&times;</button>
+    <h3 class="contact-modal__title" id="modal-title">¿A quién le escribimos?</h3>
     <p class="contact-modal__service" id="modal-service-name"></p>
 
-    <div class="contact-modal__actions">
-      <a id="modal-whatsapp"
-         href="#"
-         class="btn btn--whatsapp btn--lg contact-modal__btn"
-         target="_blank"
-         rel="noopener">
-        <span class="contact-modal__btn-icon">&#128241;</span>
-        <span>
-          <strong>WhatsApp</strong>
-          <small>Respuesta en menos de 2 horas</small>
-        </span>
-      </a>
+    <form class="contact-modal__form" id="modal-lead-form" novalidate>
+      <div class="contact-modal__field">
+        <label for="lead-nombre">Nombre</label>
+        <input id="lead-nombre" name="nombre" type="text" autocomplete="name" required maxlength="120" />
+      </div>
+      <div class="contact-modal__field">
+        <label for="lead-telefono">WhatsApp o teléfono</label>
+        <input id="lead-telefono" name="telefono" type="tel" autocomplete="tel" required placeholder="8888-8888" maxlength="40" />
+      </div>
+      <div class="contact-modal__field">
+        <label for="lead-email">Correo <span>(opcional)</span></label>
+        <input id="lead-email" name="email" type="email" autocomplete="email" maxlength="200" />
+      </div>
+      <div class="contact-modal__hp" aria-hidden="true">
+        <label for="lead-website">No llenar</label>
+        <input id="lead-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+      </div>
+      <p class="contact-modal__error" id="modal-lead-error" role="alert" hidden>
+        Escribí tu nombre y un número de WhatsApp o teléfono.
+      </p>
+      <button type="submit" class="btn btn--whatsapp btn--lg contact-modal__submit">
+        Continuar en WhatsApp
+      </button>
+      <p class="contact-modal__privacy">
+        Usamos tus datos solo para responderte sobre tu consulta.
+      </p>
+    </form>
 
-      <a href="/contacto"
-         class="btn btn--primary btn--lg contact-modal__btn"
-         id="modal-email">
-        <span class="contact-modal__btn-icon">&#9993;</span>
-        <span>
-          <strong>Formulario de contacto</strong>
-          <small>Te respondemos por correo</small>
-        </span>
-      </a>
+    <div class="contact-modal__alt">
+      <a href="/contacto" id="modal-form-link">Prefiero el formulario</a>
+      <span aria-hidden="true">·</span>
+      <a href="#" id="modal-direct-link" target="_blank" rel="noopener">Ir directo a WhatsApp</a>
     </div>
   </div>
 </div>
@@ -55,29 +65,26 @@
     transition: opacity 200ms ease, visibility 200ms ease;
     padding: var(--space-md);
   }
-
   .contact-modal-overlay.is-open {
     opacity: 1;
     visibility: visible;
   }
-
   .contact-modal {
     background: var(--color-white);
     border-radius: var(--radius-xl);
     padding: var(--space-2xl);
-    max-width: 460px;
+    max-width: 440px;
     width: 100%;
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
     position: relative;
     box-shadow: var(--shadow-xl);
     transform: translateY(20px) scale(0.95);
     transition: transform 200ms ease;
-    text-align: center;
   }
-
   .contact-modal-overlay.is-open .contact-modal {
     transform: translateY(0) scale(1);
   }
-
   .contact-modal__close {
     position: absolute;
     top: var(--space-md);
@@ -85,74 +92,89 @@
     background: none;
     border: none;
     font-size: 1.75rem;
-    color: var(--color-gray-400);
+    color: var(--color-gray-500);
     cursor: pointer;
     line-height: 1;
     padding: 4px 8px;
     border-radius: var(--radius-sm);
-    transition: background-color var(--transition), color var(--transition);
   }
-
   .contact-modal__close:hover {
     color: var(--color-dark);
     background: var(--color-gray-100);
   }
-
-  .contact-modal__icon {
-    font-size: 2.5rem;
-    margin-bottom: var(--space-md);
-  }
-
   .contact-modal__title {
     font-size: 1.25rem;
-    margin-bottom: var(--space-xs);
+    margin: 0 0 var(--space-xs);
     color: var(--color-dark);
   }
-
   .contact-modal__service {
     color: var(--color-royal);
     font-weight: 600;
     font-size: 0.9375rem;
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-lg);
   }
-
-  .contact-modal__actions {
+  .contact-modal__field {
     display: flex;
     flex-direction: column;
-    gap: var(--space-md);
+    gap: 4px;
+    margin-bottom: var(--space-md);
   }
-
-  .contact-modal__btn {
-    display: flex;
-    align-items: center;
-    gap: var(--space-md);
-    padding: var(--space-md) var(--space-lg);
-    width: 100%;
-    text-align: left;
-    border-radius: var(--radius-lg);
-    text-decoration: none;
+  .contact-modal__field label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-gray-700);
   }
-
-  .contact-modal__btn span {
-    display: flex;
-    flex-direction: column;
+  .contact-modal__field label span {
+    font-weight: 400;
+    color: var(--color-gray-500);
   }
-
-  .contact-modal__btn strong {
+  .contact-modal__field input {
+    padding: 0.7rem 0.85rem;
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--radius-md);
+    font: inherit;
     font-size: 1rem;
   }
-
-  .contact-modal__btn small {
-    font-size: 0.8125rem;
-    opacity: 0.85;
-    font-weight: 400;
+  .contact-modal__field input:focus-visible {
+    outline: 2px solid var(--color-sky);
+    outline-offset: 1px;
+    border-color: var(--color-sky);
   }
-
-  .contact-modal__btn-icon {
-    font-size: 1.5rem;
-    flex-shrink: 0;
+  .contact-modal__hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
   }
-
+  .contact-modal__error {
+    color: #b42318;
+    font-size: 0.875rem;
+    margin: 0 0 var(--space-sm);
+  }
+  .contact-modal__submit {
+    width: 100%;
+    justify-content: center;
+  }
+  .contact-modal__privacy {
+    font-size: 0.75rem;
+    color: var(--color-gray-500);
+    text-align: center;
+    margin: var(--space-sm) 0 0;
+  }
+  .contact-modal__alt {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+    margin-top: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-gray-200);
+    font-size: 0.875rem;
+    color: var(--color-gray-500);
+  }
+  .contact-modal__alt a {
+    color: var(--color-royal);
+  }
   @media (max-width: 480px) {
     .contact-modal {
       padding: var(--space-xl) var(--space-lg);
@@ -164,101 +186,105 @@
   function initContactModal() {
     const modal = document.getElementById('contact-modal');
     const serviceName = document.getElementById('modal-service-name');
-    const whatsappLink = document.getElementById('modal-whatsapp') as HTMLAnchorElement;
-    const closeBtn = modal?.querySelector('.contact-modal__close') as HTMLElement;
+    const form = document.getElementById('modal-lead-form') as HTMLFormElement | null;
+    const errorEl = document.getElementById('modal-lead-error');
+    const formLink = document.getElementById('modal-form-link') as HTMLAnchorElement | null;
+    const directLink = document.getElementById('modal-direct-link') as HTMLAnchorElement | null;
+    const closeBtn = modal?.querySelector('.contact-modal__close') as HTMLElement | null;
+    if (!modal || !serviceName || !form || !errorEl || !formLink || !directLink || !closeBtn) return;
 
-    if (!modal || !serviceName || !whatsappLink || !closeBtn) return;
+    const numero = modal.dataset.wa || '';
+    let servicio = '';
+    let lastFocused: HTMLElement | null = null;
 
-    let lastFocusedElement: HTMLElement | null = null;
+    const waUrl = (texto: string) => `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
 
-    function openModal(service: string) {
-      const whatsappMsg = encodeURIComponent(
-        `Hola Teknika CR, me interesa el servicio de: ${service}`
-      );
-      serviceName.textContent = service;
-      whatsappLink.href = `https://wa.me/50671951856?text=${whatsappMsg}`;
-      modal.classList.add('is-open');
-      modal.setAttribute('aria-hidden', 'false');
+    function openModal(service: string, trigger: HTMLElement) {
+      servicio = service;
+      lastFocused = trigger;
+      serviceName!.textContent = service;
+      directLink!.href = waUrl(`Hola Teknika CR, me interesa: ${service}`);
+      formLink!.href = '/contacto?servicio=' + encodeURIComponent(service);
+      errorEl!.hidden = true;
+      modal!.classList.add('is-open');
+      modal!.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
-      // Move focus into modal
-      closeBtn.focus();
+      (form!.querySelector('input[name="nombre"]') as HTMLInputElement)?.focus();
     }
 
     function closeModal() {
-      modal.classList.remove('is-open');
-      modal.setAttribute('aria-hidden', 'true');
+      modal!.classList.remove('is-open');
+      modal!.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
-      // Return focus to triggering element
-      if (lastFocusedElement) {
-        lastFocusedElement.focus();
-        lastFocusedElement = null;
-      }
+      lastFocused?.focus();
+      lastFocused = null;
     }
 
-    // Open modal when clicking/pressing any element with data-service
-    document.querySelectorAll('[data-service]').forEach((card) => {
-      card.addEventListener('click', (e) => {
+    document.querySelectorAll<HTMLElement>('[data-service]').forEach((el) => {
+      const abrir = (e: Event) => {
         e.preventDefault();
-        const target = e.currentTarget as HTMLElement;
-        lastFocusedElement = target;
-        const service = target.getAttribute('data-service') || '';
-        openModal(service);
-      });
-
-      // Keyboard handler: Enter and Space activate the card
-      card.addEventListener('keydown', (e) => {
-        const key = (e as KeyboardEvent).key;
-        if (key === 'Enter' || key === ' ') {
-          e.preventDefault();
-          const target = e.currentTarget as HTMLElement;
-          lastFocusedElement = target;
-          const service = target.getAttribute('data-service') || '';
-          openModal(service);
-        }
-      });
+        openModal(el.getAttribute('data-service') || 'Consulta general', el);
+      };
+      el.addEventListener('click', abrir);
+      if (el.tagName !== 'A' && el.tagName !== 'BUTTON') {
+        el.addEventListener('keydown', (e) => {
+          const k = (e as KeyboardEvent).key;
+          if (k === 'Enter' || k === ' ') abrir(e);
+        });
+      }
     });
 
-    // Close modal
-    closeBtn.addEventListener('click', closeModal);
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const datos = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
+      const nombre = (datos.nombre || '').trim();
+      const telefono = (datos.telefono || '').trim();
+      if (!nombre || telefono.replace(/\D/g, '').length < 8) {
+        errorEl!.hidden = false;
+        return;
+      }
+      const payload = JSON.stringify({
+        ...datos,
+        servicio,
+        origen: 'Sitio web (WhatsApp)',
+        pagina: location.pathname,
+      });
+      try {
+        const blob = new Blob([payload], { type: 'application/json' });
+        if (!navigator.sendBeacon('/api/lead', blob)) throw new Error('beacon');
+      } catch {
+        fetch('/api/lead', { method: 'POST', body: payload, headers: { 'Content-Type': 'application/json' }, keepalive: true }).catch(() => {});
+      }
+      window.open(waUrl(`Hola Teknika CR, soy ${nombre}. Me interesa: ${servicio}`), '_blank', 'noopener');
+      form.reset();
+      closeModal();
+    });
 
+    closeBtn.addEventListener('click', closeModal);
     modal.addEventListener('click', (e) => {
       if (e.target === modal) closeModal();
     });
 
-    // Keyboard: Escape closes, Tab traps focus inside modal
     document.addEventListener('keydown', (e) => {
       if (!modal.classList.contains('is-open')) return;
-
-      if (e.key === 'Escape') {
-        closeModal();
-        return;
-      }
-
-      // Focus trap
+      if (e.key === 'Escape') return closeModal();
       if (e.key === 'Tab') {
-        const focusableEls = modal.querySelectorAll<HTMLElement>(
-          'a[href], button, [tabindex]:not([tabindex="-1"])'
+        const els = modal.querySelectorAll<HTMLElement>(
+          'a[href], button, input:not([tabindex="-1"]), [tabindex]:not([tabindex="-1"])'
         );
-        if (focusableEls.length === 0) return;
-
-        const firstEl = focusableEls[0];
-        const lastEl = focusableEls[focusableEls.length - 1];
-
-        if (e.shiftKey) {
-          if (document.activeElement === firstEl) {
-            e.preventDefault();
-            lastEl.focus();
-          }
-        } else {
-          if (document.activeElement === lastEl) {
-            e.preventDefault();
-            firstEl.focus();
-          }
+        if (!els.length) return;
+        const first = els[0];
+        const last = els[els.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
         }
       }
     });
   }
 
-  document.addEventListener('DOMContentLoaded', initContactModal);
-  document.addEventListener('astro:after-swap', initContactModal);
+  initContactModal();
 </script>

@@ -35,7 +35,7 @@ import { AGENDA_URL, WHATSAPP_URL } from '../data/contacto';
                style="width: 100%; justify-content: center; margin-bottom: var(--space-sm);">
               Agendar una llamada
             </a>
-            <a href={WHATSAPP_URL}
+            <a data-service="Consulta general" href={WHATSAPP_URL}
                class="btn btn--whatsapp btn--lg"
                target="_blank"
                rel="noopener"
@@ -71,7 +71,7 @@ import { AGENDA_URL, WHATSAPP_URL } from '../data/contacto';
 
         <div class="contact-form-wrap">
           <h2>Formulario de contacto</h2>
-          <form action="https://formspree.io/f/mqerpoor" method="POST" class="contact-form">
+          <form action="https://formspree.io/f/mqerpoor" method="POST" class="contact-form" id="contact-form">
             <div class="form-group">
               <label for="name">Nombre</label>
               <input type="text" id="name" name="name" required placeholder="Tu nombre" autocomplete="name" />
@@ -206,3 +206,39 @@ import { AGENDA_URL, WHATSAPP_URL } from '../data/contacto';
     }
   }
 </style>
+
+<script>
+  // Prellenar desde ?servicio= y registrar el lead en HubSpot (sin bloquear el envío a Formspree)
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  if (form) {
+    const svc = new URLSearchParams(location.search).get('servicio');
+    if (svc) {
+      const select = form.querySelector('select[name="service"]') as HTMLSelectElement | null;
+      const msg = form.querySelector('textarea[name="message"]') as HTMLTextAreaElement | null;
+      const t = svc.toLowerCase();
+      if (select) {
+        select.value = /taller|programa|equipo|organizaci/.test(t) ? 'ia-equipo'
+          : /ia|coaching|sesi/.test(t) ? 'ia-personal'
+          : /web|sitio|tienda|presencia/.test(t) ? 'desarrollo-web'
+          : /soporte|formateo|diagn/.test(t) ? 'soporte' : 'otro';
+      }
+      if (msg && !msg.value) msg.value = `Me interesa: ${svc}\n`;
+    }
+    form.addEventListener('submit', () => {
+      const d = new FormData(form);
+      const select = form.querySelector('select[name="service"]') as HTMLSelectElement | null;
+      const payload = JSON.stringify({
+        nombre: d.get('name'),
+        email: d.get('email'),
+        telefono: d.get('phone'),
+        servicio: select?.selectedOptions[0]?.textContent || '',
+        mensaje: d.get('message'),
+        origen: 'Formulario de contacto',
+        pagina: location.pathname,
+      });
+      try {
+        navigator.sendBeacon('/api/lead', new Blob([payload], { type: 'application/json' }));
+      } catch {}
+    });
+  }
+</script>

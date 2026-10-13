@@ -1,6 +1,5 @@
 ---
 import Base from '../layouts/Base.astro';
-import ContactModal from '../components/ContactModal.astro';
 import PreciosWeb from '../components/PreciosWeb.astro';
 import { colones, precioDesde } from '../data/precios-ia';
 ---
@@ -372,7 +371,6 @@ import { colones, precioDesde } from '../data/precios-ia';
     </div>
   </section>
 
-  <ContactModal />
 
   <!-- CTA -->
   <section class="section section--dark text-center">
@@ -381,7 +379,7 @@ import { colones, precioDesde } from '../data/precios-ia';
       <p style="color: var(--color-gray-300); max-width: 500px; margin: var(--space-md) auto var(--space-xl);">
         Contactanos para una cotización. Te damos presupuesto exacto antes de proceder.
       </p>
-      <a href="https://wa.me/50671951856?text=Hola%20Teknika%20CR%2C%20quiero%20cotizar%20un%20servicio"
+      <a data-service="Cotizar un servicio" href="https://wa.me/50671951856?text=Hola%20Teknika%20CR%2C%20quiero%20cotizar%20un%20servicio"
          class="btn btn--whatsapp btn--lg"
          target="_blank"
          rel="noopener">
