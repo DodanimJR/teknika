@@ -1,11 +1,12 @@
 ---
 import Base from '../layouts/Base.astro';
 import ContactModal from '../components/ContactModal.astro';
+import PreciosIA from '../components/PreciosIA.astro';
 ---
 
 <Base
-  title="Capacitación en Inteligencia Artificial"
-  description="Capacitación empresarial en inteligencia artificial para organizaciones y PYMEs en Costa Rica. Talleres personalizados con Claude, Gemini y Copilot. Desde sesiones individuales hasta programas completos para equipos."
+  title="Asesoría, coaching y capacitación en IA"
+  description="Asesoría, coaching y capacitación en inteligencia artificial en Costa Rica. Sesiones 1:1 y coaching para profesionales; talleres y programas para organizaciones con Claude, ChatGPT, Gemini y Copilot."
   canonical="https://teknika.co.cr/capacitacion-ia"
 >
 
@@ -14,21 +15,21 @@ import ContactModal from '../components/ContactModal.astro';
     <div class="container">
       <div class="ia-hero__grid">
         <div class="ia-hero__content">
-          <span class="badge badge--cyan">Capacitación empresarial</span>
-          <h1>Capacitá a tu equipo en <span class="ia-hero__accent">inteligencia artificial</span></h1>
+          <span class="badge badge--cyan">Asesoría · Coaching · Capacitación</span>
+          <h1>Aprendé a trabajar con <span class="ia-hero__accent">inteligencia artificial</span></h1>
           <p class="ia-hero__subtitle">
-            Talleres y programas de capacitación personalizados para organizaciones y PYMEs.
-            Enfocados en Claude, Gemini y Copilot. Sin jerga técnica, con resultados prácticos desde el primer día.
+            Coaching 1:1 para profesionales y talleres para equipos, con tus propios casos de trabajo.
+            Claude, ChatGPT, Gemini y Copilot, sin jerga técnica y con resultados desde la primera sesión.
           </p>
           <div class="ia-hero__actions">
-            <a href="https://wa.me/50671951856?text=Hola%20Teknika%20CR%2C%20me%20interesa%20una%20capacitaci%C3%B3n%20de%20IA%20para%20mi%20organizaci%C3%B3n"
+            <a href="https://wa.me/50671951856?text=Hola%20Teknika%20CR%2C%20quiero%20agendar%20una%20llamada%20sobre%20asesor%C3%ADa%20o%20capacitaci%C3%B3n%20en%20IA"
                class="btn btn--primary btn--lg"
                target="_blank"
                rel="noopener">
-              Solicitar cotización
+              Agendar una llamada
             </a>
             <a href="#paquetes" class="btn btn--outline-light btn--lg">
-              Ver paquetes
+              Ver precios
             </a>
           </div>
         </div>
@@ -233,122 +234,14 @@ import ContactModal from '../components/ContactModal.astro';
     </div>
   </section>
 
-  <!-- PAQUETES -->
+  <!-- PAQUETES (precios desde src/data/precios-ia.ts) -->
   <section class="section" id="paquetes">
     <div class="container">
       <div class="text-center" style="margin-bottom: var(--space-2xl);">
-        <h2>Paquetes de asesoría de IA</h2>
-        <p class="text-muted">Elegí el que mejor se adapte a tu necesidad</p>
+        <h2>Precios de asesoría, coaching y capacitación</h2>
+        <p class="text-muted">Elegí según si aprendés vos o capacitás a tu equipo</p>
       </div>
-
-      <div class="grid grid--2">
-        <div class="card svc-card svc-card--clickable" data-service="Sesión de IA - 1 hora de aprendizaje virtual - ₡15,000" role="button" tabindex="0">
-          <span class="badge badge--sky">Individual</span>
-          <h3 class="svc-card__title">Sesión básica</h3>
-          <p class="svc-card__subtitle">Virtual &middot; 1 hora</p>
-          <p class="svc-card__price">&#8353;15,000</p>
-          <ul class="svc-card__list">
-            <li>1 hora de sesión virtual en vivo</li>
-            <li>Aprendizaje acompañado y práctico</li>
-            <li>Personalizado a tu trabajo o necesidad</li>
-            <li>Grabación de la sesión incluida</li>
-          </ul>
-          <p class="svc-card__detail">Ideal para una introducción o resolver una duda puntual</p>
-          <span class="svc-card__cta">Agendar sesión &rarr;</span>
-        </div>
-
-        <div class="card svc-card svc-card--clickable svc-card--featured" data-service="Bundle de IA - 6 horas de tutoría virtual - ₡75,000" role="button" tabindex="0">
-          <span class="badge badge--cyan">Mejor valor</span>
-          <h3 class="svc-card__title">Bundle 6 sesiones</h3>
-          <p class="svc-card__subtitle">Virtual &middot; Usálas a tu ritmo</p>
-          <p class="svc-card__price">&#8353;75,000</p>
-          <ul class="svc-card__list">
-            <li>6 horas de tutoría virtual</li>
-            <li>Plan de aprendizaje personalizado</li>
-            <li>Soporte por chat entre sesiones</li>
-            <li>Recursos y guías incluidas</li>
-            <li>Seguimiento de tu progreso</li>
-          </ul>
-          <p class="svc-card__save">Ahorro de &#8353;15,000 vs individual</p>
-          <span class="svc-card__cta">Empezar tutoría &rarr;</span>
-        </div>
-
-        <div class="card svc-card svc-card--clickable" data-service="Capacitación grupal de IA para empresa - ₡10,000/persona (mínimo 4 personas)" role="button" tabindex="0">
-          <span class="badge badge--sky">Empresas</span>
-          <h3 class="svc-card__title">Capacitación grupal</h3>
-          <p class="svc-card__subtitle">Virtual o presencial &middot; 2 horas</p>
-          <p class="svc-card__price">&#8353;10,000<span style="font-size: 0.75em; font-weight: 500;">/persona</span></p>
-          <ul class="svc-card__list">
-            <li>Sesión de 2 horas para equipos de trabajo</li>
-            <li>Mínimo 4 participantes</li>
-            <li>Virtual o presencial según necesidad</li>
-            <li>Material de apoyo para cada participante</li>
-            <li>Certificado de participación</li>
-          </ul>
-          <p class="svc-card__detail">Ejemplo: 10 personas = &#8353;100,000 total</p>
-          <span class="svc-card__cta">Solicitar cotización &rarr;</span>
-        </div>
-
-        <div class="card svc-card svc-card--clickable svc-card--featured" data-service="Taller PYME de IA - 3 horas, sin límite de personas - ₡50,000" role="button" tabindex="0">
-          <span class="badge badge--cyan">PYMEs</span>
-          <h3 class="svc-card__title">Taller PYME de IA</h3>
-          <p class="svc-card__subtitle">Virtual o presencial &middot; 3 horas</p>
-          <p class="svc-card__price">&#8353;50,000</p>
-          <ul class="svc-card__list">
-            <li>Taller práctico de 3 horas</li>
-            <li>Sin límite de participantes</li>
-            <li>Virtual o presencial según necesidad</li>
-            <li>Material de apoyo para cada participante</li>
-            <li>Certificado de participación</li>
-            <li>Enfocado en las necesidades de tu negocio</li>
-          </ul>
-          <p class="svc-card__save">Precio fijo, invitá a todo tu equipo</p>
-          <span class="svc-card__cta">Agendar taller &rarr;</span>
-        </div>
-      </div>
-
-      <!-- CAPACITACIÓN EMPRESARIAL -->
-      <div style="margin-top: var(--space-3xl);">
-        <div class="text-center" style="margin-bottom: var(--space-2xl);">
-          <h2>Capacitación Empresarial</h2>
-          <p class="text-muted">Para organizaciones que necesitan capacitar a su equipo completo</p>
-        </div>
-
-        <div class="grid grid--2">
-          <div class="card svc-card svc-card--clickable" data-service="Taller Introductorio de IA para empresas - ₡150,000 + IVA" role="button" tabindex="0">
-            <span class="badge badge--sky">Empresas</span>
-            <h3 class="svc-card__title">Taller Introductorio</h3>
-            <p class="svc-card__subtitle">3 horas &middot; Presencial o virtual</p>
-            <p class="svc-card__price">&#8353;150,000 <span style="font-size: 0.75em; font-weight: 500;">+ IVA</span></p>
-            <ul class="svc-card__list">
-              <li>Hasta 15 participantes</li>
-              <li>Contenido personalizado a la organización</li>
-              <li>Material de apoyo digital</li>
-              <li>Certificado de participación</li>
-            </ul>
-            <span class="svc-card__cta">Solicitar cotización &rarr;</span>
-          </div>
-
-          <div class="card svc-card svc-card--clickable svc-card--featured" data-service="Programa Completo de IA para empresas - ₡300,000 + IVA" role="button" tabindex="0">
-            <span class="badge badge--cyan">Recomendado</span>
-            <h3 class="svc-card__title">Programa Completo</h3>
-            <p class="svc-card__subtitle">6 horas (2 sesiones) &middot; Presencial o virtual</p>
-            <p class="svc-card__price">&#8353;300,000 <span style="font-size: 0.75em; font-weight: 500;">+ IVA</span></p>
-            <ul class="svc-card__list">
-              <li>Hasta 15 participantes</li>
-              <li>Todo lo del Taller Introductorio más:</li>
-              <li>Guía de prompts personalizada</li>
-              <li>Borrador de política de uso de IA</li>
-              <li>1 semana de soporte post-capacitación</li>
-            </ul>
-            <span class="svc-card__cta">Solicitar cotización &rarr;</span>
-          </div>
-        </div>
-
-        <p class="text-center" style="margin-top: var(--space-lg); font-size: 0.8125rem; color: var(--color-text-muted);">
-          &#8353;10,000 + IVA por persona adicional después de 15
-        </p>
-      </div>
+      <PreciosIA />
     </div>
   </section>
 
@@ -382,7 +275,7 @@ import ContactModal from '../components/ContactModal.astro';
         <div class="ia-process__step">
           <div class="ia-process__number">4</div>
           <h3>Seguimiento</h3>
-          <p>Te dejamos guías y recursos. Con el bundle, tenés soporte por chat para resolver dudas después.</p>
+          <p>Te dejamos guías y plantillas. En el coaching y el Programa Completo tenés soporte por chat después.</p>
         </div>
       </div>
     </div>
@@ -408,7 +301,7 @@ import ContactModal from '../components/ContactModal.astro';
 
         <details class="ia-faq__item">
           <summary class="ia-faq__question">¿Las sesiones son presenciales o virtuales?</summary>
-          <p class="ia-faq__answer">Las sesiones individuales y el bundle son 100% virtuales por videollamada. La capacitación grupal y el taller PYME pueden ser virtuales o presenciales según la necesidad de la empresa.</p>
+          <p class="ia-faq__answer">La sesión 1:1 y el coaching son 100% virtuales por videollamada. El Taller y el Programa Completo para organizaciones pueden ser presenciales o virtuales.</p>
         </details>
 
         <details class="ia-faq__item">
@@ -417,8 +310,8 @@ import ContactModal from '../components/ContactModal.astro';
         </details>
 
         <details class="ia-faq__item">
-          <summary class="ia-faq__question">¿Cuánto dura el bundle de 6 sesiones?</summary>
-          <p class="ia-faq__answer">Las usás a tu ritmo. Podés tomar una por semana o una por mes. No tienen fecha de expiración. Además, incluye soporte por chat entre sesiones.</p>
+          <summary class="ia-faq__question">¿Cuánto dura el coaching de 6 sesiones?</summary>
+          <p class="ia-faq__answer">Las usás a tu ritmo: una por semana o una cada quince días. Tenés 6 meses desde la primera sesión para completarlas, con soporte por chat entre sesiones.</p>
         </details>
 
         <details class="ia-faq__item">
@@ -436,10 +329,10 @@ import ContactModal from '../components/ContactModal.astro';
     <div class="container">
       <h2 style="color: var(--color-white);">¿Listo para empezar?</h2>
       <p style="color: var(--color-gray-300); max-width: 500px; margin: var(--space-md) auto var(--space-xl);">
-        Contactanos para agendar tu primera sesión. Te respondemos en menos de 2 horas.
+        Agendá una llamada corta y te recomendamos el formato que mejor te sirve. Te respondemos en menos de 2 horas hábiles.
       </p>
       <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
-        <a href="https://wa.me/50671951856?text=Hola%20Teknika%20CR%2C%20quiero%20agendar%20una%20asesor%C3%ADa%20de%20IA"
+        <a href="https://wa.me/50671951856?text=Hola%20Teknika%20CR%2C%20quiero%20agendar%20una%20llamada%20sobre%20IA"
            class="btn btn--whatsapp btn--lg"
            target="_blank"
            rel="noopener">

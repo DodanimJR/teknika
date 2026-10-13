@@ -1,12 +1,12 @@
 ---
 import Base from '../layouts/Base.astro';
-import ContactModal from '../components/ContactModal.astro';
 import HeroIllustration from '../components/HeroIllustration.astro';
+import { colones, precioDesde } from '../data/precios-ia';
 ---
 
 <Base
   title="Inicio"
-  description="Consultoría tecnológica, capacitación en inteligencia artificial y desarrollo web para organizaciones y PYMEs en Costa Rica."
+  description="Asesoría, coaching y capacitación en inteligencia artificial para profesionales, PYMEs y organizaciones en Costa Rica. También desarrollo web y soporte técnico."
   canonical="https://teknika.co.cr"
 >
 
@@ -15,17 +15,21 @@ import HeroIllustration from '../components/HeroIllustration.astro';
     <div class="container">
       <div class="hero__grid">
         <div class="hero__content">
-          <span class="badge badge--cyan">Consultoría tecnológica &middot; Costa Rica</span>
-<h1>Tecnología que funciona.<br /><span class="hero__accent">Soluciones que entendés.</span></h1>
-           <p class="hero__subtitle">
-             Capacitación en inteligencia artificial, desarrollo web y soporte técnico para organizaciones y PYMEs.
-           </p>
+          <span class="badge badge--cyan">Asesoría y coaching en IA &middot; Costa Rica</span>
+          <h1>Inteligencia artificial que funciona.<br /><span class="hero__accent">Explicada para que la entendás.</span></h1>
+          <p class="hero__subtitle">
+            Asesoría, coaching y capacitación en IA para profesionales, PYMEs y organizaciones.
+            Aprendé a usar Claude, ChatGPT, Gemini y Copilot en tu trabajo real.
+          </p>
           <div class="hero__actions">
-            <a href="/capacitacion-ia" class="btn btn--primary btn--lg">
-              Capacitación de IA
+            <a href="https://wa.me/50671951856?text=Hola%20Teknika%20CR%2C%20quiero%20agendar%20una%20llamada%20sobre%20asesor%C3%ADa%20o%20capacitaci%C3%B3n%20en%20IA"
+               class="btn btn--primary btn--lg"
+               target="_blank"
+               rel="noopener">
+              Agendar una llamada
             </a>
-            <a href="/contacto" class="btn btn--outline-light btn--lg">
-              Agendar consultoría
+            <a href="/capacitacion-ia" class="btn btn--outline-light btn--lg">
+              Ver servicios de IA
             </a>
           </div>
         </div>
@@ -41,28 +45,29 @@ import HeroIllustration from '../components/HeroIllustration.astro';
     <div class="container">
       <div class="text-center" style="margin-bottom: var(--space-2xl);">
         <h2>Nuestros servicios</h2>
-        <p class="text-muted">Consultoría, capacitación y soporte tecnológico para organizaciones y PYMEs</p>
+        <p class="text-muted">La IA es nuestro foco; también construimos sitios web y damos soporte técnico</p>
       </div>
 
       <div class="services-grid">
-        <div class="card card--service" data-service="Capacitación empresarial en inteligencia artificial" role="button" tabindex="0">
+        <a href="/capacitacion-ia" class="card card--service card--service-featured">
           <div class="card-service__top">
             <div class="card__icon-circle">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
             </div>
             <div>
-              <h3 class="card__title">Capacitación en IA</h3>
-              <p class="card__price">Desde &#8353;15,000 &middot; Empresas desde &#8353;150,000</p>
+              <span class="badge badge--cyan">Servicio principal</span>
+              <h3 class="card__title">Asesoría y coaching en IA</h3>
+              <p class="card__price">1:1 desde {colones(precioDesde('personas'))} &middot; Equipos desde {colones(precioDesde('organizaciones'))} + IVA</p>
             </div>
           </div>
           <p class="card__text">
-            Capacitá a tu equipo en inteligencia artificial. Talleres personalizados con Claude,
-            Gemini y Copilot para organizaciones y profesionales.
+            Sesiones 1:1 y coaching para profesionales; talleres y programas para equipos.
+            Con tus casos reales y sin jerga técnica.
           </p>
-          <span class="card__cta">Ver paquetes de capacitación &rarr;</span>
-        </div>
+          <span class="card__cta">Ver formatos y precios &rarr;</span>
+        </a>
 
-        <div class="card card--service" data-service="Sitio web para mi negocio" role="button" tabindex="0">
+        <a href="/desarrollo-web" class="card card--service">
           <div class="card-service__top">
             <div class="card__icon-circle">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
@@ -73,13 +78,13 @@ import HeroIllustration from '../components/HeroIllustration.astro';
             </div>
           </div>
           <p class="card__text">
-            Sitios web profesionales optimizados para Google y la IA.
+            Sitios web profesionales optimizados para Google y para la IA.
             Dominio, email profesional y hosting gratuito incluidos.
           </p>
-          <span class="card__cta">Cotizar sitio web &rarr;</span>
-        </div>
+          <span class="card__cta">Ver paquetes web &rarr;</span>
+        </a>
 
-        <div class="card card--service" data-service="Diagnóstico y reparación de computadoras" role="button" tabindex="0">
+        <a href="/servicios" class="card card--service">
           <div class="card-service__top">
             <div class="card__icon-circle">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
@@ -90,66 +95,11 @@ import HeroIllustration from '../components/HeroIllustration.astro';
             </div>
           </div>
           <p class="card__text">
-            Diagnóstico, reparación, formateo, limpieza interna y upgrades.
-            Presupuesto exacto antes de proceder. Sin sorpresas.
+            Diagnóstico, formateo, asesoría de compra y soporte para PYMEs.
+            Presupuesto exacto antes de proceder.
           </p>
           <span class="card__cta">Ver servicios de soporte &rarr;</span>
-        </div>
-
-        <div class="card card--service" data-service="Formateo e instalación de software" role="button" tabindex="0">
-          <div class="card-service__top">
-            <div class="card__icon-circle">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="14" y1="4" x2="10" y2="20"/></svg>
-            </div>
-            <div>
-              <h3 class="card__title">Formateo e instalación</h3>
-              <p class="card__price">Desde &#8353;15,000</p>
-            </div>
-          </div>
-          <p class="card__text">
-            Instalación limpia de Windows o Linux, drivers, software esencial,
-            antivirus y respaldo de tus datos antes de formatear.
-          </p>
-          <span class="card__cta">Consultar este servicio &rarr;</span>
-        </div>
-
-        <div class="card card--service" data-service="Asesoría de compra de equipo" role="button" tabindex="0">
-          <div class="card-service__top">
-            <div class="card__icon-circle">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-            </div>
-            <div>
-              <h3 class="card__title">Asesoría de compra</h3>
-              <p class="card__price">Chat gratis &middot; Llamada &#8353;5,000</p>
-            </div>
-          </div>
-          <p class="card__text">
-            Te ayudamos a elegir la mejor computadora según tu presupuesto y
-            necesidades. Sin comisiones ocultas, solo tu beneficio.
-          </p>
-          <span class="card__cta">Consultar este servicio &rarr;</span>
-        </div>
-
-        <div class="card card--service" data-service="Soporte técnico para PYMEs" role="button" tabindex="0">
-          <div class="card-service__top">
-            <div class="card__icon-circle">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-            </div>
-            <div>
-              <h3 class="card__title">Soporte para PYMEs</h3>
-              <p class="card__price">Desde &#8353;20,000/mes</p>
-            </div>
-          </div>
-          <p class="card__text">
-            Tu departamento de TI sin tener que contratar uno.
-            Mantenimiento de equipos, soporte recurrente y asesoría informática.
-          </p>
-          <span class="card__cta">Consultar este servicio &rarr;</span>
-        </div>
-      </div>
-
-      <div class="text-center" style="margin-top: var(--space-2xl);">
-        <a href="/servicios" class="btn btn--primary">Ver todos los servicios y precios</a>
+        </a>
       </div>
     </div>
   </section>
@@ -159,35 +109,35 @@ import HeroIllustration from '../components/HeroIllustration.astro';
     <div class="container">
       <div class="text-center" style="margin-bottom: var(--space-2xl);">
         <h2>Cómo trabajamos</h2>
-        <p class="text-muted">Un proceso simple, transparente y sin sorpresas</p>
+        <p class="text-muted">De la primera llamada a usar IA en tu día a día</p>
       </div>
 
       <div class="steps">
         <div class="step">
           <div class="step__number">1</div>
           <div class="step__connector"></div>
-          <h3 class="step__title">Contactanos</h3>
-          <p class="step__text">Escribinos por WhatsApp o por el formulario. Describí el problema y te damos un estimado.</p>
+          <h3 class="step__title">Llamada corta</h3>
+          <p class="step__text">Nos contás a qué te dedicás y qué querés lograr con IA. Te recomendamos el formato ideal.</p>
         </div>
 
         <div class="step">
           <div class="step__number">2</div>
           <div class="step__connector"></div>
-          <h3 class="step__title">Diagnóstico</h3>
-          <p class="step__text">Revisamos tu equipo (a domicilio o remoto). Te explicamos el problema en lenguaje simple.</p>
+          <h3 class="step__title">Plan a la medida</h3>
+          <p class="step__text">Preparamos ejercicios con tus documentos, procesos y herramientas reales.</p>
         </div>
 
         <div class="step">
           <div class="step__number">3</div>
           <div class="step__connector"></div>
-          <h3 class="step__title">Aprobación</h3>
-          <p class="step__text">Te damos el presupuesto exacto antes de proceder. Sin sorpresas, sin presión.</p>
+          <h3 class="step__title">Sesiones prácticas</h3>
+          <p class="step__text">Aprendés haciendo, en vivo: virtual para personas, presencial o virtual para equipos.</p>
         </div>
 
         <div class="step">
           <div class="step__number">4</div>
-          <h3 class="step__title">Solución</h3>
-          <p class="step__text">Reparamos, te enseñamos tips de mantenimiento y hacemos seguimiento a las 48 horas.</p>
+          <h3 class="step__title">Seguimiento</h3>
+          <p class="step__text">Te quedás con guías y plantillas de prompts, y soporte por chat según el plan.</p>
         </div>
       </div>
     </div>
@@ -203,50 +153,45 @@ import HeroIllustration from '../components/HeroIllustration.astro';
       <div class="features-grid">
         <div class="feature">
           <div class="feature__icon-svg">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg>
           </div>
-          <h3>Transparencia total</h3>
-          <p>Explicamos cada diagnóstico y costo antes de actuar. Nunca cobramos de más.</p>
+          <h3>Con tus propios casos</h3>
+          <p>Practicamos con tus correos, documentos y procesos reales, no con ejemplos genéricos.</p>
         </div>
-
         <div class="feature">
           <div class="feature__icon-svg">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           </div>
-          <h3>Recibimos y enviamos</h3>
-          <p>Traé tu equipo a Alajuela Centro o envialo por mensajería. Te lo devolvemos reparado.</p>
+          <h3>Sin jerga técnica</h3>
+          <p>Explicamos la IA en palabras simples. No necesitás saber de tecnología para empezar.</p>
         </div>
-
-        <div class="feature">
-          <div class="feature__icon-svg">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-          </div>
-          <h3>Te enseñamos</h3>
-          <p>Cada servicio es una oportunidad de aprender. Te damos tips para cuidar tu equipo.</p>
-        </div>
-
-        <div class="feature">
-          <div class="feature__icon-svg">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-          </div>
-          <h3>Precio justo</h3>
-          <p>Precios competitivos y sin letras pequeñas. Sabés exactamente cuánto pagás.</p>
-        </div>
-
-        <div class="feature">
-          <div class="feature__icon-svg">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-          </div>
-          <h3>Garantía</h3>
-          <p>Todo nuestro trabajo tiene garantía. Si algo falla, lo resolvemos sin costo adicional.</p>
-        </div>
-
         <div class="feature">
           <div class="feature__icon-svg">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
           </div>
-          <h3>Asesoría de IA</h3>
-          <p>Te enseñamos a usar inteligencia artificial en tu trabajo. Sesiones prácticas y personalizadas.</p>
+          <h3>Herramientas actuales</h3>
+          <p>Claude, ChatGPT, Gemini y Copilot: te ayudamos a elegir la que encaja con lo que ya usás.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon-svg">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <h3>Uso responsable</h3>
+          <p>Qué datos sí y qué datos no compartir con la IA, y cómo revisar lo que te responde.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon-svg">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+          </div>
+          <h3>Ingeniero en sistemas</h3>
+          <p>Te acompaña un ingeniero que usa IA todos los días para desarrollar, escribir y analizar.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon-svg">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3>Precios publicados</h3>
+          <p>Todos nuestros precios están en el sitio. Sabés cuánto pagás antes de empezar.</p>
         </div>
       </div>
     </div>
@@ -255,26 +200,24 @@ import HeroIllustration from '../components/HeroIllustration.astro';
   <!-- CTA FINAL -->
   <section class="section cta-section">
     <div class="container text-center">
-      <h2>¿Tu computadora necesita ayuda?</h2>
+      <h2>¿Listo para trabajar con IA?</h2>
       <p class="cta-section__text">
-        Contactanos hoy y recibirás un diagnóstico claro y un presupuesto justo.
-        Sin compromisos.
+        Agendá una llamada corta. Te recomendamos por dónde empezar, sin compromiso.
       </p>
       <div class="hero__actions" style="justify-content: center;">
-        <a href="https://wa.me/50671951856?text=Hola%20Teknika%20CR%2C%20necesito%20soporte%20t%C3%A9cnico"
+        <a href="https://wa.me/50671951856?text=Hola%20Teknika%20CR%2C%20quiero%20agendar%20una%20llamada%20sobre%20asesor%C3%ADa%20o%20capacitaci%C3%B3n%20en%20IA"
            class="btn btn--whatsapp btn--lg"
            target="_blank"
            rel="noopener">
-          Escribir por WhatsApp
+          Agendar por WhatsApp
         </a>
-        <a href="/contacto" class="btn btn--primary btn--lg">
-          Formulario de contacto
+        <a href="/capacitacion-ia#paquetes" class="btn btn--primary btn--lg">
+          Ver precios de IA
         </a>
       </div>
     </div>
   </section>
 
-  <ContactModal />
 
 </Base>
 
@@ -340,6 +283,20 @@ import HeroIllustration from '../components/HeroIllustration.astro';
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-xl);
+  }
+
+  a.card--service {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .card--service-featured {
+    border: 2px solid var(--color-cyan);
+  }
+
+  .card--service-featured .badge {
+    margin-bottom: var(--space-xs);
   }
 
   /* ============================================

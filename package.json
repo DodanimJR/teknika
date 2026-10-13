@@ -2,7 +2,7 @@
   "name": "teknika-cr",
   "type": "module",
   "version": "1.0.0",
-  "description": "Sitio web de Teknika CR - Soporte técnico y consultoría informática",
+  "description": "Sitio web de Teknika CR - Asesoría, coaching y capacitación en IA",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",

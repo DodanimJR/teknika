@@ -38,7 +38,7 @@ Si tenés datos de ventas en Excel, podés pegarlos en la IA y pedirle que ident
 
 ### 4. Responder preguntas frecuentes de clientes
 
-Si siempre te preguntan lo mismo — precios, horarios, ubicación — podés usar la IA para crear respuestas predeterminadas o incluso configurar un chatbot básico en tu [sitio web](https://teknika.co.cr/servicios/desarrollo-web).
+Si siempre te preguntan lo mismo — precios, horarios, ubicación — podés usar la IA para crear respuestas predeterminadas o incluso configurar un chatbot básico en tu [sitio web](https://teknika.co.cr/desarrollo-web).
 
 ### 5. Redactar documentos y propuestas
 
@@ -54,11 +54,11 @@ Es la herramienta que mejor entiende instrucciones largas y complejas. Excelente
 
 ### Gemini (de Google)
 
-Integrado con todo el ecosistema de Google. Si tu negocio ya usa Gmail y Google Drive, Gemini se siente natural. Puede leer tus documentos, buscar en tu correo y generar contenido. Plan gratuito disponible; la versión avanzada cuesta $20/mes.
+Integrado con todo el ecosistema de Google. Si tu negocio ya usa Gmail y Google Drive, Gemini se siente natural. Puede leer tus documentos, buscar en tu correo y generar contenido. Tiene plan gratuito y planes de pago desde unos $20/mes.
 
 ### Copilot (de Microsoft)
 
-Ideal si tu empresa vive en Word, Excel y Outlook. Copilot se integra directamente en las herramientas de Microsoft 365 y puede ayudarte desde dentro de los programas que ya usás. La versión básica es gratuita con Bing.
+Ideal si tu empresa vive en Word, Excel y Outlook. Copilot se integra directamente en las herramientas de Microsoft 365 y puede ayudarte desde dentro de los programas que ya usás. Tiene una versión gratuita, y la integración completa con Microsoft 365 es de pago.
 
 ## ¿Cuánto cuesta usar IA?
 
@@ -66,17 +66,17 @@ Esta es la mejor parte: **podés empezar gratis**.
 
 | Herramienta | Plan gratuito | Plan de pago |
 |-------------|---------------|--------------|
-| Claude | Sí, con límites de uso | $20/mes (Pro) |
-| Gemini | Sí, funciones básicas | $20/mes (Advanced) |
-| Copilot | Sí, con Bing | $20-$25/mes (Pro / M365) |
+| Claude | Sí, con límites de uso | $20/mes (Pro) o $17/mes pagando anual |
+| Gemini | Sí, funciones básicas | Desde ~$20/mes |
+| Copilot | Sí, funciones básicas | Desde ~$20/mes (según plan de Microsoft 365) |
 
-Para una PYME que está empezando, el plan gratuito de cualquiera de estas herramientas es más que suficiente. Cuando le agarrés el gusto y necesités más capacidad, invertir $20/mes es probablemente la mejor inversión que podés hacer en productividad.
+Los precios cambian seguido; revisalos en el sitio de cada herramienta antes de pagar. Para una PYME que está empezando, el plan gratuito de cualquiera de estas herramientas es más que suficiente. Cuando le agarrés el gusto y necesités más capacidad, invertir $20/mes es probablemente la mejor inversión que podés hacer en productividad.
 
 Para poner las cosas en perspectiva: $20/mes son menos de ₡10,500. Es menos de lo que gastás en café al mes en la oficina, y te puede ahorrar horas de trabajo cada semana.
 
 ## Errores comunes al empezar con IA
 
-Después de capacitar a decenas de empresas en Costa Rica, estos son los errores que más vemos:
+Estos son los errores que más vemos cuando un equipo empieza a usar IA:
 
 ### Ser demasiado vago con las instrucciones
 
@@ -117,6 +117,6 @@ Los primeros resultados van a ser buenos, no perfectos. Y eso está bien. Aprend
 
 Aprender solo está bien, pero si querés que tu equipo entero se ponga al día rápido, una capacitación personalizada marca la diferencia.
 
-En **Teknika CR** ofrecemos [capacitación empresarial en inteligencia artificial](https://teknika.co.cr/servicios/capacitacion-ia) diseñada específicamente para PYMEs en Costa Rica. No es teoría: son talleres prácticos donde tu equipo aprende a usar la IA con las tareas reales de tu negocio.
+En **Teknika CR** ofrecemos [capacitación empresarial en inteligencia artificial](https://teknika.co.cr/capacitacion-ia) diseñada específicamente para PYMEs en Costa Rica. No es teoría: son talleres prácticos donde tu equipo aprende a usar la IA con las tareas reales de tu negocio.
 
-**Contactanos** para coordinar una sesión para tu empresa. Podés escribirnos por [WhatsApp](https://wa.me/50688888888) o visitarnos en [teknika.co.cr](https://teknika.co.cr).
+**Contactanos** para coordinar una sesión para tu empresa. Podés escribirnos por [WhatsApp](https://wa.me/50671951856) o visitarnos en [teknika.co.cr](https://teknika.co.cr).

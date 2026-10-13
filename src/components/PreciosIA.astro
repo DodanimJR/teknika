@@ -1,0 +1,191 @@
+---
+/**
+ * PreciosIA — tarjetas de precios de IA.
+ * Los datos vienen de src/data/precios-ia.ts (fuente única).
+ * Uso: <PreciosIA />  |  <PreciosIA audiencia="personas" />
+ * Necesita <ContactModal /> en la página para abrir WhatsApp/formulario.
+ */
+import {
+  planesIA,
+  colones,
+  etiquetaServicio,
+  IVA_NOTA,
+  PARTICIPANTES_INCLUIDOS,
+  PRECIO_PERSONA_ADICIONAL,
+  type PlanIA,
+} from '../data/precios-ia';
+
+interface Props {
+  audiencia?: PlanIA['audiencia'];
+  /** Muestra los subtítulos "Para personas" / "Para organizaciones" */
+  conTitulos?: boolean;
+}
+
+const { audiencia, conTitulos = true } = Astro.props;
+
+const grupos: { id: PlanIA['audiencia']; titulo: string; texto: string }[] = [
+  {
+    id: 'personas',
+    titulo: 'Para profesionales y emprendedores',
+    texto: 'Asesoría y coaching 1:1, virtual y a tu ritmo',
+  },
+  {
+    id: 'organizaciones',
+    titulo: 'Para organizaciones y equipos',
+    texto: 'Capacitación personalizada a los procesos de tu organización',
+  },
+];
+
+const visibles = grupos.filter((g) => !audiencia || g.id === audiencia);
+---
+
+<div class="precios-ia">
+  {visibles.map((g) => (
+    <div class="precios-ia__grupo">
+      {conTitulos && (
+        <div class="precios-ia__head">
+          <h3 class="precios-ia__titulo">{g.titulo}</h3>
+          <p class="precios-ia__texto">{g.texto}</p>
+        </div>
+      )}
+      <div class="grid grid--2">
+        {planesIA.filter((p) => p.audiencia === g.id).map((p) => (
+          <div
+            class:list={['card', 'svc-card', 'svc-card--clickable', { 'svc-card--featured': p.destacado }]}
+            data-service={etiquetaServicio(p)}
+            role="button"
+            tabindex="0"
+          >
+            <span class:list={['badge', p.destacado ? 'badge--cyan' : 'badge--sky']}>{p.badge}</span>
+            <h4 class="svc-card__title">{p.nombre}</h4>
+            <p class="svc-card__subtitle">{p.formato}</p>
+            <p class="svc-card__price">
+              {colones(p.precio)}
+              {p.sufijo && <span class="svc-card__suffix"> {p.sufijo}</span>}
+            </p>
+            <ul class="svc-card__list">
+              {p.incluye.map((item) => <li>{item}</li>)}
+            </ul>
+            {p.nota && <p class="svc-card__save">{p.nota}</p>}
+            <span class="svc-card__cta">{p.cta} &rarr;</span>
+          </div>
+        ))}
+      </div>
+      {g.id === 'organizaciones' && (
+        <p class="precios-ia__pie">
+          Grupos de más de {PARTICIPANTES_INCLUIDOS} personas: {colones(PRECIO_PERSONA_ADICIONAL)} + IVA por participante adicional.
+        </p>
+      )}
+    </div>
+  ))}
+  <p class="precios-ia__pie">{IVA_NOTA}</p>
+</div>
+
+<style>
+  .precios-ia__grupo + .precios-ia__grupo {
+    margin-top: var(--space-3xl);
+  }
+  .precios-ia__head {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+  .precios-ia__titulo {
+    font-size: 1.375rem;
+    margin-bottom: var(--space-xs);
+  }
+  .precios-ia__texto {
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+  .precios-ia__pie {
+    text-align: center;
+    margin-top: var(--space-lg);
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+  }
+
+  .svc-card {
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+  }
+  .svc-card__title {
+    font-size: 1.25rem;
+    margin: var(--space-sm) 0 0;
+    color: var(--color-dark);
+  }
+  .svc-card__subtitle {
+    font-size: 0.8125rem;
+    color: var(--color-gray-500);
+    margin: 2px 0 var(--space-sm);
+    font-weight: 500;
+  }
+  .svc-card__price {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-royal);
+    margin-bottom: var(--space-sm);
+  }
+  .svc-card__suffix {
+    font-size: 0.75em;
+    font-weight: 500;
+  }
+  .svc-card__list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: var(--space-md);
+    flex-grow: 1;
+  }
+  .svc-card__list li {
+    padding: 3px 0;
+    font-size: 0.9375rem;
+    color: var(--color-gray-600);
+  }
+  .svc-card__list li::before {
+    content: '\2713  ';
+    color: var(--color-cyan-text);
+    font-weight: 700;
+  }
+  .svc-card__save {
+    font-size: 0.8125rem;
+    color: var(--color-cyan-text);
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+  }
+  .svc-card--clickable {
+    cursor: pointer;
+    transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+    position: relative;
+    padding-bottom: calc(var(--space-xl) + 2rem);
+  }
+  .svc-card--clickable:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-sky);
+  }
+  .svc-card--clickable:focus-visible {
+    outline: 2px solid var(--color-sky);
+    outline-offset: 2px;
+  }
+  .svc-card__cta {
+    position: absolute;
+    bottom: var(--space-lg);
+    left: var(--space-xl);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-royal);
+    transition: color var(--transition), transform var(--transition);
+  }
+  .svc-card--clickable:hover .svc-card__cta {
+    color: var(--color-navy);
+    transform: translateX(4px);
+  }
+  .svc-card--featured {
+    border: 2px solid var(--color-cyan);
+  }
+  .svc-card--featured:hover {
+    border-color: var(--color-cyan);
+    box-shadow: 0 10px 30px rgba(68, 207, 203, 0.2);
+  }
+</style>

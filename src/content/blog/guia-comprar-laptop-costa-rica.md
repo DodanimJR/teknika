@@ -145,8 +145,8 @@ Un Lenovo de ₡300,000 puede ser mejor máquina que un HP de ₡400,000. Y un A
 
 ## ¿Necesitás ayuda para decidir?
 
-Sabemos que hay muchas opciones y que puede ser abrumador. En **Teknika CR** te damos [asesoría de compra de tecnología](https://teknika.co.cr/servicios/asesoria) completamente **gratis**.
+Sabemos que hay muchas opciones y que puede ser abrumador. En **Teknika CR** te damos [asesoría de compra de tecnología](https://teknika.co.cr/servicios#asesoria) completamente **gratis**.
 
-Escribinos por [WhatsApp](https://wa.me/50688888888), contanos para qué vas a usar la laptop y cuánto tenés de presupuesto, y te decimos exactamente qué modelo comprar y dónde conseguirlo al mejor precio en Costa Rica.
+Escribinos por [WhatsApp](https://wa.me/50671951856), contanos para qué vas a usar la laptop y cuánto tenés de presupuesto, y te decimos exactamente qué modelo comprar y dónde conseguirlo al mejor precio en Costa Rica.
 
 Sin compromiso, sin costo, sin letra pequeña. Solo ayuda honesta de gente que sabe de tecnología.

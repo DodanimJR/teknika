@@ -1,119 +1,35 @@
 ---
 import Base from '../layouts/Base.astro';
 import ContactModal from '../components/ContactModal.astro';
+import { colones, precioDesde } from '../data/precios-ia';
 ---
 
 <Base
-  title="Servicios"
-  description="Servicios de soporte técnico, reparación de computadoras, formateo, instalación de software, asesoría de IA y desarrollo web en Costa Rica."
+  title="Soporte técnico y desarrollo web"
+  description="Soporte técnico, reparación y formateo de computadoras, asesoría de compra, sitios web y soporte para PYMEs en Costa Rica. Precios claros y presupuesto antes de proceder."
   canonical="https://teknika.co.cr/servicios"
 >
 
   <section class="page-header">
     <div class="container">
-      <h1>Nuestros servicios</h1>
+      <h1>Soporte técnico y desarrollo web</h1>
       <p>Soluciones informáticas claras, con precios transparentes</p>
     </div>
   </section>
 
-  <!-- MODALIDADES -->
-  <section class="section section--alt" id="modalidades">
-    <div class="container">
-      <div class="text-center" style="margin-bottom: var(--space-2xl);">
-        <h2>¿Cómo recibimos tu equipo?</h2>
-        <p class="text-muted">Dos formas de atenderte desde Alajuela Centro</p>
-      </div>
-
-      <div class="grid grid--2" style="max-width: 700px; margin: 0 auto;">
-        <div class="card svc-card" style="text-align: center;">
-          <div class="svc-card__emoji">&#128230;</div>
-          <h3 class="svc-card__title">En persona</h3>
-          <p class="svc-card__desc">Traé tu equipo a Alajuela Centro y recogelo cuando esté listo. Sin costo extra.</p>
-          <p class="svc-card__price-highlight">Sin costo de traslado</p>
-        </div>
-        <div class="card svc-card" style="text-align: center;">
-          <div class="svc-card__emoji">&#128666;</div>
-          <h3 class="svc-card__title">Por mensajería</h3>
-          <p class="svc-card__desc">Enviá tu equipo por mensajería a Alajuela. Lo reparamos y te lo devolvemos a tu puerta. Cobertura en todo el GAM.</p>
-          <p class="svc-card__price-highlight">Costo según servicio de mensajería</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ASESORIA IA -->
+  <!-- IA: el servicio principal vive en /capacitacion-ia -->
   <section class="section" id="ia">
     <div class="container">
-      <div class="svc-section__header">
-        <h2>&#129302; Asesoría de inteligencia artificial</h2>
-        <p class="text-muted">Aprendé a usar IA en tu trabajo o vida personal</p>
-      </div>
-
-      <p class="svc-intro">
-        La inteligencia artificial ya está cambiando la forma en que trabajamos. Te enseñamos
-        a usarla de forma práctica: desde generar contenido, automatizar tareas, hasta analizar
-        datos. Sesiones personalizadas, sin jerga técnica, enfocadas en lo que vos necesitás.
-      </p>
-
-      <div class="grid grid--3">
-        <div class="card svc-card svc-card--clickable" data-service="Sesión de IA - 1 hora de aprendizaje virtual - ₡15,000" role="button" tabindex="0">
-          <span class="badge badge--sky">Individual</span>
-          <h3 class="svc-card__title">Sesión básica</h3>
-          <p class="svc-card__subtitle">Virtual &middot; 1 hora</p>
-          <p class="svc-card__price">&#8353;15,000</p>
-          <ul class="svc-card__list">
-            <li>1 hora de sesión virtual en vivo</li>
-            <li>Aprendizaje acompañado y práctico</li>
-            <li>Personalizado a tu trabajo o necesidad</li>
-          </ul>
-          <span class="svc-card__cta">Agendar sesión &rarr;</span>
+      <div class="card svc-ia-banner">
+        <div>
+          <span class="badge badge--cyan">Servicio principal</span>
+          <h2>Asesoría, coaching y capacitación en IA</h2>
+          <p class="text-muted">
+            Sesiones 1:1 desde {colones(precioDesde('personas'))} y talleres para organizaciones desde
+            {colones(precioDesde('organizaciones'))} + IVA.
+          </p>
         </div>
-
-        <div class="card svc-card svc-card--clickable svc-card--featured" data-service="Bundle de IA - 6 horas de tutoría virtual - ₡75,000" role="button" tabindex="0">
-          <span class="badge badge--cyan">Mejor valor</span>
-          <h3 class="svc-card__title">Bundle 6 sesiones</h3>
-          <p class="svc-card__subtitle">Virtual &middot; Usálas a tu ritmo</p>
-          <p class="svc-card__price">&#8353;75,000</p>
-          <ul class="svc-card__list">
-            <li>6 horas de tutoría virtual</li>
-            <li>Plan de aprendizaje personalizado</li>
-            <li>Soporte por chat entre sesiones</li>
-            <li>Recursos y guías incluidas</li>
-          </ul>
-          <p class="svc-card__save">Ahorro de &#8353;15,000 vs individual</p>
-          <span class="svc-card__cta">Agendar tutoría &rarr;</span>
-        </div>
-
-        <div class="card svc-card svc-card--clickable" data-service="Capacitación grupal de IA para empresa - ₡10,000/persona (mínimo 4 personas)" role="button" tabindex="0">
-          <span class="badge badge--sky">Empresas</span>
-          <h3 class="svc-card__title">Capacitación grupal</h3>
-          <p class="svc-card__subtitle">Virtual o presencial &middot; 2 horas</p>
-          <p class="svc-card__price">&#8353;10,000<span style="font-size: 0.75em; font-weight: 500;">/persona</span></p>
-          <ul class="svc-card__list">
-            <li>Sesión de 2 horas para equipos de trabajo</li>
-            <li>Mínimo 4 participantes</li>
-            <li>Virtual o presencial según necesidad</li>
-            <li>Material de apoyo para cada participante</li>
-          </ul>
-          <span class="svc-card__cta">Solicitar cotización &rarr;</span>
-        </div>
-
-        <div class="card svc-card svc-card--clickable svc-card--featured" data-service="Taller PYME de IA - 3 horas, sin límite de personas - ₡50,000" role="button" tabindex="0">
-          <span class="badge badge--cyan">PYMEs</span>
-          <h3 class="svc-card__title">Taller PYME de IA</h3>
-          <p class="svc-card__subtitle">Virtual o presencial &middot; 3 horas</p>
-          <p class="svc-card__price">&#8353;50,000</p>
-          <ul class="svc-card__list">
-            <li>Taller práctico de 3 horas</li>
-            <li>Sin límite de participantes</li>
-            <li>Virtual o presencial según necesidad</li>
-            <li>Material de apoyo para cada participante</li>
-            <li>Certificado de participación</li>
-            <li>Enfocado en las necesidades de tu negocio</li>
-          </ul>
-          <p class="svc-card__save">Precio fijo, invitá a todo tu equipo</p>
-          <span class="svc-card__cta">Agendar taller &rarr;</span>
-        </div>
+        <a href="/capacitacion-ia" class="btn btn--primary btn--lg">Ver servicios de IA</a>
       </div>
     </div>
   </section>
@@ -191,8 +107,33 @@ import ContactModal from '../components/ContactModal.astro';
     </div>
   </section>
 
+  <!-- MODALIDADES -->
+  <section class="section" id="modalidades">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: var(--space-2xl);">
+        <h2>¿Cómo recibimos tu equipo?</h2>
+        <p class="text-muted">Dos formas de atenderte desde Alajuela Centro</p>
+      </div>
+
+      <div class="grid grid--2" style="max-width: 700px; margin: 0 auto;">
+        <div class="card svc-card" style="text-align: center;">
+          <div class="svc-card__emoji">&#128230;</div>
+          <h3 class="svc-card__title">En persona</h3>
+          <p class="svc-card__desc">Traé tu equipo a Alajuela Centro y recogelo cuando esté listo. Sin costo extra.</p>
+          <p class="svc-card__price-highlight">Sin costo de traslado</p>
+        </div>
+        <div class="card svc-card" style="text-align: center;">
+          <div class="svc-card__emoji">&#128666;</div>
+          <h3 class="svc-card__title">Por mensajería</h3>
+          <p class="svc-card__desc">Enviá tu equipo por mensajería a Alajuela. Lo reparamos y te lo devolvemos a tu puerta. Cobertura en todo el GAM.</p>
+          <p class="svc-card__price-highlight">Costo según servicio de mensajería</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- DIAGNOSTICO -->
-  <section class="section" id="diagnostico">
+  <section class="section section--alt" id="diagnostico">
     <div class="container">
       <div class="svc-section__header">
         <h2>&#128269; Diagnóstico y reparación</h2>
@@ -254,7 +195,7 @@ import ContactModal from '../components/ContactModal.astro';
   </section>
 
   <!-- FORMATEO -->
-  <section class="section section--alt" id="formateo">
+  <section class="section" id="formateo">
     <div class="container">
       <div class="svc-section__header">
         <h2>&#128187; Formateo e instalación</h2>
@@ -314,7 +255,7 @@ import ContactModal from '../components/ContactModal.astro';
   </section>
 
   <!-- ASESORIA COMPRA -->
-  <section class="section" id="asesoria">
+  <section class="section section--alt" id="asesoria">
     <div class="container">
       <div class="svc-section__header">
         <h2>&#128176; Asesoría de compra</h2>
@@ -366,7 +307,7 @@ import ContactModal from '../components/ContactModal.astro';
   </section>
 
   <!-- PAQUETES SOPORTE -->
-  <section class="section section--alt" id="paquetes">
+  <section class="section" id="paquetes">
     <div class="container">
       <div class="svc-section__header">
         <h2>&#127873; Paquetes con descuento</h2>
@@ -417,7 +358,7 @@ import ContactModal from '../components/ContactModal.astro';
   </section>
 
   <!-- SOPORTE PYMES -->
-  <section class="section" id="pymes">
+  <section class="section section--alt" id="pymes">
     <div class="container">
       <div class="svc-section__header">
         <h2>&#128188; Soporte para PYMEs</h2>
@@ -496,6 +437,23 @@ import ContactModal from '../components/ContactModal.astro';
 </Base>
 
 <style>
+  .svc-ia-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-xl);
+    flex-wrap: wrap;
+    padding: var(--space-xl);
+    border: 2px solid var(--color-cyan);
+  }
+  .svc-ia-banner h2 {
+    margin: var(--space-sm) 0 var(--space-xs);
+    font-size: 1.5rem;
+  }
+  .svc-ia-banner p {
+    margin: 0;
+  }
+
   /* ============================================
      Section headers
      ============================================ */

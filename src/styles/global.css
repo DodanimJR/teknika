@@ -15,7 +15,8 @@
   --color-navy: #224870;     /* Yale Blue */
   --color-royal: #2A4494;    /* French Blue */
   --color-sky: #4EA5D9;      /* Fresh Sky */
-  --color-cyan: #44CFCB;     /* Strong Cyan */
+  --color-cyan: #44CFCB;     /* Strong Cyan — solo fondos oscuros o decorativo (contraste 1.9:1 sobre blanco) */
+  --color-cyan-text: #1B7F7C; /* Cyan oscuro para texto sobre blanco (contraste 4.8:1) */
 
   /* Neutros */
   --color-white: #FFFFFF;
