@@ -218,7 +218,7 @@ import { colones } from '../data/precios-ia';
           >
             <span class:list={['badge', p.destacado ? 'badge--cyan' : 'badge--sky']}>{p.badge}</span>
             <h3 class="web-package__title">{p.nombre}</h3>
-            <p class="web-package__price">Desde {colones(p.precio)}</p>
+            <p class="web-package__price">Desde {colones(p.precio)} <span style="font-size: 0.6em; font-weight: 500;">IVA incluido</span></p>
             <p class="web-package__time">Entrega: {p.entrega}</p>
             <ul class="web-package__list">
               {p.incluye.map((i) => <li>{i}</li>)}

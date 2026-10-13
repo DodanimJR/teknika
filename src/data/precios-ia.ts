@@ -5,6 +5,9 @@
  * salen de este archivo: las tarjetas del sitio, la portada,
  * el schema.org de Base.astro y /llms.txt.
  * Para cambiar un precio, cambialo SOLO aquí.
+ *
+ * POLÍTICA (desde 13-oct-2026): TODOS los precios incluyen IVA (13%).
+ * Aplica al sitio, propuestas, cotizaciones y mensajes. No usar "+ IVA".
  */
 
 export type PlanIA = {
@@ -15,8 +18,6 @@ export type PlanIA = {
   /** Duración y modalidad, en una línea */
   formato: string;
   precio: number;
-  /** Texto después del precio, p. ej. "+ IVA" */
-  sufijo?: string;
   incluye: string[];
   nota?: string;
   destacado?: boolean;
@@ -25,7 +26,15 @@ export type PlanIA = {
   resumen: string;
 };
 
-export const IVA_NOTA = 'Precios en colones. Los servicios para organizaciones se facturan con IVA (13%).';
+export const IVA_INCLUIDO = true;
+export const IVA_TASA = 0.13;
+export const IVA_NOTA = 'Todos los precios están en colones e incluyen IVA (13%).';
+
+/** Desglose para facturas y propuestas: base e IVA a partir del precio con IVA incluido */
+export const desgloseIVA = (precioConIVA: number) => {
+  const base = Math.round(precioConIVA / (1 + IVA_TASA));
+  return { base, iva: precioConIVA - base, total: precioConIVA };
+};
 
 export const PARTICIPANTES_INCLUIDOS = 15;
 export const PRECIO_PERSONA_ADICIONAL = 10000;
@@ -74,7 +83,6 @@ export const planesIA: PlanIA[] = [
     nombre: 'Taller de IA',
     formato: 'Presencial o virtual · 3 horas',
     precio: 150000,
-    sufijo: '+ IVA',
     incluye: [
       `Hasta ${PARTICIPANTES_INCLUIDOS} participantes`,
       'Contenido y ejercicios con casos de tu organización',
@@ -91,7 +99,6 @@ export const planesIA: PlanIA[] = [
     nombre: 'Programa Completo',
     formato: 'Presencial o virtual · 6 horas (2 sesiones)',
     precio: 300000,
-    sufijo: '+ IVA',
     incluye: [
       `Hasta ${PARTICIPANTES_INCLUIDOS} participantes`,
       'Todo lo del Taller, más:',
@@ -112,4 +119,4 @@ export const precioDesde = (audiencia: PlanIA['audiencia']) =>
 
 /** Texto que se manda a WhatsApp al tocar una tarjeta */
 export const etiquetaServicio = (p: PlanIA) =>
-  `${p.nombre} (${p.formato}) - ${colones(p.precio)}${p.sufijo ? ' ' + p.sufijo : ''}`;
+  `${p.nombre} (${p.formato}) - ${colones(p.precio)} IVA incluido`;

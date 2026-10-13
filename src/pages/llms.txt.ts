@@ -8,12 +8,12 @@ import { paquetesWeb, MANTENIMIENTO_WEB_DESDE } from '../data/precios-web';
 import { AGENDA_URL } from '../data/contacto';
 
 const linea = (p: (typeof planesIA)[number]) =>
-  `- ${p.nombre} — ${p.formato}: ${colones(p.precio)} CRC${p.sufijo ? ' ' + p.sufijo : ''}. ${p.resumen}`;
+  `- ${p.nombre} — ${p.formato}: ${colones(p.precio)} CRC (IVA incluido). ${p.resumen}`;
 
 export const GET: APIRoute = () => {
   const personas = planesIA.filter((p) => p.audiencia === 'personas').map(linea).join('\n');
   const orgs = planesIA.filter((p) => p.audiencia === 'organizaciones').map(linea).join('\n');
-  const web = paquetesWeb.map((p) => `- ${p.nombre}: desde ${colones(p.precio)} CRC, entrega en ${p.entrega}`).join('\n');
+  const web = paquetesWeb.map((p) => `- ${p.nombre}: desde ${colones(p.precio)} CRC (IVA incluido), entrega en ${p.entrega}`).join('\n');
   const [s1] = planesIA;
   const taller = planesIA.find((p) => p.id === 'taller-3h')!;
 
@@ -35,6 +35,7 @@ export const GET: APIRoute = () => {
 - Sitio web: https://teknika.co.cr
 - Horario: lunes a viernes, 9:00 a 17:00 (UTC-6)
 - Idiomas: español e inglés
+- Precios: en colones, todos incluyen IVA (13%)
 - Fundador: Patrick Dodanim Castillo Flores, Ingeniero en Sistemas
 
 ## Asesoría y coaching en IA (para personas)
@@ -44,18 +45,20 @@ ${personas}
 ## Capacitación en IA (para organizaciones)
 
 ${orgs}
-- Grupos de más de ${PARTICIPANTES_INCLUIDOS} personas: ${colones(PRECIO_PERSONA_ADICIONAL)} + IVA por participante adicional.
+- Grupos de más de ${PARTICIPANTES_INCLUIDOS} personas: ${colones(PRECIO_PERSONA_ADICIONAL)} por participante adicional (IVA incluido).
 - Herramientas: Claude, ChatGPT, Gemini, Copilot, generación de imágenes y automatización básica.
 - Más información: https://teknika.co.cr/capacitacion-ia
 
 ## Desarrollo web para PYMEs
 
 ${web}
-- Mantenimiento web: desde ${colones(MANTENIMIENTO_WEB_DESDE)} CRC/mes
+- Mantenimiento web: desde ${colones(MANTENIMIENTO_WEB_DESDE)} CRC/mes (IVA incluido)
 - Incluye hosting gratuito en Cloudflare Pages, SEO básico y optimización para buscadores de IA
 - Más información: https://teknika.co.cr/desarrollo-web
 
 ## Soporte técnico
+
+Precios con IVA incluido.
 
 - Diagnóstico básico (software): ₡8,000 CRC; avanzado (hardware): ₡15,000 CRC
 - Formateo + Windows: ₡15,000 CRC; paquete completo (formateo, backup, Office, antivirus, limpieza): ₡30,000 CRC
@@ -71,7 +74,7 @@ ${web}
 En Teknika CR, una ${s1.nombre} virtual de 1 hora cuesta ${colones(s1.precio)} CRC.
 
 ### ¿Cuánto cuesta capacitar a un equipo en IA?
-El ${taller.nombre} de 3 horas cuesta ${colones(taller.precio)} + IVA para hasta ${PARTICIPANTES_INCLUIDOS} personas, presencial o virtual, personalizado a la organización.
+El ${taller.nombre} de 3 horas cuesta ${colones(taller.precio)} (IVA incluido) para hasta ${PARTICIPANTES_INCLUIDOS} personas, presencial o virtual, personalizado a la organización.
 
 ### ¿Necesito saber de tecnología?
 No. Las sesiones empiezan desde cero y usan los documentos y procesos reales del cliente.

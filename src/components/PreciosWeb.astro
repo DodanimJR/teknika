@@ -17,7 +17,7 @@ import { colones } from '../data/precios-ia';
     >
       <span class:list={['badge', p.destacado ? 'badge--cyan' : 'badge--sky']}>{p.badge}</span>
       <h3 class="svc-card__title">{p.nombre}</h3>
-      <p class="svc-card__price">Desde {colones(p.precio)}</p>
+      <p class="svc-card__price">Desde {colones(p.precio)} <span class="svc-card__suffix">IVA incluido</span></p>
       <ul class="svc-card__list">
         {p.incluye.map((i) => <li>{i}</li>)}
       </ul>
@@ -43,6 +43,10 @@ import { colones } from '../data/precios-ia';
     font-weight: 800;
     color: var(--color-royal);
     margin: var(--space-xs) 0 var(--space-sm);
+  }
+  .svc-card__suffix {
+    font-size: 0.7em;
+    font-weight: 500;
   }
   .svc-card__list {
     list-style: none;

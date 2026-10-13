@@ -61,7 +61,7 @@ const visibles = grupos.filter((g) => !audiencia || g.id === audiencia);
             <p class="svc-card__subtitle">{p.formato}</p>
             <p class="svc-card__price">
               {colones(p.precio)}
-              {p.sufijo && <span class="svc-card__suffix"> {p.sufijo}</span>}
+              <span class="svc-card__suffix"> IVA incluido</span>
             </p>
             <ul class="svc-card__list">
               {p.incluye.map((item) => <li>{item}</li>)}
@@ -73,7 +73,7 @@ const visibles = grupos.filter((g) => !audiencia || g.id === audiencia);
       </div>
       {g.id === 'organizaciones' && (
         <p class="precios-ia__pie">
-          Grupos de más de {PARTICIPANTES_INCLUIDOS} personas: {colones(PRECIO_PERSONA_ADICIONAL)} + IVA por participante adicional.
+          Grupos de más de {PARTICIPANTES_INCLUIDOS} personas: {colones(PRECIO_PERSONA_ADICIONAL)} por participante adicional.
         </p>
       )}
     </div>

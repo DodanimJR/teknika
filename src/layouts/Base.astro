@@ -24,7 +24,7 @@ const ofertaIA = (p: (typeof planesIA)[number]) => ({
   itemOffered: { '@type': 'Service', name: p.nombre, description: p.resumen },
   price: String(p.precio),
   priceCurrency: 'CRC',
-  ...(p.sufijo ? { valueAddedTaxIncluded: false } : {}),
+  valueAddedTaxIncluded: true,
 });
 
 const localBusiness = {
@@ -70,6 +70,7 @@ const localBusiness = {
           itemOffered: { '@type': 'Service', name: p.nombre },
           price: String(p.precio),
           priceCurrency: 'CRC',
+          valueAddedTaxIncluded: true,
         })),
       },
       {
@@ -98,7 +99,7 @@ const faq = {
     },
     {
       q: '¿Cuánto cuesta capacitar a mi equipo en IA?',
-      a: `El ${t3.nombre} de 3 horas cuesta ${colones(t3.precio)} + IVA y el ${p6.nombre} de 6 horas ${colones(p6.precio)} + IVA, ambos para grupos de hasta 15 personas, presenciales o virtuales y personalizados a la organización.`,
+      a: `El ${t3.nombre} de 3 horas cuesta ${colones(t3.precio)} y el ${p6.nombre} de 6 horas ${colones(p6.precio)}, IVA incluido, ambos para grupos de hasta 15 personas, presenciales o virtuales y personalizados a la organización.`,
     },
     {
       q: '¿Qué herramientas de IA enseñan?',
