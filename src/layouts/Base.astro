@@ -114,6 +114,7 @@ const faq = {
     },
   ].map(({ q, a }) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
 };
+import { AGENDA_URL, WHATSAPP_URL } from '../data/contacto';
 ---
 
 <!doctype html>
@@ -192,7 +193,7 @@ const faq = {
           <li><a href="/blog">Blog</a></li>
           <li><a href="/contacto">Contacto</a></li>
           <li>
-            <a href="https://wa.me/50671951856?text=Hola%20Teknika%20CR%2C%20quiero%20agendar%20una%20llamada%20sobre%20IA"
+            <a href={AGENDA_URL}
                class="btn btn--accent btn--nav"
                target="_blank"
                rel="noopener">

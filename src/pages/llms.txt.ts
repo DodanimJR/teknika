@@ -5,6 +5,7 @@
 import type { APIRoute } from 'astro';
 import { planesIA, colones, PARTICIPANTES_INCLUIDOS, PRECIO_PERSONA_ADICIONAL } from '../data/precios-ia';
 import { paquetesWeb, MANTENIMIENTO_WEB_DESDE } from '../data/precios-web';
+import { AGENDA_URL } from '../data/contacto';
 
 const linea = (p: (typeof planesIA)[number]) =>
   `- ${p.nombre} — ${p.formato}: ${colones(p.precio)} CRC${p.sufijo ? ' ' + p.sufijo : ''}. ${p.resumen}`;
@@ -28,6 +29,7 @@ export const GET: APIRoute = () => {
 
 - Nombre: Teknika CR
 - Ubicación: Alajuela, Costa Rica. Servicio virtual en todo el país; presencial en el Gran Área Metropolitana
+- Agendar una llamada de 15 minutos: ${AGENDA_URL}
 - WhatsApp: +506 7195-1856
 - Email: info@teknika.co.cr
 - Sitio web: https://teknika.co.cr

@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import HeroIllustration from '../components/HeroIllustration.astro';
 import { colones, precioDesde } from '../data/precios-ia';
+import { AGENDA_URL, WHATSAPP_URL } from '../data/contacto';
 ---
 
 <Base
@@ -22,7 +23,7 @@ import { colones, precioDesde } from '../data/precios-ia';
             Aprendé a usar Claude, ChatGPT, Gemini y Copilot en tu trabajo real.
           </p>
           <div class="hero__actions">
-            <a href="https://wa.me/50671951856?text=Hola%20Teknika%20CR%2C%20quiero%20agendar%20una%20llamada%20sobre%20asesor%C3%ADa%20o%20capacitaci%C3%B3n%20en%20IA"
+            <a href={AGENDA_URL}
                class="btn btn--primary btn--lg"
                target="_blank"
                rel="noopener">
@@ -205,14 +206,17 @@ import { colones, precioDesde } from '../data/precios-ia';
         Agendá una llamada corta. Te recomendamos por dónde empezar, sin compromiso.
       </p>
       <div class="hero__actions" style="justify-content: center;">
-        <a href="https://wa.me/50671951856?text=Hola%20Teknika%20CR%2C%20quiero%20agendar%20una%20llamada%20sobre%20asesor%C3%ADa%20o%20capacitaci%C3%B3n%20en%20IA"
+        <a href={AGENDA_URL}
+           class="btn btn--primary btn--lg"
+           target="_blank"
+           rel="noopener">
+          Agendar una llamada
+        </a>
+        <a href={WHATSAPP_URL}
            class="btn btn--whatsapp btn--lg"
            target="_blank"
            rel="noopener">
-          Agendar por WhatsApp
-        </a>
-        <a href="/capacitacion-ia#paquetes" class="btn btn--primary btn--lg">
-          Ver precios de IA
+          Escribir por WhatsApp
         </a>
       </div>
     </div>

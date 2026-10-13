@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { AGENDA_URL, WHATSAPP_URL } from '../data/contacto';
 ---
 
 <Base
@@ -22,12 +23,19 @@ import Base from '../layouts/Base.astro';
         <div class="contact-info">
           <h2>Hablemos</h2>
           <p>
-            La forma más rápida de contactarnos es por WhatsApp.
-            También podés usar el formulario o escribirnos un email.
+            Agendá una llamada de 15 minutos para conversar sobre IA en tu trabajo o tu equipo.
+            También podés escribirnos por WhatsApp, por correo o con el formulario.
           </p>
 
           <div class="contact-channels">
-            <a href="https://wa.me/50671951856?text=Hola%20Teknika%20CR%2C%20necesito%20soporte%20t%C3%A9cnico"
+            <a href={AGENDA_URL}
+               class="btn btn--primary btn--lg"
+               target="_blank"
+               rel="noopener"
+               style="width: 100%; justify-content: center; margin-bottom: var(--space-sm);">
+              Agendar una llamada
+            </a>
+            <a href={WHATSAPP_URL}
                class="btn btn--whatsapp btn--lg"
                target="_blank"
                rel="noopener"
