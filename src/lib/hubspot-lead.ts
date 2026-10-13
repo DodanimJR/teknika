@@ -1,7 +1,8 @@
 /**
- * POST /api/lead — crea o actualiza un contacto en HubSpot (Cloudflare Pages Function).
+ * Lógica de /api/lead: crea o actualiza un contacto en HubSpot y le agrega una nota.
+ * La usa src/pages/api/lead.ts (se ejecuta en el Worker de Cloudflare).
  *
- * Variable de entorno requerida en Cloudflare Pages (Settings → Environment variables):
+ * Secreto requerido en Cloudflare (Workers → teknika → Settings → Variables and Secrets):
  *   HUBSPOT_TOKEN = token de una "app privada" de HubSpot con permisos
  *                   crm.objects.contacts.read y crm.objects.contacts.write
  *
@@ -9,7 +10,7 @@
  * (el visitante igual llega a WhatsApp o al formulario).
  */
 
-interface Env {
+export interface Env {
   HUBSPOT_TOKEN?: string;
 }
 
@@ -68,7 +69,7 @@ async function buscarContacto(env: Env, email: string, telefono: string) {
   return r.ok && r.data.results?.length ? (r.data.results[0].id as string) : null;
 }
 
-export const onRequestPost = async ({ request, env }: { request: Request; env: Env }) => {
+export const procesarLead = async (request: Request, env: Env): Promise<Response> => {
   let lead: Lead;
   try {
     const tipo = request.headers.get('content-type') || '';
@@ -135,4 +136,4 @@ export const onRequestPost = async ({ request, env }: { request: Request; env: E
   return json({ ok: true });
 };
 
-export const onRequest = () => json({ ok: false, error: 'metodo' }, 405);
+export const metodoNoPermitido = () => json({ ok: false, error: 'metodo' }, 405);
