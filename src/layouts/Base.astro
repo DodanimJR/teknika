@@ -5,6 +5,7 @@ import '@fontsource/inter/600.css';
 import '@fontsource/inter/700.css';
 import '@fontsource/inter/800.css';
 import { planesIA, colones } from '../data/precios-ia';
+import { paquetesWeb } from '../data/precios-web';
 
 interface Props {
   title: string;
@@ -64,10 +65,12 @@ const localBusiness = {
       {
         '@type': 'OfferCatalog',
         name: 'Desarrollo web para PYMEs',
-        itemListElement: [
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Landing page profesional' }, price: '120000', priceCurrency: 'CRC' },
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Sitio web profesional (3-5 páginas)' }, price: '250000', priceCurrency: 'CRC' },
-        ],
+        itemListElement: paquetesWeb.map((p) => ({
+          '@type': 'Offer',
+          itemOffered: { '@type': 'Service', name: p.nombre },
+          price: String(p.precio),
+          priceCurrency: 'CRC',
+        })),
       },
       {
         '@type': 'OfferCatalog',
@@ -171,8 +174,7 @@ const faq = {
     <header class="header">
       <nav class="nav container">
         <a href="/" class="nav__logo">
-          <img src="/img/logo-icon-88.png" alt="Teknika CR" class="nav__logo-img" width="44" height="44" />
-          <span class="nav__logo-text">Teknika<span class="nav__logo-cr">CR</span></span>
+          <img src="/img/logo-horizontal-light.svg" alt="Teknika CR" class="nav__logo-img" width="124" height="43" />
         </a>
 
         <button class="nav__toggle" aria-label="Abrir menú" aria-expanded="false">
@@ -210,8 +212,7 @@ const faq = {
         <div class="footer__grid">
           <div class="footer__brand">
             <a href="/" class="footer__logo">
-              <img src="/img/logo-icon-88.png" alt="Teknika CR" class="footer__logo-img" width="42" height="42" />
-              <span class="footer__logo-text">Teknika<span class="footer__logo-cr">CR</span></span>
+              <img src="/img/logo-horizontal-white.svg" alt="Teknika CR" class="footer__logo-img" width="138" height="48" />
             </a>
             <p class="footer__tagline">Tecnología que funciona.<br />Soluciones que entendés.</p>
           </div>
@@ -308,26 +309,12 @@ const faq = {
   }
 
   .nav__logo-img {
-    width: 44px;
-    height: 44px;
-    border-radius: var(--radius-md);
-    object-fit: contain;
+    width: auto;
+    height: 40px;
+    display: block;
   }
 
-  .nav__logo-cr {
-    color: var(--color-cyan);
-  }
 
-  .nav__lang-badge {
-    font-size: 0.6875rem;
-    font-weight: 600;
-    color: var(--color-gray-400);
-    border: 1px solid var(--color-gray-200);
-    border-radius: var(--radius-sm);
-    padding: 2px 6px;
-    letter-spacing: 0.5px;
-    cursor: default;
-  }
 
   .nav__links {
     display: flex;
@@ -399,19 +386,12 @@ const faq = {
   }
 
   .footer__logo-img {
-    width: 42px;
-    height: 42px;
-    border-radius: var(--radius-md);
-    object-fit: contain;
+    width: auto;
+    height: 44px;
+    display: block;
   }
 
-  .footer__logo-text {
-    color: var(--color-white);
-  }
 
-  .footer__logo-cr {
-    color: var(--color-cyan);
-  }
 
   .footer__tagline {
     margin-top: var(--space-md);

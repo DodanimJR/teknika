@@ -1,6 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
 import ContactModal from '../components/ContactModal.astro';
+import { paquetesWeb, etiquetaWeb } from '../data/precios-web';
+import { colones } from '../data/precios-ia';
 ---
 
 <Base
@@ -207,64 +209,23 @@ import ContactModal from '../components/ContactModal.astro';
       </div>
 
       <div class="web-packages">
-        <div class="card web-package" data-service="Landing page profesional - ₡120,000" role="button" tabindex="0">
-          <span class="badge badge--sky">Esencial</span>
-          <h3 class="web-package__title">Landing Page</h3>
-          <p class="web-package__price">&#8353;120,000</p>
-          <p class="web-package__time">Entrega: 1 semana</p>
-          <ul class="web-package__list">
-            <li>1 página profesional</li>
-            <li>Diseño personalizado</li>
-            <li>Formulario de contacto</li>
-            <li>Botón de WhatsApp</li>
-            <li>Dominio .com (1 año)</li>
-            <li>Email profesional</li>
-            <li>Hosting gratuito (Cloudflare)</li>
-            <li>SEO básico</li>
-            <li>Optimizado para IA</li>
-            <li>Responsive (celular + desktop)</li>
-          </ul>
-          <span class="web-package__cta">Cotizar landing page &rarr;</span>
-        </div>
-
-        <div class="card web-package web-package--featured" data-service="Sitio web completo - ₡250,000" role="button" tabindex="0">
-          <span class="badge badge--cyan">Recomendado</span>
-          <h3 class="web-package__title">Sitio Completo</h3>
-          <p class="web-package__price">&#8353;250,000</p>
-          <p class="web-package__time">Entrega: 2 semanas</p>
-          <ul class="web-package__list">
-            <li>3-5 páginas (Inicio, Servicios, Nosotros, Contacto, Blog)</li>
-            <li>Todo lo de la Landing Page, más:</li>
-            <li>Múltiples secciones por página</li>
-            <li>Blog integrado</li>
-            <li>Google My Business configurado</li>
-            <li>SEO avanzado + Schema.org</li>
-            <li>Optimización completa para IA (llms.txt)</li>
-            <li>Sitemap XML automático</li>
-            <li>Redes sociales integradas</li>
-            <li>Capacitación básica para actualizar contenido</li>
-          </ul>
-          <span class="web-package__cta">Cotizar sitio completo &rarr;</span>
-        </div>
-
-        <div class="card web-package" data-service="Sitio web + SEO para IA - Cotización personalizada" role="button" tabindex="0">
-          <span class="badge badge--sky">Premium</span>
-          <h3 class="web-package__title">Web + SEO para IA</h3>
-          <p class="web-package__price">Desde &#8353;350,000</p>
-          <p class="web-package__time">Entrega: 2-3 semanas</p>
-          <ul class="web-package__list">
-            <li>Todo lo del Sitio Completo, más:</li>
-            <li>Optimización avanzada para LLMs</li>
-            <li>FAQ Schema estructurado</li>
-            <li>Archivo llms.txt personalizado</li>
-            <li>3 artículos de blog optimizados para IA</li>
-            <li>Páginas individuales por servicio</li>
-            <li>robots.txt para bots de IA</li>
-            <li>Dominio .co.cr (1 año)</li>
-            <li>Mantenimiento mensual (3 meses incluidos)</li>
-          </ul>
-          <span class="web-package__cta">Solicitar cotización &rarr;</span>
-        </div>
+        {paquetesWeb.map((p) => (
+          <div
+            class:list={['card', 'web-package', { 'web-package--featured': p.destacado }]}
+            data-service={etiquetaWeb(p)}
+            role="button"
+            tabindex="0"
+          >
+            <span class:list={['badge', p.destacado ? 'badge--cyan' : 'badge--sky']}>{p.badge}</span>
+            <h3 class="web-package__title">{p.nombre}</h3>
+            <p class="web-package__price">Desde {colones(p.precio)}</p>
+            <p class="web-package__time">Entrega: {p.entrega}</p>
+            <ul class="web-package__list">
+              {p.incluye.map((i) => <li>{i}</li>)}
+            </ul>
+            <span class="web-package__cta">Cotizar {p.nombre} &rarr;</span>
+          </div>
+        ))}
       </div>
     </div>
   </section>
@@ -452,7 +413,7 @@ import ContactModal from '../components/ContactModal.astro';
   }
 
   .web-comparison__col--bad h3 { color: #d93025; }
-  .web-comparison__col--good h3 { color: var(--color-cyan); }
+  .web-comparison__col--good h3 { color: var(--color-cyan-text); }
 
   .web-comparison__col ul {
     list-style: none;
@@ -523,7 +484,7 @@ import ContactModal from '../components/ContactModal.astro';
      ============================================ */
   .web-packages {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: var(--space-lg);
   }
 

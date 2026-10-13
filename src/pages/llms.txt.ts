@@ -4,6 +4,7 @@
  */
 import type { APIRoute } from 'astro';
 import { planesIA, colones, PARTICIPANTES_INCLUIDOS, PRECIO_PERSONA_ADICIONAL } from '../data/precios-ia';
+import { paquetesWeb, MANTENIMIENTO_WEB_DESDE } from '../data/precios-web';
 
 const linea = (p: (typeof planesIA)[number]) =>
   `- ${p.nombre} — ${p.formato}: ${colones(p.precio)} CRC${p.sufijo ? ' ' + p.sufijo : ''}. ${p.resumen}`;
@@ -11,6 +12,7 @@ const linea = (p: (typeof planesIA)[number]) =>
 export const GET: APIRoute = () => {
   const personas = planesIA.filter((p) => p.audiencia === 'personas').map(linea).join('\n');
   const orgs = planesIA.filter((p) => p.audiencia === 'organizaciones').map(linea).join('\n');
+  const web = paquetesWeb.map((p) => `- ${p.nombre}: desde ${colones(p.precio)} CRC, entrega en ${p.entrega}`).join('\n');
   const [s1] = planesIA;
   const taller = planesIA.find((p) => p.id === 'taller-3h')!;
 
@@ -46,11 +48,8 @@ ${orgs}
 
 ## Desarrollo web para PYMEs
 
-- Presencia Digital (landing page): desde ₡120,000 CRC
-- Sitio Profesional (3-5 páginas + blog): desde ₡250,000 CRC
-- Web + SEO para IA: desde ₡350,000 CRC
-- Tienda Básica (catálogo + pagos SINPE/transferencia): desde ₡400,000 CRC
-- Mantenimiento web: desde ₡20,000 CRC/mes
+${web}
+- Mantenimiento web: desde ${colones(MANTENIMIENTO_WEB_DESDE)} CRC/mes
 - Incluye hosting gratuito en Cloudflare Pages, SEO básico y optimización para buscadores de IA
 - Más información: https://teknika.co.cr/desarrollo-web
 

@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import ContactModal from '../components/ContactModal.astro';
+import PreciosWeb from '../components/PreciosWeb.astro';
 import PreciosIA from '../components/PreciosIA.astro';
 ---
 
@@ -36,52 +37,7 @@ import PreciosIA from '../components/PreciosIA.astro';
         <p class="text-muted">Sitios profesionales para tu negocio &mdash; sin cuotas de hosting</p>
       </div>
 
-      <div class="grid grid--3">
-        <div class="card svc-card svc-card--clickable" data-service="Presencia Digital (Landing page + dominio) - Desde ₡120,000" role="button" tabindex="0">
-          <span class="badge badge--sky">Landing</span>
-          <h3 class="svc-card__title">Presencia Digital</h3>
-          <p class="svc-card__price">Desde &#8353;120,000</p>
-          <ul class="svc-card__list">
-            <li>1 página profesional</li>
-            <li>Formulario de contacto</li>
-            <li>Diseño responsive (celular y computadora)</li>
-            <li>SSL y hosting gratis para siempre</li>
-            <li>Dominio incluido (1 año)</li>
-          </ul>
-          <p class="svc-card__save">Entrega en 1 semana</p>
-          <span class="svc-card__cta">Cotizar &rarr;</span>
-        </div>
-
-        <div class="card svc-card svc-card--clickable svc-card--featured" data-service="Sitio Profesional (3-5 páginas + Blog + SEO) - Desde ₡250,000" role="button" tabindex="0">
-          <span class="badge badge--cyan">Más popular</span>
-          <h3 class="svc-card__title">Sitio Profesional</h3>
-          <p class="svc-card__price">Desde &#8353;250,000</p>
-          <ul class="svc-card__list">
-            <li>3-5 páginas completas</li>
-            <li>Blog integrado</li>
-            <li>SEO básico + Google My Business</li>
-            <li>Botón de WhatsApp</li>
-            <li>Email profesional</li>
-            <li>Hosting gratis para siempre</li>
-          </ul>
-          <p class="svc-card__save">Entrega en 2 semanas</p>
-          <span class="svc-card__cta">Cotizar &rarr;</span>
-        </div>
-
-        <div class="card svc-card svc-card--clickable" data-service="Tienda Básica (E-commerce + catálogo + pagos) - Desde ₡400,000" role="button" tabindex="0">
-          <span class="badge badge--sky">E-commerce</span>
-          <h3 class="svc-card__title">Tienda Básica</h3>
-          <p class="svc-card__price">Desde &#8353;400,000</p>
-          <ul class="svc-card__list">
-            <li>Todo lo del Sitio Profesional</li>
-            <li>Catálogo de productos</li>
-            <li>Carrito de compras</li>
-            <li>Pagos SINPE/transferencia</li>
-          </ul>
-          <p class="svc-card__save">Entrega en 3-4 semanas</p>
-          <span class="svc-card__cta">Cotizar &rarr;</span>
-        </div>
-      </div>
+      <PreciosWeb />
     </div>
   </section>
 
@@ -216,13 +172,13 @@ import PreciosIA from '../components/PreciosIA.astro';
 
   .svc-card__list li::before {
     content: '✓ ';
-    color: var(--color-cyan);
+    color: var(--color-cyan-text);
     font-weight: 700;
   }
 
   .svc-card__save {
     font-size: 0.8125rem;
-    color: var(--color-cyan);
+    color: var(--color-cyan-text);
     font-weight: 600;
     margin-bottom: var(--space-sm);
   }

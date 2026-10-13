@@ -1,0 +1,96 @@
+---
+/**
+ * PreciosWeb — tarjetas de paquetes web (datos en src/data/precios-web.ts).
+ * Necesita <ContactModal /> en la página.
+ */
+import { paquetesWeb, etiquetaWeb } from '../data/precios-web';
+import { colones } from '../data/precios-ia';
+---
+
+<div class="grid grid--4 precios-web">
+  {paquetesWeb.map((p) => (
+    <div
+      class:list={['card', 'svc-card', 'svc-card--clickable', { 'svc-card--featured': p.destacado }]}
+      data-service={etiquetaWeb(p)}
+      role="button"
+      tabindex="0"
+    >
+      <span class:list={['badge', p.destacado ? 'badge--cyan' : 'badge--sky']}>{p.badge}</span>
+      <h3 class="svc-card__title">{p.nombre}</h3>
+      <p class="svc-card__price">Desde {colones(p.precio)}</p>
+      <ul class="svc-card__list">
+        {p.incluye.map((i) => <li>{i}</li>)}
+      </ul>
+      <p class="svc-card__save">Entrega en {p.entrega}</p>
+      <span class="svc-card__cta">Cotizar &rarr;</span>
+    </div>
+  ))}
+</div>
+
+<style>
+  .svc-card {
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+  }
+  .svc-card__title {
+    font-size: 1.125rem;
+    margin: var(--space-sm) 0 0;
+    color: var(--color-dark);
+  }
+  .svc-card__price {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--color-royal);
+    margin: var(--space-xs) 0 var(--space-sm);
+  }
+  .svc-card__list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: var(--space-md);
+    flex-grow: 1;
+  }
+  .svc-card__list li {
+    padding: 3px 0;
+    font-size: 0.875rem;
+    color: var(--color-gray-600);
+  }
+  .svc-card__list li::before {
+    content: '\2713  ';
+    color: var(--color-cyan-text);
+    font-weight: 700;
+  }
+  .svc-card__save {
+    font-size: 0.8125rem;
+    color: var(--color-cyan-text);
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+  }
+  .svc-card--clickable {
+    cursor: pointer;
+    transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+    position: relative;
+    padding-bottom: calc(var(--space-xl) + 2rem);
+  }
+  .svc-card--clickable:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-sky);
+  }
+  .svc-card--clickable:focus-visible {
+    outline: 2px solid var(--color-sky);
+    outline-offset: 2px;
+  }
+  .svc-card__cta {
+    position: absolute;
+    bottom: var(--space-lg);
+    left: var(--space-xl);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-royal);
+  }
+  .svc-card--featured {
+    border: 2px solid var(--color-cyan);
+  }
+</style>
