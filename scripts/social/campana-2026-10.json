@@ -1,0 +1,214 @@
+{
+  "horas": {
+    "instagram": "12:00",
+    "facebook": "11:00",
+    "tiktok": "19:00",
+    "story": "18:00"
+  },
+  "plan": [
+    {
+      "id": "p1",
+      "fecha": "2026-10-15",
+      "titulo": "Lanzamiento: clases y coaching de IA",
+      "tipo": "post",
+      "agendar": true,
+      "imagenes": [
+        "https://teknika.co.cr/social/2026-10/p1-lanzamiento-1.jpg",
+        "https://teknika.co.cr/social/2026-10/p1-lanzamiento-2.jpg",
+        "https://teknika.co.cr/social/2026-10/p1-lanzamiento-3.jpg",
+        "https://teknika.co.cr/social/2026-10/p1-lanzamiento-4.jpg"
+      ],
+      "alt": "Clases y coaching de IA en Costa Rica, desde ₡15,000",
+      "instagram": "Ya podés aprender a usar inteligencia artificial con Teknika CR 🇨🇷\n\nClases y coaching de IA personalizados a tu trabajo:\n→ Escribir correos, propuestas e informes más rápido\n→ Resumir documentos largos y analizar datos\n→ Pedirle bien a ChatGPT, Claude, Gemini o Copilot\n→ Usarla con seguridad\n\nEs virtual, desde cualquier parte del país, y no necesitás saber de tecnología.\n\nSesión 1:1: ₡15,000 · Coaching de 6 sesiones: ₡75,000. IVA incluido.\n\nAgendá una llamada de 15 minutos y te decimos por dónde empezar. Link en bio 👆\n\n#TeknikaCR #InteligenciaArtificial #CursoDeIA #CostaRica #ChatGPT",
+      "facebook": "Ya podés aprender a usar inteligencia artificial con Teknika CR 🇨🇷\n\nClases y coaching de IA personalizados a tu trabajo:\n→ Escribir correos, propuestas e informes más rápido\n→ Resumir documentos largos y analizar datos\n→ Pedirle bien a ChatGPT, Claude, Gemini o Copilot\n→ Usarla con seguridad\n\nEs virtual, desde cualquier parte del país, y no necesitás saber de tecnología.\n\nSesión 1:1: ₡15,000 · Coaching de 6 sesiones: ₡75,000. IVA incluido.\n\nAgendá una llamada de 15 minutos y te decimos por dónde empezar 👉 https://teknika.co.cr/aprender-ia/",
+      "tiktok": "Clases y coaching de IA en Costa Rica 🇨🇷 Aprendé a usar ChatGPT, Claude y Gemini en tu trabajo, desde cero. Desde ₡15,000. Link en el perfil. #TeknikaCR #InteligenciaArtificial #CursoDeIA #CostaRica #ChatGPT"
+    },
+    {
+      "id": "p2",
+      "fecha": "2026-10-16",
+      "titulo": "¿Sesión, coaching o taller?",
+      "tipo": "post",
+      "agendar": true,
+      "imagenes": [
+        "https://teknika.co.cr/social/2026-10/p2-cual-elegir-1.jpg",
+        "https://teknika.co.cr/social/2026-10/p2-cual-elegir-2.jpg",
+        "https://teknika.co.cr/social/2026-10/p2-cual-elegir-3.jpg",
+        "https://teknika.co.cr/social/2026-10/p2-cual-elegir-4.jpg"
+      ],
+      "alt": "Comparación entre sesión 1:1, coaching y taller de IA",
+      "instagram": "¿Cuál es la mejor forma de aprender IA? Depende de lo que buscás:\n\n🔹 Sesión 1:1 (₡15,000): para probar o resolver algo puntual en 1 hora.\n🔹 Coaching en IA (₡75,000): 6 sesiones para que la IA quede integrada en tu día a día.\n🔹 Taller de IA (₡150,000): 3 horas para equipos de hasta 15 personas.\n\nTodos los precios incluyen IVA. ¿No sabés cuál te conviene? Te ayudamos a elegir.\n\nAgendá una llamada de 15 minutos. Link en bio 👆\n\n#TeknikaCR #InteligenciaArtificial #CursoDeIA #CostaRica #AprenderIA",
+      "facebook": "¿Cuál es la mejor forma de aprender IA? Depende de lo que buscás:\n\n🔹 Sesión 1:1 (₡15,000): para probar o resolver algo puntual en 1 hora.\n🔹 Coaching en IA (₡75,000): 6 sesiones para que la IA quede integrada en tu día a día.\n🔹 Taller de IA (₡150,000): 3 horas para equipos de hasta 15 personas.\n\nTodos los precios incluyen IVA. ¿No sabés cuál te conviene? Te ayudamos a elegir.\n\nAgendá una llamada de 15 minutos 👉 https://teknika.co.cr/aprender-ia/",
+      "tiktok": "¿Sesión, coaching o taller de IA? Así elegís el que te conviene 👆 #TeknikaCR #InteligenciaArtificial #CursoDeIA #CostaRica #AprenderIA"
+    },
+    {
+      "id": "p3",
+      "fecha": "2026-10-19",
+      "titulo": "Mito: hay que saber de tecnología",
+      "tipo": "post",
+      "agendar": true,
+      "imagenes": [
+        "https://teknika.co.cr/social/2026-10/p3-mito.jpg"
+      ],
+      "alt": "Si sabés mandar un WhatsApp, podés aprender IA",
+      "instagram": "\"Yo no sé nada de tecnología, eso de la IA no es para mí.\"\n\nLo escuchamos seguido, y no es cierto. Si sabés escribir un mensaje de WhatsApp, ya tenés lo necesario para usar la IA: se le habla en español, como a una persona.\n\nEn nuestras clases empezamos desde cero y practicamos con tu trabajo real: tus correos, tus documentos, tus clientes.\n\nAgendá una llamada de 15 minutos y te decimos por dónde empezar. Link en bio 👆\n\n#TeknikaCR #InteligenciaArtificial #CursoDeIA #CostaRica #AprenderIA",
+      "facebook": "\"Yo no sé nada de tecnología, eso de la IA no es para mí.\"\n\nLo escuchamos seguido, y no es cierto. Si sabés escribir un mensaje de WhatsApp, ya tenés lo necesario para usar la IA: se le habla en español, como a una persona.\n\nEn nuestras clases empezamos desde cero y practicamos con tu trabajo real: tus correos, tus documentos, tus clientes.\n\nAgendá una llamada de 15 minutos y te decimos por dónde empezar 👉 https://teknika.co.cr/aprender-ia/",
+      "tiktok": "Si sabés mandar un WhatsApp, podés aprender IA. Empezamos desde cero 🙌 #TeknikaCR #InteligenciaArtificial #CursoDeIA #CostaRica #AprenderIA"
+    },
+    {
+      "id": "p4",
+      "fecha": "2026-10-20",
+      "titulo": "Talleres de IA para equipos",
+      "tipo": "post",
+      "agendar": true,
+      "imagenes": [
+        "https://teknika.co.cr/social/2026-10/p4-equipos-1.jpg",
+        "https://teknika.co.cr/social/2026-10/p4-equipos-2.jpg",
+        "https://teknika.co.cr/social/2026-10/p4-equipos-3.jpg"
+      ],
+      "alt": "Talleres de IA para empresas y organizaciones en Costa Rica",
+      "instagram": "Tu equipo ya usa IA. La pregunta es si la usa bien.\n\nEn la mayoría de organizaciones cada persona prueba ChatGPT por su cuenta, sin una guía común y sin reglas sobre qué información compartir.\n\nNuestros talleres ordenan eso:\n✓ Diagnóstico previo de sus procesos y herramientas\n✓ Ejercicios con casos reales de la organización\n✓ Uso responsable: qué no compartir y cómo verificar\n✓ Material y certificado para cada persona\n\nTaller de 3 h: ₡150,000 · Programa Completo de 6 h: ₡300,000. Hasta 15 personas, IVA incluido. Presencial en el GAM o virtual.\n\nAgendá una llamada y te enviamos una propuesta en 24 horas. Link en bio 👆\n\n#TeknikaCR #InteligenciaArtificial #CursoDeIA #CostaRica #CapacitaciónIA #PYMEsCR",
+      "facebook": "Tu equipo ya usa IA. La pregunta es si la usa bien.\n\nEn la mayoría de organizaciones cada persona prueba ChatGPT por su cuenta, sin una guía común y sin reglas sobre qué información compartir.\n\nNuestros talleres ordenan eso:\n✓ Diagnóstico previo de sus procesos y herramientas\n✓ Ejercicios con casos reales de la organización\n✓ Uso responsable: qué no compartir y cómo verificar\n✓ Material y certificado para cada persona\n\nTaller de 3 h: ₡150,000 · Programa Completo de 6 h: ₡300,000. Hasta 15 personas, IVA incluido. Presencial en el GAM o virtual.\n\nAgendá una llamada y te enviamos una propuesta en 24 horas 👉 https://teknika.co.cr/capacitacion-ia-empresas/",
+      "tiktok": "Talleres de IA para equipos en Costa Rica: casos reales, uso responsable y certificado. #TeknikaCR #InteligenciaArtificial #CursoDeIA #CostaRica #CapacitaciónIA #PYMEsCR"
+    },
+    {
+      "id": "p5",
+      "fecha": "2026-10-21",
+      "titulo": "IA para contadores: 3 prompts",
+      "tipo": "post",
+      "agendar": true,
+      "imagenes": [
+        "https://teknika.co.cr/social/2026-10/p5-contadores-1.jpg",
+        "https://teknika.co.cr/social/2026-10/p5-contadores-2.jpg",
+        "https://teknika.co.cr/social/2026-10/p5-contadores-3.jpg",
+        "https://teknika.co.cr/social/2026-10/p5-contadores-4.jpg",
+        "https://teknika.co.cr/social/2026-10/p5-contadores-5.jpg"
+      ],
+      "alt": "Tres prompts de IA para contadores",
+      "instagram": "3 prompts de IA para contadores, listos para copiar 📊\n\n1️⃣ Explicarle un concepto a un cliente en lenguaje simple\n2️⃣ Ordenar los gastos del mes por categoría\n3️⃣ Redactar un recordatorio de cobro amable pero firme\n\nGuardá este post para usarlo mañana. Y antes de pegar datos, quitá nombres, cédulas y números de cuenta.\n\n¿Querés plantillas hechas para tu trabajo? En el coaching las armamos con tus casos reales.\n\nLink en bio 👆\n\n#TeknikaCR #InteligenciaArtificial #CursoDeIA #CostaRica #Contadores #Prompts",
+      "facebook": "3 prompts de IA para contadores, listos para copiar 📊\n\n1️⃣ Explicarle un concepto a un cliente en lenguaje simple\n2️⃣ Ordenar los gastos del mes por categoría\n3️⃣ Redactar un recordatorio de cobro amable pero firme\n\nGuardá este post para usarlo mañana. Y antes de pegar datos, quitá nombres, cédulas y números de cuenta.\n\n¿Querés plantillas hechas para tu trabajo? En el coaching las armamos con tus casos reales.\n\nMás información 👉 https://teknika.co.cr/aprender-ia/",
+      "tiktok": "3 prompts de IA para contadores. Guardalo 📌 #TeknikaCR #InteligenciaArtificial #CursoDeIA #CostaRica #Contadores #Prompts"
+    },
+    {
+      "id": "p6",
+      "fecha": "2026-10-22",
+      "titulo": "5 datos que no se le pegan a la IA",
+      "tipo": "post",
+      "agendar": true,
+      "imagenes": [
+        "https://teknika.co.cr/social/2026-10/p6-datos-1.jpg",
+        "https://teknika.co.cr/social/2026-10/p6-datos-2.jpg",
+        "https://teknika.co.cr/social/2026-10/p6-datos-3.jpg"
+      ],
+      "alt": "Cinco tipos de datos que no se deben compartir con la IA",
+      "instagram": "5 datos que nunca deberías pegarle a la IA 🔒\n\n1. Cédulas y datos personales\n2. Contraseñas y códigos\n3. Datos médicos\n4. Datos financieros de clientes\n5. Documentos confidenciales sin autorización\n\nCompartilo con tu equipo. Y si querés reglas claras para toda la organización, en el Programa Completo incluimos un borrador de política de uso de IA.\n\nLink en bio 👆\n\n#TeknikaCR #InteligenciaArtificial #CursoDeIA #CostaRica #UsoResponsable",
+      "facebook": "5 datos que nunca deberías pegarle a la IA 🔒\n\n1. Cédulas y datos personales\n2. Contraseñas y códigos\n3. Datos médicos\n4. Datos financieros de clientes\n5. Documentos confidenciales sin autorización\n\nCompartilo con tu equipo. Y si querés reglas claras para toda la organización, en el Programa Completo incluimos un borrador de política de uso de IA.\n\nMás información 👉 https://teknika.co.cr/capacitacion-ia-empresas/",
+      "tiktok": "5 datos que nunca deberías pegarle a la IA 🔒 Compartilo con tu equipo. #TeknikaCR #InteligenciaArtificial #CursoDeIA #CostaRica #UsoResponsable"
+    },
+    {
+      "id": "p7",
+      "fecha": "2026-10-23",
+      "titulo": "¿Quién te enseña?",
+      "tipo": "post",
+      "agendar": true,
+      "imagenes": [
+        "https://teknika.co.cr/social/2026-10/p7-fundador.jpg"
+      ],
+      "alt": "Patrick Castillo, fundador de Teknika CR",
+      "instagram": "¡Hola! Soy Patrick Castillo, ingeniero en sistemas y fundador de Teknika CR 👋\n\nTeknika empezó dando soporte técnico, y ahí aprendí algo: la mayoría de la gente no necesita más tecnología, necesita entender la que ya tiene. Hoy esa tecnología es la inteligencia artificial.\n\nUso IA todos los días en mi trabajo, y ahora te enseño a usarla en el tuyo: con tus casos y sin jerga técnica.\n\nSi querés empezar, agendá una llamada de 15 minutos. Link en bio 👆\n\n#TeknikaCR #InteligenciaArtificial #CursoDeIA #CostaRica",
+      "facebook": "¡Hola! Soy Patrick Castillo, ingeniero en sistemas y fundador de Teknika CR 👋\n\nTeknika empezó dando soporte técnico, y ahí aprendí algo: la mayoría de la gente no necesita más tecnología, necesita entender la que ya tiene. Hoy esa tecnología es la inteligencia artificial.\n\nUso IA todos los días en mi trabajo, y ahora te enseño a usarla en el tuyo: con tus casos y sin jerga técnica.\n\nSi querés empezar, agendá una llamada de 15 minutos 👉 https://teknika.co.cr/aprender-ia/",
+      "tiktok": "Soy Patrick, fundador de Teknika CR, y te enseño a usar IA en tu trabajo 👋 #TeknikaCR #InteligenciaArtificial #CursoDeIA #CostaRica"
+    },
+    {
+      "id": "p8",
+      "fecha": "2026-10-26",
+      "titulo": "La IA es tu borrador",
+      "tipo": "post",
+      "agendar": false,
+      "imagenes": [
+        "https://teknika.co.cr/social/2026-10/p8-borrador.jpg"
+      ],
+      "alt": "La IA es tu borrador, vos sos el editor",
+      "instagram": "La regla de oro para usar IA en el trabajo: la IA es tu borrador. Vos sos el editor. ✍️\n\nUsala para avanzar más rápido, pero revisá siempre datos, nombres y cifras antes de enviar.\n\nAgendá una llamada de 15 minutos y te decimos por dónde empezar. Link en bio 👆\n\n#TeknikaCR #InteligenciaArtificial #CursoDeIA #CostaRica",
+      "facebook": "La regla de oro para usar IA en el trabajo: la IA es tu borrador. Vos sos el editor. ✍️\n\nUsala para avanzar más rápido, pero revisá siempre datos, nombres y cifras antes de enviar.\n\nAgendá una llamada de 15 minutos y te decimos por dónde empezar 👉 https://teknika.co.cr/aprender-ia/",
+      "tiktok": "La IA es tu borrador. Vos sos el editor ✍️ #TeknikaCR #InteligenciaArtificial #CursoDeIA #CostaRica"
+    },
+    {
+      "id": "p9",
+      "fecha": "2026-10-28",
+      "titulo": "IA para abogados: 3 prompts",
+      "tipo": "post",
+      "agendar": false,
+      "imagenes": [
+        "https://teknika.co.cr/social/2026-10/p9-abogados-1.jpg",
+        "https://teknika.co.cr/social/2026-10/p9-abogados-2.jpg",
+        "https://teknika.co.cr/social/2026-10/p9-abogados-3.jpg",
+        "https://teknika.co.cr/social/2026-10/p9-abogados-4.jpg",
+        "https://teknika.co.cr/social/2026-10/p9-abogados-5.jpg"
+      ],
+      "alt": "Tres prompts de IA para abogados",
+      "instagram": "3 prompts de IA para abogados ⚖️\n\n1️⃣ Resumir un contrato en una tabla\n2️⃣ Redactar el borrador de una carta formal\n3️⃣ Preparar una negociación pensando como la contraparte\n\nLa IA no reemplaza el criterio ni la revisión legal: te ahorra el primer borrador.\n\n¿Querés esto para tu despacho? Link en bio 👆\n\n#TeknikaCR #InteligenciaArtificial #CursoDeIA #CostaRica #Abogados #Prompts",
+      "facebook": "3 prompts de IA para abogados ⚖️\n\n1️⃣ Resumir un contrato en una tabla\n2️⃣ Redactar el borrador de una carta formal\n3️⃣ Preparar una negociación pensando como la contraparte\n\nLa IA no reemplaza el criterio ni la revisión legal: te ahorra el primer borrador.\n\n¿Querés esto para tu despacho? 👉 https://teknika.co.cr/capacitacion-ia-empresas/",
+      "tiktok": "3 prompts de IA para abogados ⚖️ Guardalo. #TeknikaCR #InteligenciaArtificial #CursoDeIA #CostaRica #Abogados #Prompts"
+    },
+    {
+      "id": "p10",
+      "fecha": "2026-10-30",
+      "titulo": "Halloween: 5 sustos con la IA",
+      "tipo": "post",
+      "agendar": false,
+      "imagenes": [
+        "https://teknika.co.cr/social/2026-10/p10-sustos-1.jpg",
+        "https://teknika.co.cr/social/2026-10/p10-sustos-2.jpg",
+        "https://teknika.co.cr/social/2026-10/p10-sustos-3.jpg"
+      ],
+      "alt": "Los 5 sustos más comunes al empezar con IA",
+      "instagram": "Los 5 sustos más comunes al empezar con IA 🎃 (y cómo evitarlos)\n\n👻 \"Me inventó un dato\" → pedile la fuente y verificala\n👻 \"Pegué algo confidencial\" → anonimizá antes de pegar\n👻 \"Me respondió algo genérico\" → dale rol, contexto y formato\n👻 \"Suena a robot\" → pasale un ejemplo de cómo escribís\n👻 \"No sé cuál usar\" → empezá con la que ya tenés\n\nSesión 1:1 desde ₡15,000, IVA incluido.\n\nAgendá una llamada de 15 minutos y te decimos por dónde empezar. Link en bio 👆\n\n#TeknikaCR #InteligenciaArtificial #CursoDeIA #CostaRica #Halloween",
+      "facebook": "Los 5 sustos más comunes al empezar con IA 🎃 (y cómo evitarlos)\n\n👻 \"Me inventó un dato\" → pedile la fuente y verificala\n👻 \"Pegué algo confidencial\" → anonimizá antes de pegar\n👻 \"Me respondió algo genérico\" → dale rol, contexto y formato\n👻 \"Suena a robot\" → pasale un ejemplo de cómo escribís\n👻 \"No sé cuál usar\" → empezá con la que ya tenés\n\nSesión 1:1 desde ₡15,000, IVA incluido.\n\nAgendá una llamada de 15 minutos y te decimos por dónde empezar 👉 https://teknika.co.cr/aprender-ia/",
+      "tiktok": "Los 5 sustos más comunes al empezar con IA 🎃 #TeknikaCR #InteligenciaArtificial #CursoDeIA #CostaRica #Halloween"
+    },
+    {
+      "id": "s1",
+      "fecha": "2026-10-15",
+      "titulo": "Story: nuevo",
+      "tipo": "story",
+      "agendar": true,
+      "imagenes": [
+        "https://teknika.co.cr/social/2026-10/s1-nuevo.jpg"
+      ],
+      "alt": "Nuevo: clases y coaching de IA"
+    },
+    {
+      "id": "s2",
+      "fecha": "2026-10-19",
+      "titulo": "Story: tip de preguntas",
+      "tipo": "story",
+      "agendar": true,
+      "imagenes": [
+        "https://teknika.co.cr/social/2026-10/s2-tip.jpg"
+      ],
+      "alt": "Tip: pedile a la IA que te haga preguntas primero"
+    },
+    {
+      "id": "s3",
+      "fecha": "2026-10-21",
+      "titulo": "Story: ¿qué delegarías?",
+      "tipo": "story",
+      "agendar": true,
+      "imagenes": [
+        "https://teknika.co.cr/social/2026-10/s3-pregunta.jpg"
+      ],
+      "alt": "¿Qué tarea te gustaría delegarle a la IA?"
+    },
+    {
+      "id": "s4",
+      "fecha": "2026-10-27",
+      "titulo": "Story: agendá",
+      "tipo": "story",
+      "agendar": false,
+      "imagenes": [
+        "https://teknika.co.cr/social/2026-10/s4-agenda.jpg"
+      ],
+      "alt": "¿No sabés por dónde empezar? Agendá una llamada"
+    }
+  ]
+}
