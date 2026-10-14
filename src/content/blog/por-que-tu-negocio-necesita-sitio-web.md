@@ -115,6 +115,6 @@ En 2026, si no tenés sitio web:
 
 ## Cotizá tu sitio web sin compromiso
 
-En **Teknika CR** nos especializamos en [desarrollo web para PYMEs en Costa Rica](https://teknika.co.cr/desarrollo-web). Creamos sitios rápidos, optimizados para Google y para la inteligencia artificial, con hosting gratuito y diseño profesional.
+En **Teknika CR** nos especializamos en [desarrollo web para PYMEs en Costa Rica](https://teknika.co.cr/desarrollo-web/). Creamos sitios rápidos, optimizados para Google y para la inteligencia artificial, con hosting gratuito y diseño profesional.
 
 No importa si apenas estás empezando o si ya tenés un negocio establecido. **Cotizá sin compromiso** — escribinos por [WhatsApp](https://wa.me/50671951856) o visitá [teknika.co.cr](https://teknika.co.cr).

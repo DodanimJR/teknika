@@ -1,0 +1,155 @@
+---
+import Base from '../layouts/Base.astro';
+import PreciosIA from '../components/PreciosIA.astro';
+import Faq from '../components/Faq.astro';
+import { faqEmpresas } from '../data/faq-ia';
+import { servicioIA } from '../data/schema';
+import { colones, precioDesde, PARTICIPANTES_INCLUIDOS } from '../data/precios-ia';
+import { AGENDA_URL } from '../data/contacto';
+
+const desc =
+  'Capacitación en IA para empresas en Costa Rica: talleres prácticos para equipos, con casos reales y política de uso. Presencial en el GAM o virtual.';
+---
+
+<Base
+  title="Capacitación en IA para empresas en Costa Rica"
+  description={desc}
+  breadcrumbs={[
+    { name: 'Asesoría IA', path: '/capacitacion-ia/' },
+    { name: 'Capacitación de IA para empresas', path: '/capacitacion-ia-empresas/' },
+  ]}
+  schemas={[
+    servicioIA({
+      nombre: 'Capacitación en inteligencia artificial para empresas',
+      tipo: 'Capacitación corporativa en inteligencia artificial',
+      descripcion: desc,
+      path: '/capacitacion-ia-empresas/',
+      audiencia: 'organizaciones',
+    }),
+  ]}
+>
+  <section class="page-header">
+    <div class="container">
+      <span class="badge badge--cyan">Presencial en el GAM · Virtual</span>
+      <h1>Capacitación en inteligencia artificial para empresas en Costa Rica</h1>
+      <p>
+        Talleres prácticos para que tu equipo use la IA en su trabajo diario, de forma productiva y segura.
+        Grupos de hasta {PARTICIPANTES_INCLUIDOS} personas desde {colones(precioDesde('organizaciones'))}, IVA incluido.
+      </p>
+      <div class="ce-actions">
+        <a href={AGENDA_URL} class="btn btn--accent btn--lg" target="_blank" rel="noopener">Agendar una llamada</a>
+        <a href="#precios" class="btn btn--outline-light btn--lg">Ver precios</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container ce-narrow">
+      <h2>Tu equipo ya usa IA. La pregunta es cómo.</h2>
+      <p>
+        En la mayoría de organizaciones el personal ya prueba ChatGPT u otras herramientas por su cuenta, sin una
+        guía común y sin reglas sobre qué información compartir. Un taller de inteligencia artificial bien hecho
+        ordena eso: todos aprenden las mismas buenas prácticas, con ejemplos de su propio trabajo.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <h2 class="text-center">Qué incluye la capacitación</h2>
+      <div class="grid grid--3 ce-grid">
+        <div class="card">
+          <h3>Diagnóstico previo</h3>
+          <p>Una llamada para conocer sus procesos, documentos y herramientas (Google Workspace o Microsoft 365).</p>
+        </div>
+        <div class="card">
+          <h3>Casos reales</h3>
+          <p>Ejercicios con comunicados, actas, informes, atención de consultas y análisis de datos de la organización.</p>
+        </div>
+        <div class="card">
+          <h3>Uso responsable</h3>
+          <p>Qué datos no compartir, cómo verificar resultados y, en el Programa Completo, un borrador de política de uso de IA.</p>
+        </div>
+        <div class="card">
+          <h3>Herramientas actuales</h3>
+          <p>Claude, ChatGPT, Gemini y Copilot, según lo que ya tenga la organización.</p>
+        </div>
+        <div class="card">
+          <h3>Material y certificado</h3>
+          <p>Guía de prompts, material digital y certificado de participación para cada persona.</p>
+        </div>
+        <div class="card">
+          <h3>Seguimiento</h3>
+          <p>El Programa Completo incluye una semana de soporte después de la capacitación.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="text-center">Para quién es</h2>
+      <p class="text-center text-muted ce-narrow">
+        PYMEs, colegios profesionales, cámaras empresariales, asociaciones, ONG e instituciones en San José,
+        Heredia, Alajuela, Cartago y el resto de Costa Rica.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="precios">
+    <div class="container">
+      <h2 class="text-center">Precios</h2>
+      <PreciosIA audiencia="organizaciones" conTitulos={false} />
+      <p class="text-center ce-link">
+        ¿Es solo para vos? <a href="/aprender-ia/">Ver clases y coaching de IA personalizados</a>
+      </p>
+    </div>
+  </section>
+
+  <Faq items={faqEmpresas} />
+
+  <section class="section section--dark text-center">
+    <div class="container">
+      <h2>Coordinemos la capacitación de tu equipo</h2>
+      <p class="ce-cta-text">Agendá una llamada de 15 minutos y te enviamos una propuesta en 24 horas.</p>
+      <a href={AGENDA_URL} class="btn btn--accent btn--lg" target="_blank" rel="noopener">Agendar una llamada</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .ce-actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: var(--space-xl);
+  }
+  .ce-narrow {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .ce-grid {
+    margin-top: var(--space-2xl);
+  }
+  .ce-grid h3 {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-xs);
+  }
+  .ce-grid p {
+    color: var(--color-gray-600);
+    margin: 0;
+  }
+  .ce-link {
+    margin-top: var(--space-xl);
+  }
+  .ce-link a {
+    color: var(--color-royal);
+    font-weight: 600;
+  }
+  .ce-cta-text {
+    color: var(--color-gray-300);
+    margin: var(--space-md) auto var(--space-xl);
+  }
+</style>

@@ -38,7 +38,7 @@ Si tenés datos de ventas en Excel, podés pegarlos en la IA y pedirle que ident
 
 ### 4. Responder preguntas frecuentes de clientes
 
-Si siempre te preguntan lo mismo — precios, horarios, ubicación — podés usar la IA para crear respuestas predeterminadas o incluso configurar un chatbot básico en tu [sitio web](https://teknika.co.cr/desarrollo-web).
+Si siempre te preguntan lo mismo — precios, horarios, ubicación — podés usar la IA para crear respuestas predeterminadas o incluso configurar un chatbot básico en tu [sitio web](https://teknika.co.cr/desarrollo-web/).
 
 ### 5. Redactar documentos y propuestas
 
@@ -117,6 +117,6 @@ Los primeros resultados van a ser buenos, no perfectos. Y eso está bien. Aprend
 
 Aprender solo está bien, pero si querés que tu equipo entero se ponga al día rápido, una capacitación personalizada marca la diferencia.
 
-En **Teknika CR** ofrecemos [capacitación empresarial en inteligencia artificial](https://teknika.co.cr/capacitacion-ia) diseñada específicamente para PYMEs en Costa Rica. No es teoría: son talleres prácticos donde tu equipo aprende a usar la IA con las tareas reales de tu negocio.
+En **Teknika CR** ofrecemos [capacitación empresarial en inteligencia artificial](https://teknika.co.cr/capacitacion-ia/) diseñada específicamente para PYMEs en Costa Rica. No es teoría: son talleres prácticos donde tu equipo aprende a usar la IA con las tareas reales de tu negocio.
 
 **Contactanos** para coordinar una sesión para tu empresa. Podés escribirnos por [WhatsApp](https://wa.me/50671951856) o visitarnos en [teknika.co.cr](https://teknika.co.cr).

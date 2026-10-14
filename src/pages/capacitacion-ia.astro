@@ -1,12 +1,17 @@
 ---
 import Base from '../layouts/Base.astro';
 import PreciosIA from '../components/PreciosIA.astro';
+import Faq from '../components/Faq.astro';
+import { faqGeneral } from '../data/faq-ia';
+import { servicioIA } from '../data/schema';
 import { AGENDA_URL, WHATSAPP_URL } from '../data/contacto';
 ---
 
 <Base
-  title="Asesoría, coaching y capacitación en IA"
-  description="Asesoría, coaching y capacitación en inteligencia artificial en Costa Rica. Sesiones 1:1 y coaching para profesionales; talleres y programas para organizaciones con Claude, ChatGPT, Gemini y Copilot."
+  title="Asesoría y coaching de IA en Costa Rica"
+  description="Asesoría y coaching de IA en Costa Rica: aprendé a usar ChatGPT, Claude y Gemini. Sesiones 1:1 desde ₡15,000 y talleres para empresas."
+  breadcrumbs={[{ name: 'Asesoría IA', path: '/capacitacion-ia/' }]}
+  schemas={[servicioIA({ nombre: 'Asesoría, coaching y capacitación en inteligencia artificial', tipo: 'Asesoría y capacitación en inteligencia artificial', descripcion: 'Asesoría 1:1, coaching y talleres de inteligencia artificial para profesionales, PYMEs y organizaciones en Costa Rica.', path: '/capacitacion-ia/' })]}
   canonical="https://teknika.co.cr/capacitacion-ia"
 >
 
@@ -16,7 +21,7 @@ import { AGENDA_URL, WHATSAPP_URL } from '../data/contacto';
       <div class="ia-hero__grid">
         <div class="ia-hero__content">
           <span class="badge badge--cyan">Asesoría · Coaching · Capacitación</span>
-          <h1>Aprendé a trabajar con <span class="ia-hero__accent">inteligencia artificial</span></h1>
+          <h1>Asesoría y coaching de <span class="ia-hero__accent">inteligencia artificial</span> en Costa Rica</h1>
           <p class="ia-hero__subtitle">
             Coaching 1:1 para profesionales y talleres para equipos, con tus propios casos de trabajo.
             Claude, ChatGPT, Gemini y Copilot, sin jerga técnica y con resultados desde la primera sesión.
@@ -207,8 +212,8 @@ import { AGENDA_URL, WHATSAPP_URL } from '../data/contacto';
               <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
             </svg>
           </div>
-          <h3>Profesionales independientes</h3>
-          <p>Abogados, contadores, diseñadores, consultores que quieren ser más productivos con IA.</p>
+          <h3><a href="/aprender-ia/" class="ia-audience__link">Profesionales independientes</a></h3>
+          <p>Abogados, contadores, diseñadores, consultores que quieren ser más productivos con IA. <a href="/aprender-ia/" class="ia-audience__link">Clases y coaching de IA &rarr;</a></p>
         </div>
 
         <div class="ia-audience">
@@ -217,8 +222,8 @@ import { AGENDA_URL, WHATSAPP_URL } from '../data/contacto';
               <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />
             </svg>
           </div>
-          <h3>Equipos de PYMEs</h3>
-          <p>Empresas pequeñas que quieren que su equipo use IA para mejorar procesos y ahorrar tiempo.</p>
+          <h3><a href="/capacitacion-ia-empresas/" class="ia-audience__link">Equipos y organizaciones</a></h3>
+          <p>PYMEs, colegios profesionales e instituciones que quieren que su equipo use IA para mejorar procesos y ahorrar tiempo. <a href="/capacitacion-ia-empresas/" class="ia-audience__link">Capacitación para empresas &rarr;</a></p>
         </div>
 
         <div class="ia-audience">
@@ -281,47 +286,8 @@ import { AGENDA_URL, WHATSAPP_URL } from '../data/contacto';
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="section">
-    <div class="container">
-      <div class="text-center" style="margin-bottom: var(--space-2xl);">
-        <h2>Preguntas frecuentes</h2>
-      </div>
-
-      <div class="ia-faq">
-        <details class="ia-faq__item">
-          <summary class="ia-faq__question">No sé nada de IA, ¿puedo tomar una sesión?</summary>
-          <p class="ia-faq__answer">Sí, precisamente para eso es este servicio. Empezamos desde cero y avanzamos a tu ritmo. No necesitás conocimientos previos de tecnología.</p>
-        </details>
-
-        <details class="ia-faq__item">
-          <summary class="ia-faq__question">¿Qué necesito para tomar la sesión?</summary>
-          <p class="ia-faq__answer">Solo una computadora con internet y ganas de aprender. Nosotros te guiamos para crear las cuentas en las herramientas que vamos a usar.</p>
-        </details>
-
-        <details class="ia-faq__item">
-          <summary class="ia-faq__question">¿Las sesiones son presenciales o virtuales?</summary>
-          <p class="ia-faq__answer">La sesión 1:1 y el coaching son 100% virtuales por videollamada. El Taller y el Programa Completo para organizaciones pueden ser presenciales o virtuales.</p>
-        </details>
-
-        <details class="ia-faq__item">
-          <summary class="ia-faq__question">¿La IA no me va a quitar el trabajo?</summary>
-          <p class="ia-faq__answer">La IA no reemplaza personas, reemplaza tareas. Quien sepa usar IA va a ser más productivo y valioso. Mejor aprender a usarla que ignorarla.</p>
-        </details>
-
-        <details class="ia-faq__item">
-          <summary class="ia-faq__question">¿Cuánto dura el coaching de 6 sesiones?</summary>
-          <p class="ia-faq__answer">Las usás a tu ritmo: una por semana o una cada quince días. Tenés 6 meses desde la primera sesión para completarlas, con soporte por chat entre sesiones.</p>
-        </details>
-
-        <details class="ia-faq__item">
-          <summary class="ia-faq__question">¿Puedo usar la sesión para algo específico de mi trabajo?</summary>
-          <p class="ia-faq__answer">Absolutamente. De hecho, eso es lo ideal. Si sos abogado, trabajamos con contratos. Si sos contador, con hojas de cálculo. Si tenés una tienda, con contenido para redes. La sesión se adapta a vos.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
+  <!-- FAQ (texto y schema desde src/data/faq-ia.ts) -->
+  <Faq items={faqGeneral} />
 
   <!-- CTA -->
   <section class="section section--dark text-center">
@@ -350,6 +316,16 @@ import { AGENDA_URL, WHATSAPP_URL } from '../data/contacto';
 </Base>
 
 <style>
+  .ia-audience__link {
+    color: inherit;
+    text-decoration: none;
+  }
+  p .ia-audience__link {
+    color: var(--color-cyan);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
   /* ============================================
      Hero IA
      ============================================ */
@@ -572,62 +548,13 @@ import { AGENDA_URL, WHATSAPP_URL } from '../data/contacto';
   /* ============================================
      FAQ
      ============================================ */
-  .ia-faq {
-    max-width: 700px;
-    margin: 0 auto;
-  }
 
-  .ia-faq__item {
-    border: 1px solid var(--color-gray-200);
-    border-radius: var(--radius-md);
-    margin-bottom: var(--space-md);
-    overflow: hidden;
-    transition: border-color var(--transition), box-shadow var(--transition);
-  }
 
-  .ia-faq__item[open] {
-    border-color: var(--color-cyan);
-    box-shadow: 0 2px 12px rgba(68, 207, 203, 0.1);
-  }
 
-  .ia-faq__question {
-    padding: var(--space-lg);
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 1rem;
-    color: var(--color-dark);
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
 
-  .ia-faq__question::-webkit-details-marker {
-    display: none;
-  }
 
-  .ia-faq__question::after {
-    content: '+';
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: var(--color-gray-400);
-    transition: transform var(--transition);
-    flex-shrink: 0;
-    margin-left: var(--space-md);
-  }
 
-  .ia-faq__item[open] .ia-faq__question::after {
-    transform: rotate(45deg);
-    color: var(--color-cyan);
-  }
 
-  .ia-faq__answer {
-    padding: 0 var(--space-lg) var(--space-lg);
-    color: var(--color-text-muted);
-    font-size: 0.9375rem;
-    line-height: 1.7;
-    margin: 0;
-  }
 
   /* ============================================
      Hero Animations

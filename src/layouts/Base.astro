@@ -10,11 +10,31 @@ import { paquetesWeb } from '../data/precios-web';
 interface Props {
   title: string;
   description: string;
+  /** Ignorado: el canonical se calcula de la URL (siempre con / final) */
   canonical?: string;
+  /** Migas de pan para schema.org: [{ name, path }] sin incluir Inicio */
+  breadcrumbs?: { name: string; path: string }[];
+  /** JSON-LD adicional de la página (por ejemplo, Service) */
+  schemas?: Record<string, unknown>[];
+  noindex?: boolean;
 }
 
-const { title, description, canonical } = Astro.props;
+const { title, description, breadcrumbs = [], schemas = [], noindex = false } = Astro.props;
 const siteUrl = 'https://teknika.co.cr';
+const ruta = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : Astro.url.pathname + '/';
+const canonical = siteUrl + ruta;
+const breadcrumbSchema = breadcrumbs.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [{ name: 'Inicio', path: '/' }, ...breadcrumbs].map((b, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: b.name,
+        item: siteUrl + b.path,
+      })),
+    }
+  : null;
 const fullTitle = title === 'Inicio'
   ? 'Teknika CR - Asesoría, coaching y capacitación en IA en Costa Rica'
   : `${title} | Teknika CR`;
@@ -85,53 +105,23 @@ const localBusiness = {
   },
 };
 
-const [s1, c6, t3, p6] = ['sesion-1-1', 'coaching-6', 'taller-3h', 'programa-6h'].map(
-  (id) => planesIA.find((p) => p.id === id)!
-);
-
-const faq = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      q: '¿Cuánto cuesta una asesoría de inteligencia artificial en Costa Rica?',
-      a: `En Teknika CR, una ${s1.nombre} virtual de 1 hora cuesta ${colones(s1.precio)}. El ${c6.nombre} de 6 sesiones cuesta ${colones(c6.precio)} e incluye plan personalizado y soporte por chat entre sesiones.`,
-    },
-    {
-      q: '¿Cuánto cuesta capacitar a mi equipo en IA?',
-      a: `El ${t3.nombre} de 3 horas cuesta ${colones(t3.precio)} y el ${p6.nombre} de 6 horas ${colones(p6.precio)}, IVA incluido, ambos para grupos de hasta 15 personas, presenciales o virtuales y personalizados a la organización.`,
-    },
-    {
-      q: '¿Qué herramientas de IA enseñan?',
-      a: 'Claude, ChatGPT, Gemini y Copilot, según lo que ya use tu organización (Google Workspace o Microsoft 365). También generación de imágenes y automatización básica.',
-    },
-    {
-      q: '¿Necesito saber de tecnología para aprender a usar IA?',
-      a: 'No. Las sesiones empiezan desde cero, sin jerga técnica, y se trabajan con tus propios documentos, correos y procesos.',
-    },
-    {
-      q: '¿Las sesiones son presenciales o virtuales?',
-      a: 'La asesoría 1:1 y el coaching son virtuales para todo Costa Rica. Los talleres para organizaciones pueden ser presenciales en el Gran Área Metropolitana o virtuales.',
-    },
-  ].map(({ q, a }) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
-};
 import { AGENDA_URL } from '../data/contacto';
 import ContactModal from '../components/ContactModal.astro';
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es-CR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="author" content="Teknika CR" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content={noindex ? "noindex, follow" : "index, follow"} />
     <meta name="theme-color" content="#122C34" />
 
     <title>{fullTitle}</title>
 
-    {canonical && <link rel="canonical" href={canonical} />}
+    {!noindex && <link rel="canonical" href={canonical} />}
 
     <!-- LLM discovery -->
     <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Information" />
@@ -148,7 +138,7 @@ import ContactModal from '../components/ContactModal.astro';
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonical || siteUrl} />
+    <meta property="og:url" content={canonical} />
     <meta property="og:locale" content="es_CR" />
     <meta property="og:site_name" content="Teknika CR" />
     <meta property="og:image" content={`${siteUrl}/img/og-teknika.png`} />
@@ -166,7 +156,8 @@ import ContactModal from '../components/ContactModal.astro';
 
     <!-- Schema.org (precios de IA desde src/data/precios-ia.ts) -->
     <script type="application/ld+json" set:html={JSON.stringify(localBusiness)} />
-    <script type="application/ld+json" set:html={JSON.stringify(faq)} />
+    {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
+    {schemas.map((sc) => <script type="application/ld+json" set:html={JSON.stringify(sc)} />)}
 
     <!-- Estilos -->
     <style is:global>
@@ -188,12 +179,12 @@ import ContactModal from '../components/ContactModal.astro';
 
         <ul class="nav__links" id="nav-links">
           <li><a href="/">Inicio</a></li>
-          <li><a href="/capacitacion-ia">Asesoría IA</a></li>
-          <li><a href="/desarrollo-web">Desarrollo Web</a></li>
-          <li><a href="/servicios">Soporte</a></li>
-          <li><a href="/sobre">Nosotros</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/contacto">Contacto</a></li>
+          <li><a href="/capacitacion-ia/">Asesoría IA</a></li>
+          <li><a href="/desarrollo-web/">Desarrollo Web</a></li>
+          <li><a href="/servicios/">Soporte</a></li>
+          <li><a href="/sobre/">Nosotros</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/contacto/">Contacto</a></li>
           <li>
             <a href={AGENDA_URL}
                class="btn btn--accent btn--nav"
@@ -223,20 +214,20 @@ import ContactModal from '../components/ContactModal.astro';
           <div class="footer__col">
             <h4>Servicios</h4>
             <ul>
-              <li><a href="/capacitacion-ia">Capacitación en IA</a></li>
-              <li><a href="/desarrollo-web">Desarrollo Web</a></li>
-              <li><a href="/servicios">Soporte</a></li>
-              <li><a href="/servicios#diagnostico">Diagnóstico y reparación</a></li>
-              <li><a href="/servicios#formateo">Formateo e instalación</a></li>
+              <li><a href="/capacitacion-ia/">Asesoría y coaching de IA</a></li>
+              <li><a href="/aprender-ia/">Clases de IA para profesionales</a></li>
+              <li><a href="/capacitacion-ia-empresas/">Capacitación de IA para empresas</a></li>
+              <li><a href="/desarrollo-web/">Desarrollo web</a></li>
+              <li><a href="/servicios/">Soporte técnico</a></li>
             </ul>
           </div>
 
           <div class="footer__col">
             <h4>Empresa</h4>
             <ul>
-              <li><a href="/sobre">Sobre nosotros</a></li>
-              <li><a href="/blog">Blog</a></li>
-              <li><a href="/contacto">Contacto</a></li>
+              <li><a href="/sobre/">Sobre nosotros</a></li>
+              <li><a href="/blog/">Blog</a></li>
+              <li><a href="/contacto/">Contacto</a></li>
             </ul>
           </div>
 

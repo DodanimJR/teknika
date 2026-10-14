@@ -1,0 +1,78 @@
+---
+/**
+ * Faq — preguntas frecuentes visibles + schema.org FAQPage con el mismo texto.
+ */
+import type { FaqItem } from '../data/faq-ia';
+
+interface Props {
+  items: FaqItem[];
+  titulo?: string;
+}
+
+const { items, titulo = 'Preguntas frecuentes' } = Astro.props;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: items.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+
+<section class="section faq-sec">
+  <div class="container">
+    <h2 class="text-center">{titulo}</h2>
+    <div class="faq">
+      {items.map(({ q, a }) => (
+        <details class="faq__item">
+          <summary class="faq__q">{q}</summary>
+          <p class="faq__a">{a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+</section>
+
+<style>
+  .faq {
+    max-width: 760px;
+    margin: var(--space-2xl) auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  .faq__item {
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-lg);
+    background: var(--color-white);
+    padding: var(--space-md) var(--space-lg);
+  }
+  .faq__q {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--color-dark);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-md);
+  }
+  .faq__q::-webkit-details-marker {
+    display: none;
+  }
+  .faq__q::after {
+    content: '+';
+    color: var(--color-cyan-text);
+    font-weight: 700;
+  }
+  .faq__item[open] .faq__q::after {
+    content: '−';
+  }
+  .faq__a {
+    margin: var(--space-sm) 0 0;
+    color: var(--color-gray-600);
+  }
+</style>

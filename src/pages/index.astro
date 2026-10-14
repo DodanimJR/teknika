@@ -29,7 +29,7 @@ import { AGENDA_URL, WHATSAPP_URL } from '../data/contacto';
                rel="noopener">
               Agendar una llamada
             </a>
-            <a href="/capacitacion-ia" class="btn btn--outline-light btn--lg">
+            <a href="/capacitacion-ia/" class="btn btn--outline-light btn--lg">
               Ver servicios de IA
             </a>
           </div>
@@ -50,7 +50,7 @@ import { AGENDA_URL, WHATSAPP_URL } from '../data/contacto';
       </div>
 
       <div class="services-grid">
-        <a href="/capacitacion-ia" class="card card--service card--service-featured">
+        <a href="/capacitacion-ia/" class="card card--service card--service-featured">
           <div class="card-service__top">
             <div class="card__icon-circle">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
@@ -62,13 +62,13 @@ import { AGENDA_URL, WHATSAPP_URL } from '../data/contacto';
             </div>
           </div>
           <p class="card__text">
-            Sesiones 1:1 y coaching para profesionales; talleres y programas para equipos.
+            Clases y coaching de IA para profesionales; talleres de IA para empresas en Costa Rica.
             Con tus casos reales y sin jerga técnica.
           </p>
           <span class="card__cta">Ver formatos y precios &rarr;</span>
         </a>
 
-        <a href="/desarrollo-web" class="card card--service">
+        <a href="/desarrollo-web/" class="card card--service">
           <div class="card-service__top">
             <div class="card__icon-circle">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
@@ -85,7 +85,7 @@ import { AGENDA_URL, WHATSAPP_URL } from '../data/contacto';
           <span class="card__cta">Ver paquetes web &rarr;</span>
         </a>
 
-        <a href="/servicios" class="card card--service">
+        <a href="/servicios/" class="card card--service">
           <div class="card-service__top">
             <div class="card__icon-circle">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
@@ -105,8 +105,26 @@ import { AGENDA_URL, WHATSAPP_URL } from '../data/contacto';
     </div>
   </section>
 
+  <!-- RUTAS IA (SEO + navegación) -->
+  <section class="section" id="rutas-ia">
+    <div class="container rutas-ia">
+      <a href="/aprender-ia/" class="card rutas-ia__card">
+        <span class="badge badge--sky">Para vos</span>
+        <h2 class="rutas-ia__title">Clases y coaching de IA</h2>
+        <p>Aprendé a usar ChatGPT, Claude y Gemini en tu trabajo, desde cero. Virtual en todo Costa Rica.</p>
+        <span class="rutas-ia__cta">Ver clases y coaching &rarr;</span>
+      </a>
+      <a href="/capacitacion-ia-empresas/" class="card rutas-ia__card">
+        <span class="badge badge--sky">Para tu equipo</span>
+        <h2 class="rutas-ia__title">Capacitación de IA para empresas</h2>
+        <p>Talleres prácticos para equipos, con casos reales y política de uso. Presencial en el GAM o virtual.</p>
+        <span class="rutas-ia__cta">Ver capacitación para empresas &rarr;</span>
+      </a>
+    </div>
+  </section>
+
   <!-- PROCESO -->
-  <section class="section" id="proceso">
+  <section class="section section--alt" id="proceso">
     <div class="container">
       <div class="text-center" style="margin-bottom: var(--space-2xl);">
         <h2>Cómo trabajamos</h2>
@@ -226,6 +244,29 @@ import { AGENDA_URL, WHATSAPP_URL } from '../data/contacto';
 </Base>
 
 <style>
+  .rutas-ia {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-xl);
+  }
+  .rutas-ia__card {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    padding: var(--space-xl);
+  }
+  .rutas-ia__title {
+    font-size: 1.375rem;
+    margin: var(--space-sm) 0 var(--space-xs);
+  }
+  .rutas-ia__card p {
+    color: var(--color-gray-600);
+  }
+  .rutas-ia__cta {
+    font-weight: 600;
+    color: var(--color-royal);
+  }
+
   /* ============================================
      Hero
      ============================================ */

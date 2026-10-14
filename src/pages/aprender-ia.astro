@@ -1,0 +1,160 @@
+---
+import Base from '../layouts/Base.astro';
+import PreciosIA from '../components/PreciosIA.astro';
+import Faq from '../components/Faq.astro';
+import { faqPersonas } from '../data/faq-ia';
+import { servicioIA } from '../data/schema';
+import { colones, precioDesde } from '../data/precios-ia';
+import { AGENDA_URL } from '../data/contacto';
+
+const desc =
+  'Clases y coaching de IA en Costa Rica: aprendé a usar ChatGPT, Claude y Gemini en tu trabajo, desde cero y con tus casos. Virtual, desde ₡15,000.';
+---
+
+<Base
+  title="Clases y coaching de IA en Costa Rica"
+  description={desc}
+  breadcrumbs={[
+    { name: 'Asesoría IA', path: '/capacitacion-ia/' },
+    { name: 'Clases y coaching de IA', path: '/aprender-ia/' },
+  ]}
+  schemas={[
+    servicioIA({
+      nombre: 'Clases y coaching de inteligencia artificial',
+      tipo: 'Coaching y clases personalizadas de inteligencia artificial',
+      descripcion: desc,
+      path: '/aprender-ia/',
+      audiencia: 'personas',
+    }),
+  ]}
+>
+  <section class="page-header">
+    <div class="container">
+      <span class="badge badge--cyan">Virtual · Todo Costa Rica</span>
+      <h1>Clases y coaching de inteligencia artificial en Costa Rica</h1>
+      <p>
+        Aprendé a usar ChatGPT, Claude, Gemini y Copilot en tu trabajo real, desde cero y sin jerga técnica.
+        Sesiones 1:1 desde {colones(precioDesde('personas'))}, IVA incluido.
+      </p>
+      <div class="ap-actions">
+        <a href={AGENDA_URL} class="btn btn--accent btn--lg" target="_blank" rel="noopener">Agendar una llamada</a>
+        <a href="#precios" class="btn btn--outline-light btn--lg">Ver precios</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container ap-narrow">
+      <h2>Un curso de IA hecho a tu medida</h2>
+      <p>
+        Los cursos de inteligencia artificial enseñan lo mismo a todo el mundo. En el coaching de Teknika CR cada
+        sesión se arma con lo que vos hacés todos los días: tus correos, documentos, clientes, clases o reportes.
+        Así aprendés más rápido y salís de cada sesión con algo que ya podés usar.
+      </p>
+      <p>
+        Las sesiones son por videollamada, así que podés tomarlas desde San José, Heredia, Alajuela, Cartago,
+        Guanacaste, Puntarenas, Limón o donde estés.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <h2 class="text-center">Qué vas a aprender</h2>
+      <div class="grid grid--3 ap-grid">
+        <div class="card">
+          <h3>Escribir mejor y más rápido</h3>
+          <p>Correos, propuestas, informes y publicaciones con la IA como borrador, sin perder tu estilo.</p>
+        </div>
+        <div class="card">
+          <h3>Resumir y analizar</h3>
+          <p>Documentos largos, contratos, hojas de cálculo y datos: lo importante en minutos.</p>
+        </div>
+        <div class="card">
+          <h3>Pedirle bien a la IA</h3>
+          <p>La fórmula de un buen prompt y plantillas listas para tus tareas que se repiten.</p>
+        </div>
+        <div class="card">
+          <h3>Elegir la herramienta</h3>
+          <p>Claude, ChatGPT, Gemini o Copilot: cuál conviene según lo que ya usás y tu presupuesto.</p>
+        </div>
+        <div class="card">
+          <h3>Organizar tu trabajo</h3>
+          <p>Planificar la semana, preparar reuniones, crear listas y procesos con ayuda de la IA.</p>
+        </div>
+        <div class="card">
+          <h3>Usarla con seguridad</h3>
+          <p>Qué datos no compartir, cómo detectar errores ("alucinaciones") y cómo verificar respuestas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="text-center">Para quién es</h2>
+      <p class="text-center text-muted ap-narrow">
+        Profesionales independientes, abogados, contadores, docentes, diseñadores, consultores, estudiantes
+        universitarios y dueños de negocio que quieren aprender inteligencia artificial de forma práctica.
+        No necesitás saber de tecnología.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="precios">
+    <div class="container">
+      <h2 class="text-center">Precios</h2>
+      <PreciosIA audiencia="personas" conTitulos={false} />
+      <p class="text-center ap-link">
+        ¿Querés capacitar a tu equipo? <a href="/capacitacion-ia-empresas/">Ver capacitación de IA para empresas</a>
+      </p>
+    </div>
+  </section>
+
+  <Faq items={faqPersonas} />
+
+  <section class="section section--dark text-center">
+    <div class="container">
+      <h2>Empezá esta semana</h2>
+      <p class="ap-cta-text">Agendá una llamada de 15 minutos y te recomendamos por dónde empezar.</p>
+      <a href={AGENDA_URL} class="btn btn--accent btn--lg" target="_blank" rel="noopener">Agendar una llamada</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .ap-actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: var(--space-xl);
+  }
+  .ap-narrow {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .ap-grid {
+    margin-top: var(--space-2xl);
+  }
+  .ap-grid h3 {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-xs);
+  }
+  .ap-grid p {
+    color: var(--color-gray-600);
+    margin: 0;
+  }
+  .ap-link {
+    margin-top: var(--space-xl);
+  }
+  .ap-link a {
+    color: var(--color-royal);
+    font-weight: 600;
+  }
+  .ap-cta-text {
+    color: var(--color-gray-300);
+    margin: var(--space-md) auto var(--space-xl);
+  }
+</style>

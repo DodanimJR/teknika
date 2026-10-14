@@ -43,7 +43,7 @@ import { WHATSAPP_NUMERO } from '../data/contacto';
     </form>
 
     <div class="contact-modal__alt">
-      <a href="/contacto" id="modal-form-link">Prefiero el formulario</a>
+      <a href="/contacto/" id="modal-form-link">Prefiero el formulario</a>
       <span aria-hidden="true">·</span>
       <a href="#" id="modal-direct-link" target="_blank" rel="noopener">Ir directo a WhatsApp</a>
     </div>
@@ -204,7 +204,7 @@ import { WHATSAPP_NUMERO } from '../data/contacto';
       lastFocused = trigger;
       serviceName!.textContent = service;
       directLink!.href = waUrl(`Hola Teknika CR, me interesa: ${service}`);
-      formLink!.href = '/contacto?servicio=' + encodeURIComponent(service);
+      formLink!.href = '/contacto/?servicio=' + encodeURIComponent(service);
       errorEl!.hidden = true;
       modal!.classList.add('is-open');
       modal!.setAttribute('aria-hidden', 'false');

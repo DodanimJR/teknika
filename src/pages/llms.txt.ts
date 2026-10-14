@@ -47,14 +47,16 @@ ${personas}
 ${orgs}
 - Grupos de más de ${PARTICIPANTES_INCLUIDOS} personas: ${colones(PRECIO_PERSONA_ADICIONAL)} por participante adicional (IVA incluido).
 - Herramientas: Claude, ChatGPT, Gemini, Copilot, generación de imágenes y automatización básica.
-- Más información: https://teknika.co.cr/capacitacion-ia
+- Más información: https://teknika.co.cr/capacitacion-ia/
+- Clases y coaching de IA para personas: https://teknika.co.cr/aprender-ia/
+- Capacitación de IA para empresas: https://teknika.co.cr/capacitacion-ia-empresas/
 
 ## Desarrollo web para PYMEs
 
 ${web}
 - Mantenimiento web: desde ${colones(MANTENIMIENTO_WEB_DESDE)} CRC/mes (IVA incluido)
 - Incluye hosting gratuito en Cloudflare Pages, SEO básico y optimización para buscadores de IA
-- Más información: https://teknika.co.cr/desarrollo-web
+- Más información: https://teknika.co.cr/desarrollo-web/
 
 ## Soporte técnico
 
@@ -66,7 +68,7 @@ Precios con IVA incluido.
 - Cambio de HDD a SSD: ₡10,000 CRC + SSD
 - Asesoría de compra por WhatsApp: gratis
 - Soporte para PYMEs: Plan Básico desde ₡20,000/mes (hasta 3 equipos), Plan Profesional desde ₡45,000/mes (hasta 10 equipos)
-- Más información: https://teknika.co.cr/servicios
+- Más información: https://teknika.co.cr/servicios/
 
 ## Preguntas frecuentes
 
